@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup 1 - Germany Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>Germany Visualization - Mockup 1</h1>
+    <!-- Tabs für Navigation -->
+    <div class="tab-container">
+        <a class="tab-button" href="index.html">Zurück zur Landing Page</a>
+        <a class="tab-button" href="mockup2.html">Mockup 2</a>
+        <a class="tab-button" href="mockup3.html">Mockup 3</a>
+    </div>
+    <div id="container">
+        <!-- Linker Container für die Deutschlandkarte -->
+        <div id="leftContainer">
+            <svg width="100%" height="100%"></svg>
+        </div>
+
+        <!-- Rechter Container mit zwei untergeordneten Containern (oben und unten) -->
+        <div id="rightContainer">
+            <!-- Rechter Container, oben rechts -->
+            <div id="topRightContainer">
+                <h2>Datenauswahl</h2>
+                <div class="input-group">
+                    <svg id="hex-date1" class="hex-display"></svg>
+                    <label for="date1Selection">Datum 1:</label>
+                    
+                    <select id="date1Selection">
+                        <!-- Optionen werden dynamisch hinzugefügt -->
+                    </select>
+                </div>
+            
+                <div class="input-group">
+                    <svg id="hex-date2" class="hex-display"></svg>
+                    <label for="date2Selection">Datum 2:</label>
+                    
+                    <select id="date2Selection">
+                        <!-- Optionen werden dynamisch hinzugefügt -->
+                    </select>
+                </div>
+            
+                <div class="input-group">
+                    <svg id="hex-date3" class="hex-display"></svg>
+                    <label for="date3Selection">Datum 3:</label>
+                    
+                    <select id="date3Selection">
+                        <!-- Optionen werden dynamisch hinzugefügt -->
+                    </select>
+                </div>
+
+                <button id="selectButton">Selektieren</button>
+            </div>
+            <!-- Rechter Container, unten rechts (Info-Bereich) -->
+            <div id="bottomRightContainer">
+                <div id="info-container" style="display: flex; height: 100%;">
+                    <!-- Linker Bereich (obere Hälfte Info, untere Hälfte Legende) -->
+                    <div id="left-info" style="flex: 1; display: flex; flex-direction: column;">
+                        <!-- Blaue Box (Info-Text) -->
+                        <div id="info-content-box" style="flex: 1; padding: 10px; border: 1px solid blue;">
+                            <!-- Hier wird der Textinhalt angezeigt -->
+                        </div>
+                
+                        <!-- Grüne Box (Legende) -->
+                        <div id="legend-container" style="flex: 1; padding: 10px; border: 1px solid green;">
+                            <!-- Hier wird die Legende eingefügt -->
+                        </div>
+                    </div>
+                
+                    <!-- Rechter Bereich (Balkendiagramm, nimmt die rechte Hälfte ein) -->
+                    <div id="chart-container" style="flex: 1; padding: 10px; border: 1px solid red;">
+                        <!-- Hier wird das Balkendiagramm eingefügt -->
+                    </div>
+                </div>                                                  
+            </div>
+        </div>
+    </div>
+
+    <script src="germany_visualization.js"></script>
+</body>
+</html>

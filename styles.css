@@ -1,0 +1,296 @@
+/* Tab Buttons Styling */
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #ccc;
+}
+
+/* Container for the content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Controls Styling */
+#controls {
+    margin-bottom: 20px;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+}
+
+#svgContainer {
+    margin-right: 20px;
+}
+
+#info {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Hexagon Styling */
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+.node {
+    fill: #d62728;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+
+/* Container Aufteilung für die Seite */
+#container {
+    display: flex;
+    height: 100vh; /* Fullscreen Höhe */
+    width: 100vw; /* Fullscreen Breite */
+}
+
+/* Linker Container nimmt 50% der Breite ein */
+#leftContainer {
+    flex: 1; /* Nimmt die linke Hälfte des Bildschirms ein */
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red; /* Sichtbare Umrandung */
+    height: 100%; /* Volle Höhe des Containers */
+}
+
+#leftContainer svg {
+    width: 100%;  /* SVG füllt den gesamten Container */
+    height: 100%; /* SVG passt sich an die Containerhöhe an */
+}
+
+/* Rechter Container (nimmt die rechte Hälfte ein) */
+#rightContainer {
+    display: flex;
+    flex-direction: column; /* Ordnet die beiden Container (oben und unten) untereinander */
+    width: 50%; /* Nimmt die rechte Hälfte des Bildschirms ein */
+    height: 100%; /* Volle Höhe */
+}
+
+#topRightContainer {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+/* Dropdown-Menüs Styling */
+#topRightContainer select {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: 80%;
+}
+
+#bottomRightContainer {
+    flex: 1; /* Nimmt die untere Hälfte der rechten Seite ein */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid green; /* Sichtbare Umrandung */
+    height: 100%;
+}
+
+/* Flexbox für die grüne Box */
+#info-container {
+    display: flex;
+    height: 100%;
+}
+
+/* Linke Seite (Info und Legende) */
+#left-info {
+    flex: 1; /* Nimmt die linke Hälfte der grünen Box ein */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Info-Text oben links */
+#info-content-box {
+    flex: 1; /* Nimmt die obere Hälfte der linken Seite ein */
+    padding: 10px;
+    border: 1px solid blue;
+    overflow: auto; /* Falls der Text zu groß ist */
+}
+
+/* Legende unten links */
+#legend-container {
+    flex: 1; /* Nimmt die untere Hälfte der linken Seite ein */
+    padding: 10px;
+    border: 1px solid green;
+    overflow: hidden; /* Falls die Legende zu groß ist */
+    height: 100%; /* Volle Höhe nutzen */
+}
+
+/* Rechte Seite (Balkendiagramm) */
+#chart-container {
+    flex: 1; /* Nimmt die rechte Hälfte der grünen Box ein */
+    padding: 10px;
+    border: 1px solid red;
+    overflow: hidden; /* Verhindert Überlauf */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hex-display {
+    width: 40px;
+    height: 40px;
+    justify-content: center; /* Zentriert das SVG horizontal */
+    align-items: center; /* Zentriert das SVG vertikal */
+}
+
+/* Container für Mockup 2 */
+#mockup2-container {
+    display: flex;
+    height: 100vh; /* Fullscreen Höhe */
+    width: 100vw; /* Fullscreen Breite */
+}
+
+/* Linker Container für die Karte in Mockup 2 */
+#mockup2-leftContainer {
+    width: 50%; /* Nimm 70% der Breite ein */
+    height: 100%;
+    border: 1px solid red;
+}
+
+#mockup2-rightContainer {
+    display: flex;
+    flex-direction: column; /* Ordnet die beiden Container (oben und unten) untereinander */
+    width: 50%; /* Nimmt die rechte Hälfte des Bildschirms ein */
+    height: 100%; /* Volle Höhe */
+}
+
+
+#mockup2-selectionContainer {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+/* Dropdown-Menüs Styling */
+#mockup2-selectionContainer select {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+#mockup2-infoContainer {
+    flex: 1; /* Nimmt den verbleibenden Platz ein */
+    padding: 10;
+    border: 1px solid green;
+}
+
+/* Styles für Mockup 3 */
+.mockup3-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten */
+    grid-template-rows: 1fr 1fr; /* Zwei Reihen */
+    height: 100vh; /* Fullscreen Höhe */
+    width: 100vw; /* Fullscreen Breite */
+    gap: 10px; /* Abstand zwischen den Karten */
+    padding: 10px; /* Abstand um den Container */
+    box-sizing: border-box;
+    border: 2px solid #d62728;
+}
+
+.mockup3-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    /* Temporäre farbige Rahmen für Visualisierung */
+    border: 2px solid black;
+    overflow: hidden; /* Verhindert Überlaufen */
+}
+
+.mockup3-map:nth-child(1) { border-color: red; }
+.mockup3-map:nth-child(2) { border-color: green; }
+.mockup3-map:nth-child(3) { border-color: blue; }
+.mockup3-map:nth-child(4) { border-color: purple; }
+
+.mockup3-map select {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.mockup3-map svg {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    overflow-y: auto; /* Falls SVG den Container überfüllt, wird eine Scrollbar angezeigt */
+}
+
+/* Optional: Globale Container, um sicherzustellen, dass die Seite gut strukturiert ist */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Verhindert extra Abstand um den Body */
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+

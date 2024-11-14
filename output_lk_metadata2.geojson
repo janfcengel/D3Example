@@ -1,0 +1,6618 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.44572,
+          54.788333
+        ]
+      },
+      "properties": {
+        "RS": "01001",
+        "GEN": "Flensburg",
+        "BEZ": "KS",
+        "id": 0,
+        "area": 0.00539799999999978
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.132837,
+          54.319502
+        ]
+      },
+      "properties": {
+        "RS": "01002",
+        "GEN": "Kiel",
+        "BEZ": "KS",
+        "id": 1,
+        "area": 0.011807499999999804
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.723673,
+          53.869091
+        ]
+      },
+      "properties": {
+        "RS": "01003",
+        "GEN": "Lübeck",
+        "BEZ": "KS",
+        "id": 2,
+        "area": 0.02402449999999933
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.990916,
+          54.078725
+        ]
+      },
+      "properties": {
+        "RS": "01004",
+        "GEN": "Neumünster",
+        "BEZ": "KS",
+        "id": 3,
+        "area": 0.009174999999999656
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.111529,
+          54.136441
+        ]
+      },
+      "properties": {
+        "RS": "01051",
+        "GEN": "Dithmarschen",
+        "BEZ": "K",
+        "id": 4,
+        "area": 0.19683899999999985
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.606314,
+          53.589822
+        ]
+      },
+      "properties": {
+        "RS": "01053",
+        "GEN": "Herzogtum Lauenburg",
+        "BEZ": "K",
+        "id": 5,
+        "area": 0.17413850000000103
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.745717,
+          53.719567
+        ]
+      },
+      "properties": {
+        "RS": "01056",
+        "GEN": "Pinneberg",
+        "BEZ": "K",
+        "id": 8,
+        "area": 0.08946450000000031
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.363903,
+          54.246208
+        ]
+      },
+      "properties": {
+        "RS": "01057",
+        "GEN": "Plön",
+        "BEZ": "K",
+        "id": 9,
+        "area": 0.1488569999999992
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.783887,
+          54.292322
+        ]
+      },
+      "properties": {
+        "RS": "01058",
+        "GEN": "Rendsburg-Eckernförde",
+        "BEZ": "K",
+        "id": 10,
+        "area": 0.3073085000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.499929,
+          54.627578
+        ]
+      },
+      "properties": {
+        "RS": "01059",
+        "GEN": "Schleswig-Flensburg",
+        "BEZ": "K",
+        "id": 11,
+        "area": 0.27547750000000076
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1457,
+          53.921905
+        ]
+      },
+      "properties": {
+        "RS": "01060",
+        "GEN": "Segeberg",
+        "BEZ": "K",
+        "id": 12,
+        "area": 0.18383850000000015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.519,
+          53.929673
+        ]
+      },
+      "properties": {
+        "RS": "01061",
+        "GEN": "Steinburg",
+        "BEZ": "K",
+        "id": 13,
+        "area": 0.13888999999999904
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.337271,
+          53.722505
+        ]
+      },
+      "properties": {
+        "RS": "01062",
+        "GEN": "Stormarn",
+        "BEZ": "K",
+        "id": 14,
+        "area": 0.10380099999999919
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.021959,
+          53.544559
+        ]
+      },
+      "properties": {
+        "RS": "02000",
+        "GEN": "Hamburg",
+        "BEZ": "KS",
+        "id": 15,
+        "area": 0.10119849999999976
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.524425,
+          52.275062
+        ]
+      },
+      "properties": {
+        "RS": "03101",
+        "GEN": "Braunschweig",
+        "BEZ": "KS",
+        "id": 16,
+        "area": 0.02671000000000016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.369096,
+          52.119865
+        ]
+      },
+      "properties": {
+        "RS": "03102",
+        "GEN": "Salzgitter",
+        "BEZ": "KS",
+        "id": 17,
+        "area": 0.031319500000000125
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.785282,
+          52.408922
+        ]
+      },
+      "properties": {
+        "RS": "03103",
+        "GEN": "Wolfsburg",
+        "BEZ": "KS",
+        "id": 18,
+        "area": 0.026987000000000323
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.60768,
+          52.5802
+        ]
+      },
+      "properties": {
+        "RS": "03151",
+        "GEN": "Gifhorn",
+        "BEZ": "LK",
+        "id": 19,
+        "area": 0.21388600000000144
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.398772,
+          51.87317
+        ]
+      },
+      "properties": {
+        "RS": "03153",
+        "GEN": "Goslar",
+        "BEZ": "LK",
+        "id": 20,
+        "area": 0.12747250000000016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.895803,
+          52.258463
+        ]
+      },
+      "properties": {
+        "RS": "03154",
+        "GEN": "Helmstedt",
+        "BEZ": "LK",
+        "id": 21,
+        "area": 0.08864949999999971
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.847748,
+          51.741179
+        ]
+      },
+      "properties": {
+        "RS": "03155",
+        "GEN": "Northeim",
+        "BEZ": "LK",
+        "id": 22,
+        "area": 0.1642480000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.250153,
+          52.305113
+        ]
+      },
+      "properties": {
+        "RS": "03157",
+        "GEN": "Peine",
+        "BEZ": "LK",
+        "id": 23,
+        "area": 0.07431899999999932
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.094592,
+          51.56593
+        ]
+      },
+      "properties": {
+        "RS": "03159",
+        "GEN": "Göttingen",
+        "BEZ": "LK",
+        "id": 25,
+        "area": 0.22536199999999781
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.718007,
+          52.422447
+        ]
+      },
+      "properties": {
+        "RS": "03241",
+        "GEN": "Region Hannover",
+        "BEZ": "LK",
+        "id": 26,
+        "area": 0.3033145000000008
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.699889,
+          52.727094
+        ]
+      },
+      "properties": {
+        "RS": "03251",
+        "GEN": "Diepholz",
+        "BEZ": "LK",
+        "id": 27,
+        "area": 0.2629624999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.395425,
+          52.095451
+        ]
+      },
+      "properties": {
+        "RS": "03252",
+        "GEN": "Hameln-Pyrmont",
+        "BEZ": "LK",
+        "id": 28,
+        "area": 0.10067550000000013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.947658,
+          52.090515
+        ]
+      },
+      "properties": {
+        "RS": "03254",
+        "GEN": "Hildesheim",
+        "BEZ": "LK",
+        "id": 29,
+        "area": 0.1552639999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.552733,
+          51.886143
+        ]
+      },
+      "properties": {
+        "RS": "03255",
+        "GEN": "Holzminden",
+        "BEZ": "LK",
+        "id": 30,
+        "area": 0.09275850000000088
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.114936,
+          52.613713
+        ]
+      },
+      "properties": {
+        "RS": "03256",
+        "GEN": "Nienburg (Weser)",
+        "BEZ": "LK",
+        "id": 31,
+        "area": 0.1849689999999985
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.206105,
+          52.293049
+        ]
+      },
+      "properties": {
+        "RS": "03257",
+        "GEN": "Schaumburg",
+        "BEZ": "LK",
+        "id": 32,
+        "area": 0.09326350000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.102294,
+          52.712564
+        ]
+      },
+      "properties": {
+        "RS": "03351",
+        "GEN": "Celle",
+        "BEZ": "LK",
+        "id": 33,
+        "area": 0.2029164999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.806381,
+          53.612997
+        ]
+      },
+      "properties": {
+        "RS": "03352",
+        "GEN": "Cuxhaven",
+        "BEZ": "LK",
+        "id": 34,
+        "area": 0.27780999999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.963563,
+          53.315766
+        ]
+      },
+      "properties": {
+        "RS": "03353",
+        "GEN": "Harburg",
+        "BEZ": "LK",
+        "id": 35,
+        "area": 0.16839900000000035
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.128977,
+          53.019705
+        ]
+      },
+      "properties": {
+        "RS": "03354",
+        "GEN": "Lüchow-Dannenberg",
+        "BEZ": "LK",
+        "id": 36,
+        "area": 0.16384550000000075
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.574356,
+          53.229897
+        ]
+      },
+      "properties": {
+        "RS": "03355",
+        "GEN": "Lüneburg",
+        "BEZ": "LK",
+        "id": 37,
+        "area": 0.18715499999999924
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.811865,
+          53.248354
+        ]
+      },
+      "properties": {
+        "RS": "03356",
+        "GEN": "Osterholz",
+        "BEZ": "LK",
+        "id": 38,
+        "area": 0.08732450000000033
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.303105,
+          53.254588
+        ]
+      },
+      "properties": {
+        "RS": "03357",
+        "GEN": "Rotenburg (Wümme)",
+        "BEZ": "LK",
+        "id": 39,
+        "area": 0.2779489999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.77319,
+          52.93054
+        ]
+      },
+      "properties": {
+        "RS": "03358",
+        "GEN": "Heidekreis",
+        "BEZ": "LK",
+        "id": 40,
+        "area": 0.25489650000000036
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.416613,
+          53.578676
+        ]
+      },
+      "properties": {
+        "RS": "03359",
+        "GEN": "Stade",
+        "BEZ": "LK",
+        "id": 41,
+        "area": 0.16290800000000133
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.554558,
+          52.978209
+        ]
+      },
+      "properties": {
+        "RS": "03360",
+        "GEN": "Uelzen",
+        "BEZ": "LK",
+        "id": 42,
+        "area": 0.1906194999999983
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178178,
+          52.977586
+        ]
+      },
+      "properties": {
+        "RS": "03361",
+        "GEN": "Verden",
+        "BEZ": "LK",
+        "id": 43,
+        "area": 0.1048475000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.64888,
+          53.054166
+        ]
+      },
+      "properties": {
+        "RS": "03401",
+        "GEN": "Delmenhorst",
+        "BEZ": "KS",
+        "id": 44,
+        "area": 0.0067399999999999596
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.176085,
+          53.360994
+        ]
+      },
+      "properties": {
+        "RS": "03402",
+        "GEN": "Emden",
+        "BEZ": "KS",
+        "id": 45,
+        "area": 0.016574000000000463
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.233921,
+          53.145121
+        ]
+      },
+      "properties": {
+        "RS": "03403",
+        "GEN": "Oldenburg (Oldb)",
+        "BEZ": "KS",
+        "id": 46,
+        "area": 0.012170999999999835
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.058485,
+          52.27371
+        ]
+      },
+      "properties": {
+        "RS": "03404",
+        "GEN": "Osnabrück",
+        "BEZ": "KS",
+        "id": 47,
+        "area": 0.015441000000000487
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.077724,
+          53.573071
+        ]
+      },
+      "properties": {
+        "RS": "03405",
+        "GEN": "Wilhelmshaven",
+        "BEZ": "KS",
+        "id": 48,
+        "area": 0.012404000000000017
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.008753,
+          53.215249
+        ]
+      },
+      "properties": {
+        "RS": "03451",
+        "GEN": "Ammerland",
+        "BEZ": "LK",
+        "id": 49,
+        "area": 0.10566900000000051
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.372895,
+          53.488864
+        ]
+      },
+      "properties": {
+        "RS": "03452",
+        "GEN": "Aurich",
+        "BEZ": "LK",
+        "id": 50,
+        "area": 0.16815149999999796
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.908177,
+          52.908705
+        ]
+      },
+      "properties": {
+        "RS": "03453",
+        "GEN": "Cloppenburg",
+        "BEZ": "LK",
+        "id": 51,
+        "area": 0.18544049999999915
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.404801,
+          52.738456
+        ]
+      },
+      "properties": {
+        "RS": "03454",
+        "GEN": "Emsland",
+        "BEZ": "LK",
+        "id": 52,
+        "area": 0.37727999999999956
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.985112,
+          53.506333
+        ]
+      },
+      "properties": {
+        "RS": "03455",
+        "GEN": "Friesland",
+        "BEZ": "LK",
+        "id": 53,
+        "area": 0.07761549999999916
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.018654,
+          52.478244
+        ]
+      },
+      "properties": {
+        "RS": "03456",
+        "GEN": "Grafschaft Bentheim",
+        "BEZ": "LK",
+        "id": 54,
+        "area": 0.1337660000000016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.397087,
+          52.987641
+        ]
+      },
+      "properties": {
+        "RS": "03458",
+        "GEN": "Oldenburg",
+        "BEZ": "LK",
+        "id": 56,
+        "area": 0.143389999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.042719,
+          52.38343
+        ]
+      },
+      "properties": {
+        "RS": "03459",
+        "GEN": "Osnabrück",
+        "BEZ": "LK",
+        "id": 57,
+        "area": 0.2822394999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.221048,
+          52.661897
+        ]
+      },
+      "properties": {
+        "RS": "03460",
+        "GEN": "Vechta",
+        "BEZ": "LK",
+        "id": 58,
+        "area": 0.10792850000000073
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.393062,
+          53.349355
+        ]
+      },
+      "properties": {
+        "RS": "03461",
+        "GEN": "Wesermarsch",
+        "BEZ": "LK",
+        "id": 59,
+        "area": 0.11447300000000052
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.718102,
+          53.55625
+        ]
+      },
+      "properties": {
+        "RS": "03462",
+        "GEN": "Wittmund",
+        "BEZ": "LK",
+        "id": 60,
+        "area": 0.0885304999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.799277,
+          53.102373
+        ]
+      },
+      "properties": {
+        "RS": "04011",
+        "GEN": "Bremen",
+        "BEZ": "KS",
+        "id": 61,
+        "area": 0.04082349999999971
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.579119,
+          53.541121
+        ]
+      },
+      "properties": {
+        "RS": "04012",
+        "GEN": "Bremerhaven",
+        "BEZ": "KS",
+        "id": 62,
+        "area": 0.008182500000000271
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.808712,
+          51.229727
+        ]
+      },
+      "properties": {
+        "RS": "05111",
+        "GEN": "Düsseldorf",
+        "BEZ": "KS",
+        "id": 63,
+        "area": 0.026845500000000494
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.73152,
+          51.441093
+        ]
+      },
+      "properties": {
+        "RS": "05112",
+        "GEN": "Duisburg",
+        "BEZ": "KS",
+        "id": 64,
+        "area": 0.0311715000000006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.016429,
+          51.435711
+        ]
+      },
+      "properties": {
+        "RS": "05113",
+        "GEN": "Essen",
+        "BEZ": "KS",
+        "id": 65,
+        "area": 0.028737000000000124
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.575824,
+          51.346154
+        ]
+      },
+      "properties": {
+        "RS": "05114",
+        "GEN": "Krefeld",
+        "BEZ": "KS",
+        "id": 66,
+        "area": 0.018825000000000057
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.405035,
+          51.169353
+        ]
+      },
+      "properties": {
+        "RS": "05116",
+        "GEN": "Mönchengladbach",
+        "BEZ": "KS",
+        "id": 67,
+        "area": 0.02244499999999994
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.875813,
+          51.416584
+        ]
+      },
+      "properties": {
+        "RS": "05117",
+        "GEN": "Mülheim an der Ruhr",
+        "BEZ": "KS",
+        "id": 68,
+        "area": 0.011712499999999702
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.847564,
+          51.510481
+        ]
+      },
+      "properties": {
+        "RS": "05119",
+        "GEN": "Oberhausen",
+        "BEZ": "KS",
+        "id": 69,
+        "area": 0.010387499999999949
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.228133,
+          51.18004
+        ]
+      },
+      "properties": {
+        "RS": "05120",
+        "GEN": "Remscheid",
+        "BEZ": "KS",
+        "id": 70,
+        "area": 0.007415999999999847
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.050777,
+          51.160769
+        ]
+      },
+      "properties": {
+        "RS": "05122",
+        "GEN": "Solingen",
+        "BEZ": "KS",
+        "id": 71,
+        "area": 0.009137499999999464
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.172432,
+          51.246469
+        ]
+      },
+      "properties": {
+        "RS": "05124",
+        "GEN": "Wuppertal",
+        "BEZ": "KS",
+        "id": 72,
+        "area": 0.025416000000000327
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.264022,
+          51.651829
+        ]
+      },
+      "properties": {
+        "RS": "05154",
+        "GEN": "Kleve",
+        "BEZ": "K",
+        "id": 73,
+        "area": 0.1544405000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.965495,
+          51.256147
+        ]
+      },
+      "properties": {
+        "RS": "05158",
+        "GEN": "Mettmann",
+        "BEZ": "K",
+        "id": 74,
+        "area": 0.05374599999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.639904,
+          51.142174
+        ]
+      },
+      "properties": {
+        "RS": "05162",
+        "GEN": "Rhein-Kreis Neuss",
+        "BEZ": "K",
+        "id": 75,
+        "area": 0.07444799999999936
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.326138,
+          51.285793
+        ]
+      },
+      "properties": {
+        "RS": "05166",
+        "GEN": "Viersen",
+        "BEZ": "K",
+        "id": 76,
+        "area": 0.07270600000000042
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.618406,
+          51.626584
+        ]
+      },
+      "properties": {
+        "RS": "05170",
+        "GEN": "Wesel",
+        "BEZ": "K",
+        "id": 77,
+        "area": 0.13434450000000012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.114652,
+          50.69998
+        ]
+      },
+      "properties": {
+        "RS": "05314",
+        "GEN": "Bonn",
+        "BEZ": "KS",
+        "id": 78,
+        "area": 0.014823000000000603
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.97429,
+          50.949436
+        ]
+      },
+      "properties": {
+        "RS": "05315",
+        "GEN": "Köln",
+        "BEZ": "KS",
+        "id": 79,
+        "area": 0.05341799999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.004496,
+          51.058026
+        ]
+      },
+      "properties": {
+        "RS": "05316",
+        "GEN": "Leverkusen",
+        "BEZ": "KS",
+        "id": 80,
+        "area": 0.009438999999999911
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.217304,
+          50.732767
+        ]
+      },
+      "properties": {
+        "RS": "05334",
+        "GEN": "Städteregion Aachen",
+        "BEZ": "K",
+        "id": 81,
+        "area": 0.09007149999999987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.44479,
+          50.822931
+        ]
+      },
+      "properties": {
+        "RS": "05358",
+        "GEN": "Düren",
+        "BEZ": "K",
+        "id": 82,
+        "area": 0.11880450000000099
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.722938,
+          50.90013
+        ]
+      },
+      "properties": {
+        "RS": "05362",
+        "GEN": "Rhein-Erft-Kreis",
+        "BEZ": "K",
+        "id": 83,
+        "area": 0.0888304999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.635992,
+          50.532796
+        ]
+      },
+      "properties": {
+        "RS": "05366",
+        "GEN": "Euskirchen",
+        "BEZ": "K",
+        "id": 84,
+        "area": 0.15879649999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.160565,
+          51.051247
+        ]
+      },
+      "properties": {
+        "RS": "05370",
+        "GEN": "Heinsberg",
+        "BEZ": "K",
+        "id": 85,
+        "area": 0.07855099999999961
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.509849,
+          51.010495
+        ]
+      },
+      "properties": {
+        "RS": "05374",
+        "GEN": "Oberbergischer Kreis",
+        "BEZ": "K",
+        "id": 86,
+        "area": 0.11707799999999974
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.188792,
+          51.028921
+        ]
+      },
+      "properties": {
+        "RS": "05378",
+        "GEN": "Rheinisch-Bergischer Kreis",
+        "BEZ": "K",
+        "id": 87,
+        "area": 0.0543755000000007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.225864,
+          50.761494
+        ]
+      },
+      "properties": {
+        "RS": "05382",
+        "GEN": "Rhein-Sieg-Kreis",
+        "BEZ": "K",
+        "id": 88,
+        "area": 0.14913249999999875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.915078,
+          51.571628
+        ]
+      },
+      "properties": {
+        "RS": "05512",
+        "GEN": "Bottrop",
+        "BEZ": "KS",
+        "id": 89,
+        "area": 0.011395500000000182
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.070199,
+          51.554431
+        ]
+      },
+      "properties": {
+        "RS": "05513",
+        "GEN": "Gelsenkirchen",
+        "BEZ": "KS",
+        "id": 90,
+        "area": 0.013168999999999816
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.62153,
+          51.955115
+        ]
+      },
+      "properties": {
+        "RS": "05515",
+        "GEN": "Münster",
+        "BEZ": "KS",
+        "id": 91,
+        "area": 0.03585550000000013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.906416,
+          51.965411
+        ]
+      },
+      "properties": {
+        "RS": "05554",
+        "GEN": "Borken",
+        "BEZ": "K",
+        "id": 92,
+        "area": 0.18418099999999815
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.368202,
+          51.863431
+        ]
+      },
+      "properties": {
+        "RS": "05558",
+        "GEN": "Coesfeld",
+        "BEZ": "K",
+        "id": 93,
+        "area": 0.14537599999999978
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.151132,
+          51.673937
+        ]
+      },
+      "properties": {
+        "RS": "05562",
+        "GEN": "Recklinghausen",
+        "BEZ": "K",
+        "id": 94,
+        "area": 0.09833299999999963
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.584563,
+          52.208675
+        ]
+      },
+      "properties": {
+        "RS": "05566",
+        "GEN": "Steinfurt",
+        "BEZ": "K",
+        "id": 95,
+        "area": 0.23990350000000035
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.952858,
+          51.871086
+        ]
+      },
+      "properties": {
+        "RS": "05570",
+        "GEN": "Warendorf",
+        "BEZ": "K",
+        "id": 96,
+        "area": 0.1713355000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54117,
+          52.010668
+        ]
+      },
+      "properties": {
+        "RS": "05711",
+        "GEN": "Bielefeld",
+        "BEZ": "KS",
+        "id": 97,
+        "area": 0.03453050000000015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.352018,
+          51.929692
+        ]
+      },
+      "properties": {
+        "RS": "05754",
+        "GEN": "Gütersloh",
+        "BEZ": "K",
+        "id": 98,
+        "area": 0.12740099999999902
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.640878,
+          52.168871
+        ]
+      },
+      "properties": {
+        "RS": "05758",
+        "GEN": "Herford",
+        "BEZ": "K",
+        "id": 99,
+        "area": 0.05603399999999954
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.184045,
+          51.685612
+        ]
+      },
+      "properties": {
+        "RS": "05762",
+        "GEN": "Höxter",
+        "BEZ": "K",
+        "id": 100,
+        "area": 0.15611050000000068
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.949435,
+          51.980922
+        ]
+      },
+      "properties": {
+        "RS": "05766",
+        "GEN": "Lippe",
+        "BEZ": "K",
+        "id": 101,
+        "area": 0.16311749999999983
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.740887,
+          52.352338
+        ]
+      },
+      "properties": {
+        "RS": "05770",
+        "GEN": "Minden-Lübbecke",
+        "BEZ": "K",
+        "id": 102,
+        "area": 0.15714900000000095
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.722527,
+          51.662022
+        ]
+      },
+      "properties": {
+        "RS": "05774",
+        "GEN": "Paderborn",
+        "BEZ": "K",
+        "id": 103,
+        "area": 0.16381649999999964
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.222803,
+          51.47286
+        ]
+      },
+      "properties": {
+        "RS": "05911",
+        "GEN": "Bochum",
+        "BEZ": "KS",
+        "id": 104,
+        "area": 0.019507499999999973
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.471779,
+          51.517911
+        ]
+      },
+      "properties": {
+        "RS": "05913",
+        "GEN": "Dortmund",
+        "BEZ": "KS",
+        "id": 105,
+        "area": 0.03961149999999993
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.506996,
+          51.353742
+        ]
+      },
+      "properties": {
+        "RS": "05914",
+        "GEN": "Hagen",
+        "BEZ": "KS",
+        "id": 106,
+        "area": 0.017559499999999627
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.816667,
+          51.667764
+        ]
+      },
+      "properties": {
+        "RS": "05915",
+        "GEN": "Hamm",
+        "BEZ": "KS",
+        "id": 107,
+        "area": 0.02986
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.210749,
+          51.536322
+        ]
+      },
+      "properties": {
+        "RS": "05916",
+        "GEN": "Herne",
+        "BEZ": "KS",
+        "id": 108,
+        "area": 0.005050500000000202
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.329739,
+          51.345551
+        ]
+      },
+      "properties": {
+        "RS": "05954",
+        "GEN": "Ennepe-Ruhr-Kreis",
+        "BEZ": "K",
+        "id": 109,
+        "area": 0.055616000000000394
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.384259,
+          51.306141
+        ]
+      },
+      "properties": {
+        "RS": "05958",
+        "GEN": "Hochsauerlandkreis",
+        "BEZ": "K",
+        "id": 110,
+        "area": 0.25111249999999935
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.712034,
+          51.26236
+        ]
+      },
+      "properties": {
+        "RS": "05962",
+        "GEN": "Märkischer Kreis",
+        "BEZ": "K",
+        "id": 111,
+        "area": 0.14254949999999966
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.976496,
+          51.084127
+        ]
+      },
+      "properties": {
+        "RS": "05966",
+        "GEN": "Olpe",
+        "BEZ": "K",
+        "id": 112,
+        "area": 0.0934910000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.196605,
+          50.936392
+        ]
+      },
+      "properties": {
+        "RS": "05970",
+        "GEN": "Siegen-Wittgenstein",
+        "BEZ": "K",
+        "id": 113,
+        "area": 0.1448665000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.215067,
+          51.565348
+        ]
+      },
+      "properties": {
+        "RS": "05974",
+        "GEN": "Soest",
+        "BEZ": "K",
+        "id": 114,
+        "area": 0.1735250000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.636483,
+          51.580655
+        ]
+      },
+      "properties": {
+        "RS": "05978",
+        "GEN": "Unna",
+        "BEZ": "K",
+        "id": 115,
+        "area": 0.06486150000000047
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.664485,
+          49.874763
+        ]
+      },
+      "properties": {
+        "RS": "06411",
+        "GEN": "Darmstadt",
+        "BEZ": "KS",
+        "id": 116,
+        "area": 0.014891500000000009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.641392,
+          50.116806
+        ]
+      },
+      "properties": {
+        "RS": "06412",
+        "GEN": "Frankfurt am Main",
+        "BEZ": "KS",
+        "id": 117,
+        "area": 0.031376499999999925
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.785657,
+          50.094963
+        ]
+      },
+      "properties": {
+        "RS": "06413",
+        "GEN": "Offenbach am Main",
+        "BEZ": "KS",
+        "id": 118,
+        "area": 0.005288000000000225
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.259999,
+          50.077426
+        ]
+      },
+      "properties": {
+        "RS": "06414",
+        "GEN": "Wiesbaden",
+        "BEZ": "KS",
+        "id": 119,
+        "area": 0.027312000000000836
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.79334,
+          49.854338
+        ]
+      },
+      "properties": {
+        "RS": "06432",
+        "GEN": "Darmstadt-Dieburg",
+        "BEZ": "LK",
+        "id": 121,
+        "area": 0.0823359999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.468,
+          49.909968
+        ]
+      },
+      "properties": {
+        "RS": "06433",
+        "GEN": "Groß-Gerau",
+        "BEZ": "LK",
+        "id": 122,
+        "area": 0.056377999999999304
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.511452,
+          50.276696
+        ]
+      },
+      "properties": {
+        "RS": "06434",
+        "GEN": "Hochtaunuskreis",
+        "BEZ": "LK",
+        "id": 123,
+        "area": 0.06398950000000016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.280207,
+          50.242424
+        ]
+      },
+      "properties": {
+        "RS": "06435",
+        "GEN": "Main-Kinzig-Kreis",
+        "BEZ": "LK",
+        "id": 124,
+        "area": 0.1764269999999991
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.426962,
+          50.101617
+        ]
+      },
+      "properties": {
+        "RS": "06436",
+        "GEN": "Main-Taunus-Kreis",
+        "BEZ": "LK",
+        "id": 125,
+        "area": 0.025888500000000352
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.972882,
+          49.667657
+        ]
+      },
+      "properties": {
+        "RS": "06437",
+        "GEN": "Odenwaldkreis",
+        "BEZ": "LK",
+        "id": 126,
+        "area": 0.07760500000000042
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.803192,
+          50.016915
+        ]
+      },
+      "properties": {
+        "RS": "06438",
+        "GEN": "Offenbach",
+        "BEZ": "LK",
+        "id": 127,
+        "area": 0.04298549999999975
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.07547,
+          50.143023
+        ]
+      },
+      "properties": {
+        "RS": "06439",
+        "GEN": "Rheingau-Taunus-Kreis",
+        "BEZ": "LK",
+        "id": 128,
+        "area": 0.10434499999999967
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.919465,
+          50.354979
+        ]
+      },
+      "properties": {
+        "RS": "06440",
+        "GEN": "Wetteraukreis",
+        "BEZ": "LK",
+        "id": 129,
+        "area": 0.1363485000000009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.801277,
+          50.567241
+        ]
+      },
+      "properties": {
+        "RS": "06531",
+        "GEN": "Gießen",
+        "BEZ": "LK",
+        "id": 130,
+        "area": 0.10890449999999992
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.367352,
+          50.650219
+        ]
+      },
+      "properties": {
+        "RS": "06532",
+        "GEN": "Lahn-Dill-Kreis",
+        "BEZ": "LK",
+        "id": 131,
+        "area": 0.1344534999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.203102,
+          50.428818
+        ]
+      },
+      "properties": {
+        "RS": "06533",
+        "GEN": "Limburg-Weilburg",
+        "BEZ": "LK",
+        "id": 132,
+        "area": 0.0951529999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.737679,
+          50.836395
+        ]
+      },
+      "properties": {
+        "RS": "06534",
+        "GEN": "Marburg-Biedenkopf",
+        "BEZ": "LK",
+        "id": 133,
+        "area": 0.16026849999999992
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.265745,
+          50.639908
+        ]
+      },
+      "properties": {
+        "RS": "06535",
+        "GEN": "Vogelsbergkreis",
+        "BEZ": "LK",
+        "id": 134,
+        "area": 0.18464600000000012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.458885,
+          51.314605
+        ]
+      },
+      "properties": {
+        "RS": "06611",
+        "GEN": "Kassel",
+        "BEZ": "KS",
+        "id": 135,
+        "area": 0.01261949999999916
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.75183,
+          50.564545
+        ]
+      },
+      "properties": {
+        "RS": "06631",
+        "GEN": "Fulda",
+        "BEZ": "LK",
+        "id": 136,
+        "area": 0.17174150000000066
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.75113,
+          50.907896
+        ]
+      },
+      "properties": {
+        "RS": "06632",
+        "GEN": "Hersfeld-Rotenburg",
+        "BEZ": "LK",
+        "id": 137,
+        "area": 0.14404100000000075
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.407519,
+          51.404437
+        ]
+      },
+      "properties": {
+        "RS": "06633",
+        "GEN": "Kassel",
+        "BEZ": "LK",
+        "id": 138,
+        "area": 0.16710400000000009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.373044,
+          51.028638
+        ]
+      },
+      "properties": {
+        "RS": "06634",
+        "GEN": "Schwalm-Eder-Kreis",
+        "BEZ": "LK",
+        "id": 139,
+        "area": 0.19658650000000022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.891857,
+          51.190558
+        ]
+      },
+      "properties": {
+        "RS": "06635",
+        "GEN": "Waldeck-Frankenberg",
+        "BEZ": "LK",
+        "id": 140,
+        "area": 0.23727650000000045
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.928118,
+          51.191186
+        ]
+      },
+      "properties": {
+        "RS": "06636",
+        "GEN": "Werra-Meißner-Kreis",
+        "BEZ": "LK",
+        "id": 141,
+        "area": 0.13438500000000014
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.578524,
+          50.345727
+        ]
+      },
+      "properties": {
+        "RS": "07111",
+        "GEN": "Koblenz",
+        "BEZ": "KS",
+        "id": 142,
+        "area": 0.014449000000000043
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.052115,
+          50.473227
+        ]
+      },
+      "properties": {
+        "RS": "07131",
+        "GEN": "Ahrweiler",
+        "BEZ": "LK",
+        "id": 143,
+        "area": 0.10291599999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.74218,
+          50.748911
+        ]
+      },
+      "properties": {
+        "RS": "07132",
+        "GEN": "Altenkirchen (Westerwald)",
+        "BEZ": "LK",
+        "id": 144,
+        "area": 0.08411549999999961
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.690824,
+          49.829235
+        ]
+      },
+      "properties": {
+        "RS": "07133",
+        "GEN": "Bad Kreuznach",
+        "BEZ": "LK",
+        "id": 145,
+        "area": 0.10709400000000066
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.272439,
+          49.713207
+        ]
+      },
+      "properties": {
+        "RS": "07134",
+        "GEN": "Birkenfeld",
+        "BEZ": "LK",
+        "id": 146,
+        "area": 0.09744400000000053
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.175588,
+          50.135676
+        ]
+      },
+      "properties": {
+        "RS": "07135",
+        "GEN": "Cochem-Zell",
+        "BEZ": "LK",
+        "id": 147,
+        "area": 0.08438950000000034
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.323126,
+          50.331762
+        ]
+      },
+      "properties": {
+        "RS": "07137",
+        "GEN": "Mayen-Koblenz",
+        "BEZ": "LK",
+        "id": 148,
+        "area": 0.10091899999999912
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4706,
+          50.559022
+        ]
+      },
+      "properties": {
+        "RS": "07138",
+        "GEN": "Neuwied",
+        "BEZ": "LK",
+        "id": 149,
+        "area": 0.07797550000000009
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.500294,
+          50.04698
+        ]
+      },
+      "properties": {
+        "RS": "07140",
+        "GEN": "Rhein-Hunsrück-Kreis",
+        "BEZ": "LK",
+        "id": 150,
+        "area": 0.12734850000000034
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.841819,
+          50.264757
+        ]
+      },
+      "properties": {
+        "RS": "07141",
+        "GEN": "Rhein-Lahn-Kreis",
+        "BEZ": "LK",
+        "id": 151,
+        "area": 0.09296649999999922
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.867492,
+          50.547273
+        ]
+      },
+      "properties": {
+        "RS": "07143",
+        "GEN": "Westerwaldkreis",
+        "BEZ": "LK",
+        "id": 152,
+        "area": 0.12596400000000096
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.66007,
+          49.767822
+        ]
+      },
+      "properties": {
+        "RS": "07211",
+        "GEN": "Trier",
+        "BEZ": "KS",
+        "id": 153,
+        "area": 0.012229499999999775
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.970146,
+          49.925333
+        ]
+      },
+      "properties": {
+        "RS": "07231",
+        "GEN": "Bernkastel-Wittlich",
+        "BEZ": "LK",
+        "id": 154,
+        "area": 0.14794049999999898
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.415888,
+          50.058575
+        ]
+      },
+      "properties": {
+        "RS": "07232",
+        "GEN": "Eifelkreis Bitburg-Prüm",
+        "BEZ": "LK",
+        "id": 155,
+        "area": 0.2056524999999989
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.75128,
+          50.237584
+        ]
+      },
+      "properties": {
+        "RS": "07233",
+        "GEN": "Vulkaneifel",
+        "BEZ": "LK",
+        "id": 156,
+        "area": 0.11407750000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.693017,
+          49.693026
+        ]
+      },
+      "properties": {
+        "RS": "07235",
+        "GEN": "Trier-Saarburg",
+        "BEZ": "LK",
+        "id": 157,
+        "area": 0.1371135000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.371105,
+          49.538864
+        ]
+      },
+      "properties": {
+        "RS": "07311",
+        "GEN": "Frankenthal (Pfalz)",
+        "BEZ": "KS",
+        "id": 158,
+        "area": 0.00435099999999975
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.754692,
+          49.427557
+        ]
+      },
+      "properties": {
+        "RS": "07312",
+        "GEN": "Kaiserslautern",
+        "BEZ": "KS",
+        "id": 159,
+        "area": 0.01836449999999975
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401615,
+          49.479258
+        ]
+      },
+      "properties": {
+        "RS": "07314",
+        "GEN": "Ludwigshafen am Rhein",
+        "BEZ": "KS",
+        "id": 161,
+        "area": 0.009751500000000107
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.235129,
+          49.982075
+        ]
+      },
+      "properties": {
+        "RS": "07315",
+        "GEN": "Mainz",
+        "BEZ": "KS",
+        "id": 162,
+        "area": 0.008874999999999165
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.142681,
+          49.34619
+        ]
+      },
+      "properties": {
+        "RS": "07316",
+        "GEN": "Neustadt an der Weinstraße",
+        "BEZ": "KS",
+        "id": 163,
+        "area": 0.01323600000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.591488,
+          49.197235
+        ]
+      },
+      "properties": {
+        "RS": "07317",
+        "GEN": "Pirmasens",
+        "BEZ": "KS",
+        "id": 164,
+        "area": 0.006548999999999497
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439034,
+          49.327034
+        ]
+      },
+      "properties": {
+        "RS": "07318",
+        "GEN": "Speyer",
+        "BEZ": "KS",
+        "id": 165,
+        "area": 0.004530999999999962
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.331504,
+          49.648199
+        ]
+      },
+      "properties": {
+        "RS": "07319",
+        "GEN": "Worms",
+        "BEZ": "KS",
+        "id": 166,
+        "area": 0.014839499999999617
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.365061,
+          49.25547
+        ]
+      },
+      "properties": {
+        "RS": "07320",
+        "GEN": "Zweibrücken",
+        "BEZ": "KS",
+        "id": 167,
+        "area": 0.008355000000000317
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.160207,
+          49.75405
+        ]
+      },
+      "properties": {
+        "RS": "07331",
+        "GEN": "Alzey-Worms",
+        "BEZ": "LK",
+        "id": 168,
+        "area": 0.07617199999999988
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.106384,
+          49.453491
+        ]
+      },
+      "properties": {
+        "RS": "07332",
+        "GEN": "Bad Dürkheim",
+        "BEZ": "LK",
+        "id": 169,
+        "area": 0.07222899999999968
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.907134,
+          49.628626
+        ]
+      },
+      "properties": {
+        "RS": "07333",
+        "GEN": "Donnersbergkreis",
+        "BEZ": "LK",
+        "id": 170,
+        "area": 0.08022750000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.25017,
+          49.119581
+        ]
+      },
+      "properties": {
+        "RS": "07334",
+        "GEN": "Germersheim",
+        "BEZ": "LK",
+        "id": 171,
+        "area": 0.05789649999999939
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.68418,
+          49.44329
+        ]
+      },
+      "properties": {
+        "RS": "07335",
+        "GEN": "Kaiserslautern",
+        "BEZ": "LK",
+        "id": 172,
+        "area": 0.07634300000000041
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.469658,
+          49.553911
+        ]
+      },
+      "properties": {
+        "RS": "07336",
+        "GEN": "Kusel",
+        "BEZ": "LK",
+        "id": 173,
+        "area": 0.07612449999999982
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.055924,
+          49.192802
+        ]
+      },
+      "properties": {
+        "RS": "07337",
+        "GEN": "Südliche Weinstraße",
+        "BEZ": "LK",
+        "id": 174,
+        "area": 0.08071500000000066
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.356518,
+          49.414535
+        ]
+      },
+      "properties": {
+        "RS": "07338",
+        "GEN": "Rhein-Pfalz-Kreis",
+        "BEZ": "LK",
+        "id": 175,
+        "area": 0.04034050000000052
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.084949,
+          49.92226
+        ]
+      },
+      "properties": {
+        "RS": "07339",
+        "GEN": "Mainz-Bingen",
+        "BEZ": "LK",
+        "id": 176,
+        "area": 0.07610900000000098
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.661506,
+          49.208602
+        ]
+      },
+      "properties": {
+        "RS": "07340",
+        "GEN": "Südwestpfalz",
+        "BEZ": "LK",
+        "id": 177,
+        "area": 0.12102100000000088
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.170718,
+          48.773514
+        ]
+      },
+      "properties": {
+        "RS": "08111",
+        "GEN": "Stuttgart",
+        "BEZ": "SK",
+        "id": 178,
+        "area": 0.023641999999999615
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.951682,
+          48.684307
+        ]
+      },
+      "properties": {
+        "RS": "08115",
+        "GEN": "Böblingen",
+        "BEZ": "LK",
+        "id": 179,
+        "area": 0.07466149999999924
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.36718,
+          48.643048
+        ]
+      },
+      "properties": {
+        "RS": "08116",
+        "GEN": "Esslingen",
+        "BEZ": "LK",
+        "id": 180,
+        "area": 0.07782100000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.716167,
+          48.660708
+        ]
+      },
+      "properties": {
+        "RS": "08117",
+        "GEN": "Göppingen",
+        "BEZ": "LK",
+        "id": 181,
+        "area": 0.08052199999999964
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.497591,
+          48.897707
+        ]
+      },
+      "properties": {
+        "RS": "08119",
+        "GEN": "Rems-Murr-Kreis",
+        "BEZ": "LK",
+        "id": 183,
+        "area": 0.10599249999999912
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.180857,
+          49.153552
+        ]
+      },
+      "properties": {
+        "RS": "08121",
+        "GEN": "Heilbronn",
+        "BEZ": "SK",
+        "id": 184,
+        "area": 0.010966500000000153
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.192435,
+          49.175133
+        ]
+      },
+      "properties": {
+        "RS": "08125",
+        "GEN": "Heilbronn",
+        "BEZ": "LK",
+        "id": 185,
+        "area": 0.14505349999999959
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.620217,
+          49.273706
+        ]
+      },
+      "properties": {
+        "RS": "08126",
+        "GEN": "Hohenlohekreis",
+        "BEZ": "LK",
+        "id": 186,
+        "area": 0.09602449999999986
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.910679,
+          49.142521
+        ]
+      },
+      "properties": {
+        "RS": "08127",
+        "GEN": "Schwäbisch Hall",
+        "BEZ": "LK",
+        "id": 187,
+        "area": 0.18527950000000099
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.729055,
+          49.560303
+        ]
+      },
+      "properties": {
+        "RS": "08128",
+        "GEN": "Main-Tauber-Kreis",
+        "BEZ": "LK",
+        "id": 188,
+        "area": 0.1605279999999993
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.092437,
+          48.873735
+        ]
+      },
+      "properties": {
+        "RS": "08136",
+        "GEN": "Ostalbkreis",
+        "BEZ": "LK",
+        "id": 190,
+        "area": 0.185592000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.227724,
+          48.749292
+        ]
+      },
+      "properties": {
+        "RS": "08211",
+        "GEN": "Baden-Baden",
+        "BEZ": "SK",
+        "id": 191,
+        "area": 0.018441000000000082
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.408722,
+          49.009854
+        ]
+      },
+      "properties": {
+        "RS": "08212",
+        "GEN": "Karlsruhe",
+        "BEZ": "SK",
+        "id": 192,
+        "area": 0.02015099999999979
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564184,
+          49.083985
+        ]
+      },
+      "properties": {
+        "RS": "08215",
+        "GEN": "Karlsruhe",
+        "BEZ": "LK",
+        "id": 193,
+        "area": 0.13249800000000053
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.24376,
+          48.761645
+        ]
+      },
+      "properties": {
+        "RS": "08216",
+        "GEN": "Rastatt",
+        "BEZ": "LK",
+        "id": 194,
+        "area": 0.08901550000000043
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.684978,
+          49.405252
+        ]
+      },
+      "properties": {
+        "RS": "08221",
+        "GEN": "Heidelberg",
+        "BEZ": "SK",
+        "id": 195,
+        "area": 0.015100500000000606
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.500565,
+          49.499819
+        ]
+      },
+      "properties": {
+        "RS": "08222",
+        "GEN": "Mannheim",
+        "BEZ": "SK",
+        "id": 196,
+        "area": 0.017638000000000334
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.280592,
+          49.468499
+        ]
+      },
+      "properties": {
+        "RS": "08225",
+        "GEN": "Neckar-Odenwald-Kreis",
+        "BEZ": "LK",
+        "id": 197,
+        "area": 0.14212399999999994
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.765769,
+          49.37153
+        ]
+      },
+      "properties": {
+        "RS": "08226",
+        "GEN": "Rhein-Neckar-Kreis",
+        "BEZ": "LK",
+        "id": 198,
+        "area": 0.12884799999999844
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.706234,
+          48.881097
+        ]
+      },
+      "properties": {
+        "RS": "08231",
+        "GEN": "Pforzheim",
+        "BEZ": "SK",
+        "id": 199,
+        "area": 0.011575999999999597
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.637469,
+          48.680363
+        ]
+      },
+      "properties": {
+        "RS": "08235",
+        "GEN": "Calw",
+        "BEZ": "LK",
+        "id": 200,
+        "area": 0.09706799999999957
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.731348,
+          48.910942
+        ]
+      },
+      "properties": {
+        "RS": "08236",
+        "GEN": "Enzkreis",
+        "BEZ": "LK",
+        "id": 201,
+        "area": 0.07102099999999983
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462869,
+          48.475415
+        ]
+      },
+      "properties": {
+        "RS": "08237",
+        "GEN": "Freudenstadt",
+        "BEZ": "LK",
+        "id": 202,
+        "area": 0.108786000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.813796,
+          47.999915
+        ]
+      },
+      "properties": {
+        "RS": "08311",
+        "GEN": "Freiburg im Breisgau",
+        "BEZ": "SK",
+        "id": 203,
+        "area": 0.017560499999999663
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.916868,
+          47.925859
+        ]
+      },
+      "properties": {
+        "RS": "08315",
+        "GEN": "Breisgau-Hochschwarzwald",
+        "BEZ": "LK",
+        "id": 204,
+        "area": 0.16844700000000024
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.89583,
+          48.147166
+        ]
+      },
+      "properties": {
+        "RS": "08316",
+        "GEN": "Emmendingen",
+        "BEZ": "LK",
+        "id": 205,
+        "area": 0.08043949999999946
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.014856,
+          48.419318
+        ]
+      },
+      "properties": {
+        "RS": "08317",
+        "GEN": "Ortenaukreis",
+        "BEZ": "LK",
+        "id": 206,
+        "area": 0.22221600000000072
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532062,
+          48.256369
+        ]
+      },
+      "properties": {
+        "RS": "08325",
+        "GEN": "Rottweil",
+        "BEZ": "LK",
+        "id": 207,
+        "area": 0.0915239999999991
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414846,
+          48.019872
+        ]
+      },
+      "properties": {
+        "RS": "08326",
+        "GEN": "Schwarzwald-Baar-Kreis",
+        "BEZ": "LK",
+        "id": 208,
+        "area": 0.12647750000000052
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.798649,
+          48.012231
+        ]
+      },
+      "properties": {
+        "RS": "08327",
+        "GEN": "Tuttlingen",
+        "BEZ": "LK",
+        "id": 209,
+        "area": 0.0875865000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.912181,
+          47.799909
+        ]
+      },
+      "properties": {
+        "RS": "08335",
+        "GEN": "Konstanz",
+        "BEZ": "LK",
+        "id": 210,
+        "area": 0.09902349999999945
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.775712,
+          47.702518
+        ]
+      },
+      "properties": {
+        "RS": "08336",
+        "GEN": "Lörrach",
+        "BEZ": "LK",
+        "id": 211,
+        "area": 0.09500199999999903
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.218236,
+          47.695858
+        ]
+      },
+      "properties": {
+        "RS": "08337",
+        "GEN": "Waldshut",
+        "BEZ": "LK",
+        "id": 212,
+        "area": 0.1364959999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.3693,
+          48.406308
+        ]
+      },
+      "properties": {
+        "RS": "08415",
+        "GEN": "Reutlingen",
+        "BEZ": "LK",
+        "id": 213,
+        "area": 0.1282595000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.982316,
+          48.485154
+        ]
+      },
+      "properties": {
+        "RS": "08416",
+        "GEN": "Tübingen",
+        "BEZ": "LK",
+        "id": 214,
+        "area": 0.06710700000000137
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.935869,
+          48.265887
+        ]
+      },
+      "properties": {
+        "RS": "08417",
+        "GEN": "Zollernalbkreis",
+        "BEZ": "LK",
+        "id": 215,
+        "area": 0.11213300000000012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.949147,
+          48.398312
+        ]
+      },
+      "properties": {
+        "RS": "08421",
+        "GEN": "Ulm",
+        "BEZ": "SK",
+        "id": 216,
+        "area": 0.009138999999999974
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.832567,
+          48.395889
+        ]
+      },
+      "properties": {
+        "RS": "08425",
+        "GEN": "Alb-Donau-Kreis",
+        "BEZ": "LK",
+        "id": 217,
+        "area": 0.16992649999999912
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.769703,
+          48.106507
+        ]
+      },
+      "properties": {
+        "RS": "08426",
+        "GEN": "Biberach",
+        "BEZ": "LK",
+        "id": 218,
+        "area": 0.1702180000000006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.408548,
+          47.730819
+        ]
+      },
+      "properties": {
+        "RS": "08435",
+        "GEN": "Bodenseekreis",
+        "BEZ": "LK",
+        "id": 219,
+        "area": 0.0769325000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.780154,
+          47.826851
+        ]
+      },
+      "properties": {
+        "RS": "08436",
+        "GEN": "Ravensburg",
+        "BEZ": "LK",
+        "id": 220,
+        "area": 0.20194199999999904
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.237514,
+          48.041183
+        ]
+      },
+      "properties": {
+        "RS": "08437",
+        "GEN": "Sigmaringen",
+        "BEZ": "LK",
+        "id": 221,
+        "area": 0.1423754999999994
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.396818,
+          48.752086
+        ]
+      },
+      "properties": {
+        "RS": "09161",
+        "GEN": "Ingolstadt",
+        "BEZ": "KS",
+        "id": 222,
+        "area": 0.016053500000000276
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.55057,
+          48.157928
+        ]
+      },
+      "properties": {
+        "RS": "09162",
+        "GEN": "München",
+        "BEZ": "KS",
+        "id": 223,
+        "area": 0.0404064999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.101724,
+          47.842701
+        ]
+      },
+      "properties": {
+        "RS": "09163",
+        "GEN": "Rosenheim",
+        "BEZ": "KS",
+        "id": 224,
+        "area": 0.0034740000000000847
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.701516,
+          48.212498
+        ]
+      },
+      "properties": {
+        "RS": "09171",
+        "GEN": "Altötting",
+        "BEZ": "LK",
+        "id": 225,
+        "area": 0.07098899999999946
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.902196,
+          47.695004
+        ]
+      },
+      "properties": {
+        "RS": "09172",
+        "GEN": "Berchtesgadener Land",
+        "BEZ": "LK",
+        "id": 226,
+        "area": 0.09899349999999972
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.482368,
+          47.72766
+        ]
+      },
+      "properties": {
+        "RS": "09173",
+        "GEN": "Bad Tölz-Wolfratshausen",
+        "BEZ": "LK",
+        "id": 227,
+        "area": 0.13449000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.355872,
+          48.331955
+        ]
+      },
+      "properties": {
+        "RS": "09174",
+        "GEN": "Dachau",
+        "BEZ": "LK",
+        "id": 228,
+        "area": 0.06633499999999992
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.911873,
+          48.077596
+        ]
+      },
+      "properties": {
+        "RS": "09175",
+        "GEN": "Ebersberg",
+        "BEZ": "LK",
+        "id": 229,
+        "area": 0.07073600000000016
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.369492,
+          48.899739
+        ]
+      },
+      "properties": {
+        "RS": "09176",
+        "GEN": "Eichstätt",
+        "BEZ": "LK",
+        "id": 230,
+        "area": 0.15176099999999831
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.999154,
+          48.301775
+        ]
+      },
+      "properties": {
+        "RS": "09177",
+        "GEN": "Erding",
+        "BEZ": "LK",
+        "id": 231,
+        "area": 0.10567849999999954
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.736116,
+          48.449066
+        ]
+      },
+      "properties": {
+        "RS": "09178",
+        "GEN": "Freising",
+        "BEZ": "LK",
+        "id": 232,
+        "area": 0.10293800000000007
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.193332,
+          48.188391
+        ]
+      },
+      "properties": {
+        "RS": "09179",
+        "GEN": "Fürstenfeldbruck",
+        "BEZ": "LK",
+        "id": 233,
+        "area": 0.051897999999999854
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.125728,
+          47.556079
+        ]
+      },
+      "properties": {
+        "RS": "09180",
+        "GEN": "Garmisch-Partenkirchen",
+        "BEZ": "LK",
+        "id": 234,
+        "area": 0.12453100000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.944415,
+          48.027234
+        ]
+      },
+      "properties": {
+        "RS": "09181",
+        "GEN": "Landsberg am Lech",
+        "BEZ": "LK",
+        "id": 235,
+        "area": 0.09609199999999896
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.806043,
+          47.746047
+        ]
+      },
+      "properties": {
+        "RS": "09182",
+        "GEN": "Miesbach",
+        "BEZ": "LK",
+        "id": 236,
+        "area": 0.10152550000000006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.374204,
+          48.235994
+        ]
+      },
+      "properties": {
+        "RS": "09183",
+        "GEN": "Mühldorf a. Inn",
+        "BEZ": "LK",
+        "id": 237,
+        "area": 0.09872599999999984
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.623426,
+          48.069382
+        ]
+      },
+      "properties": {
+        "RS": "09184",
+        "GEN": "München",
+        "BEZ": "LK",
+        "id": 238,
+        "area": 0.07593750000000028
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.197591,
+          48.664081
+        ]
+      },
+      "properties": {
+        "RS": "09185",
+        "GEN": "Neuburg-Schrobenhausen",
+        "BEZ": "LK",
+        "id": 239,
+        "area": 0.08962600000000173
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.520827,
+          48.597238
+        ]
+      },
+      "properties": {
+        "RS": "09186",
+        "GEN": "Pfaffenhofen a.d. Ilm",
+        "BEZ": "LK",
+        "id": 240,
+        "area": 0.09135649999999973
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.158003,
+          47.873537
+        ]
+      },
+      "properties": {
+        "RS": "09187",
+        "GEN": "Rosenheim",
+        "BEZ": "LK",
+        "id": 241,
+        "area": 0.16717549999999962
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.279285,
+          48.009866
+        ]
+      },
+      "properties": {
+        "RS": "09188",
+        "GEN": "Starnberg",
+        "BEZ": "LK",
+        "id": 242,
+        "area": 0.05643099999999971
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.580617,
+          47.89612
+        ]
+      },
+      "properties": {
+        "RS": "09189",
+        "GEN": "Traunstein",
+        "BEZ": "LK",
+        "id": 243,
+        "area": 0.18670949999999964
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.054056,
+          47.793354
+        ]
+      },
+      "properties": {
+        "RS": "09190",
+        "GEN": "Weilheim-Schongau",
+        "BEZ": "LK",
+        "id": 244,
+        "area": 0.11697800000000012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.178,
+          48.543
+        ]
+      },
+      "properties": {
+        "RS": "09261",
+        "GEN": "Landshut",
+        "BEZ": "KS",
+        "id": 245,
+        "area": 0.005614500000000041
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.423742,
+          48.58535
+        ]
+      },
+      "properties": {
+        "RS": "09262",
+        "GEN": "Passau",
+        "BEZ": "KS",
+        "id": 246,
+        "area": 0.00596399999999987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.574207,
+          48.881318
+        ]
+      },
+      "properties": {
+        "RS": "09263",
+        "GEN": "Straubing",
+        "BEZ": "KS",
+        "id": 247,
+        "area": 0.006402999999999786
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.994762,
+          48.778516
+        ]
+      },
+      "properties": {
+        "RS": "09271",
+        "GEN": "Deggendorf",
+        "BEZ": "LK",
+        "id": 248,
+        "area": 0.10351500000000022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.513724,
+          48.825534
+        ]
+      },
+      "properties": {
+        "RS": "09272",
+        "GEN": "Freyung-Grafenau",
+        "BEZ": "LK",
+        "id": 249,
+        "area": 0.1226165000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.861942,
+          48.82052
+        ]
+      },
+      "properties": {
+        "RS": "09273",
+        "GEN": "Kelheim",
+        "BEZ": "LK",
+        "id": 250,
+        "area": 0.12678150000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.198449,
+          48.558333
+        ]
+      },
+      "properties": {
+        "RS": "09274",
+        "GEN": "Landshut",
+        "BEZ": "LK",
+        "id": 251,
+        "area": 0.1654710000000011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.360114,
+          48.559335
+        ]
+      },
+      "properties": {
+        "RS": "09275",
+        "GEN": "Passau",
+        "BEZ": "LK",
+        "id": 252,
+        "area": 0.18988400000000144
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.103319,
+          49.0235
+        ]
+      },
+      "properties": {
+        "RS": "09276",
+        "GEN": "Regen",
+        "BEZ": "LK",
+        "id": 253,
+        "area": 0.11685299999999968
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.868379,
+          48.423461
+        ]
+      },
+      "properties": {
+        "RS": "09277",
+        "GEN": "Rottal-Inn",
+        "BEZ": "LK",
+        "id": 254,
+        "area": 0.1512550000000011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.586148,
+          48.898672
+        ]
+      },
+      "properties": {
+        "RS": "09278",
+        "GEN": "Straubing-Bogen",
+        "BEZ": "LK",
+        "id": 255,
+        "area": 0.14869200000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.61232,
+          48.640208
+        ]
+      },
+      "properties": {
+        "RS": "09279",
+        "GEN": "Dingolfing-Landau",
+        "BEZ": "LK",
+        "id": 256,
+        "area": 0.10721399999999931
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.838867,
+          49.449933
+        ]
+      },
+      "properties": {
+        "RS": "09361",
+        "GEN": "Amberg",
+        "BEZ": "KS",
+        "id": 257,
+        "area": 0.0047700000000000025
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.110963,
+          49.014871
+        ]
+      },
+      "properties": {
+        "RS": "09362",
+        "GEN": "Regensburg",
+        "BEZ": "KS",
+        "id": 258,
+        "area": 0.009012000000000086
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.150473,
+          49.674216
+        ]
+      },
+      "properties": {
+        "RS": "09363",
+        "GEN": "Weiden i.d. OPf.",
+        "BEZ": "KS",
+        "id": 259,
+        "area": 0.006123000000000065
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.803501,
+          49.485469
+        ]
+      },
+      "properties": {
+        "RS": "09371",
+        "GEN": "Amberg-Sulzbach",
+        "BEZ": "LK",
+        "id": 260,
+        "area": 0.15283950000000093
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.692775,
+          49.235098
+        ]
+      },
+      "properties": {
+        "RS": "09372",
+        "GEN": "Cham",
+        "BEZ": "LK",
+        "id": 261,
+        "area": 0.1883850000000011
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.570693,
+          49.216031
+        ]
+      },
+      "properties": {
+        "RS": "09373",
+        "GEN": "Neumarkt i.d. OPf.",
+        "BEZ": "LK",
+        "id": 262,
+        "area": 0.16524599999999923
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.104082,
+          49.686337
+        ]
+      },
+      "properties": {
+        "RS": "09374",
+        "GEN": "Neustadt a.d. Waldnaab",
+        "BEZ": "LK",
+        "id": 263,
+        "area": 0.18247899999999925
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.121719,
+          49.019848
+        ]
+      },
+      "properties": {
+        "RS": "09375",
+        "GEN": "Regensburg",
+        "BEZ": "LK",
+        "id": 264,
+        "area": 0.17538150000000022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.247991,
+          49.368066
+        ]
+      },
+      "properties": {
+        "RS": "09376",
+        "GEN": "Schwandorf",
+        "BEZ": "LK",
+        "id": 265,
+        "area": 0.18073099999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.198229,
+          49.899135
+        ]
+      },
+      "properties": {
+        "RS": "09377",
+        "GEN": "Tirschenreuth",
+        "BEZ": "LK",
+        "id": 266,
+        "area": 0.1367864999999989
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.889667,
+          49.889
+        ]
+      },
+      "properties": {
+        "RS": "09461",
+        "GEN": "Bamberg",
+        "BEZ": "KS",
+        "id": 267,
+        "area": 0.003997999999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.589581,
+          49.936847
+        ]
+      },
+      "properties": {
+        "RS": "09462",
+        "GEN": "Bayreuth",
+        "BEZ": "KS",
+        "id": 268,
+        "area": 0.006844499999999684
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.96501,
+          50.258364
+        ]
+      },
+      "properties": {
+        "RS": "09463",
+        "GEN": "Coburg",
+        "BEZ": "KS",
+        "id": 269,
+        "area": 0.005515000000000061
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.894125,
+          50.311667
+        ]
+      },
+      "properties": {
+        "RS": "09464",
+        "GEN": "Hof",
+        "BEZ": "KS",
+        "id": 270,
+        "area": 0.006884999999999452
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.891252,
+          49.896244
+        ]
+      },
+      "properties": {
+        "RS": "09471",
+        "GEN": "Bamberg",
+        "BEZ": "LK",
+        "id": 271,
+        "area": 0.15191500000000055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.54852,
+          49.882409
+        ]
+      },
+      "properties": {
+        "RS": "09472",
+        "GEN": "Bayreuth",
+        "BEZ": "LK",
+        "id": 272,
+        "area": 0.166053000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.944271,
+          50.26966
+        ]
+      },
+      "properties": {
+        "RS": "09473",
+        "GEN": "Coburg",
+        "BEZ": "LK",
+        "id": 273,
+        "area": 0.07283949999999983
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.178435,
+          49.721836
+        ]
+      },
+      "properties": {
+        "RS": "09474",
+        "GEN": "Forchheim",
+        "BEZ": "LK",
+        "id": 274,
+        "area": 0.07717249999999932
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.814178,
+          50.274778
+        ]
+      },
+      "properties": {
+        "RS": "09475",
+        "GEN": "Hof",
+        "BEZ": "LK",
+        "id": 275,
+        "area": 0.11228350000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.376022,
+          50.325637
+        ]
+      },
+      "properties": {
+        "RS": "09476",
+        "GEN": "Kronach",
+        "BEZ": "LK",
+        "id": 276,
+        "area": 0.07725750000000013
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.483066,
+          50.105506
+        ]
+      },
+      "properties": {
+        "RS": "09477",
+        "GEN": "Kulmbach",
+        "BEZ": "LK",
+        "id": 277,
+        "area": 0.07931349999999858
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.118206,
+          50.116571
+        ]
+      },
+      "properties": {
+        "RS": "09478",
+        "GEN": "Lichtenfels",
+        "BEZ": "LK",
+        "id": 278,
+        "area": 0.06478950000000047
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.032058,
+          50.092848
+        ]
+      },
+      "properties": {
+        "RS": "09479",
+        "GEN": "Wunsiedel i. Fichtelgebirge",
+        "BEZ": "LK",
+        "id": 279,
+        "area": 0.07516150000000098
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.568965,
+          49.29331
+        ]
+      },
+      "properties": {
+        "RS": "09561",
+        "GEN": "Ansbach",
+        "BEZ": "KS",
+        "id": 280,
+        "area": 0.013622500000000417
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.983286,
+          49.581231
+        ]
+      },
+      "properties": {
+        "RS": "09562",
+        "GEN": "Erlangen",
+        "BEZ": "KS",
+        "id": 281,
+        "area": 0.008538500000000143
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.966948,
+          49.491098
+        ]
+      },
+      "properties": {
+        "RS": "09563",
+        "GEN": "Fürth",
+        "BEZ": "KS",
+        "id": 282,
+        "area": 0.007689499999999857
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.069881,
+          49.438813
+        ]
+      },
+      "properties": {
+        "RS": "09564",
+        "GEN": "Nürnberg",
+        "BEZ": "KS",
+        "id": 283,
+        "area": 0.022185000000000198
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.028,
+          49.337
+        ]
+      },
+      "properties": {
+        "RS": "09565",
+        "GEN": "Schwabach",
+        "BEZ": "KS",
+        "id": 284,
+        "area": 0.0029594999999999426
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.473349,
+          49.248357
+        ]
+      },
+      "properties": {
+        "RS": "09571",
+        "GEN": "Ansbach",
+        "BEZ": "LK",
+        "id": 285,
+        "area": 0.24432149999999841
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.9175,
+          49.636807
+        ]
+      },
+      "properties": {
+        "RS": "09572",
+        "GEN": "Erlangen-Höchstadt",
+        "BEZ": "LK",
+        "id": 286,
+        "area": 0.07173449999999922
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.843062,
+          49.449886
+        ]
+      },
+      "properties": {
+        "RS": "09573",
+        "GEN": "Fürth",
+        "BEZ": "LK",
+        "id": 287,
+        "area": 0.036937000000000095
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.365797,
+          49.489998
+        ]
+      },
+      "properties": {
+        "RS": "09574",
+        "GEN": "Nürnberger Land",
+        "BEZ": "LK",
+        "id": 288,
+        "area": 0.10193950000000027
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.462582,
+          49.573529
+        ]
+      },
+      "properties": {
+        "RS": "09575",
+        "GEN": "Neustadt a.d. Aisch-Bad Windsheim",
+        "BEZ": "LK",
+        "id": 289,
+        "area": 0.15633400000000178
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.125839,
+          49.205168
+        ]
+      },
+      "properties": {
+        "RS": "09576",
+        "GEN": "Roth",
+        "BEZ": "LK",
+        "id": 290,
+        "area": 0.11500950000000054
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.89118,
+          49.034361
+        ]
+      },
+      "properties": {
+        "RS": "09577",
+        "GEN": "Weißenburg-Gunzenhausen",
+        "BEZ": "LK",
+        "id": 291,
+        "area": 0.11487299999999975
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.14391,
+          49.963768
+        ]
+      },
+      "properties": {
+        "RS": "09661",
+        "GEN": "Aschaffenburg",
+        "BEZ": "KS",
+        "id": 292,
+        "area": 0.006710000000000219
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.216667,
+          50.047667
+        ]
+      },
+      "properties": {
+        "RS": "09662",
+        "GEN": "Schweinfurt",
+        "BEZ": "KS",
+        "id": 293,
+        "area": 0.0032099999999998844
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.935162,
+          49.782998
+        ]
+      },
+      "properties": {
+        "RS": "09663",
+        "GEN": "Würzburg",
+        "BEZ": "KS",
+        "id": 294,
+        "area": 0.011006499999999952
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.237595,
+          50.008697
+        ]
+      },
+      "properties": {
+        "RS": "09671",
+        "GEN": "Aschaffenburg",
+        "BEZ": "LK",
+        "id": 295,
+        "area": 0.0880410000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.960543,
+          50.220636
+        ]
+      },
+      "properties": {
+        "RS": "09672",
+        "GEN": "Bad Kissingen",
+        "BEZ": "LK",
+        "id": 296,
+        "area": 0.1423359999999993
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.24644,
+          50.375941
+        ]
+      },
+      "properties": {
+        "RS": "09673",
+        "GEN": "Rhön-Grabfeld",
+        "BEZ": "LK",
+        "id": 297,
+        "area": 0.13449149999999957
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.605803,
+          50.063127
+        ]
+      },
+      "properties": {
+        "RS": "09674",
+        "GEN": "Haßberge",
+        "BEZ": "LK",
+        "id": 298,
+        "area": 0.12182250000000044
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.253839,
+          49.755146
+        ]
+      },
+      "properties": {
+        "RS": "09675",
+        "GEN": "Kitzingen",
+        "BEZ": "LK",
+        "id": 299,
+        "area": 0.07906899999999933
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.225074,
+          49.759047
+        ]
+      },
+      "properties": {
+        "RS": "09676",
+        "GEN": "Miltenberg",
+        "BEZ": "LK",
+        "id": 300,
+        "area": 0.08949699999999987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.657528,
+          49.991658
+        ]
+      },
+      "properties": {
+        "RS": "09677",
+        "GEN": "Main-Spessart",
+        "BEZ": "LK",
+        "id": 301,
+        "area": 0.17144200000000037
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.265058,
+          50.013156
+        ]
+      },
+      "properties": {
+        "RS": "09678",
+        "GEN": "Schweinfurt",
+        "BEZ": "LK",
+        "id": 302,
+        "area": 0.10940400000000064
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.937456,
+          49.735223
+        ]
+      },
+      "properties": {
+        "RS": "09679",
+        "GEN": "Würzburg",
+        "BEZ": "LK",
+        "id": 303,
+        "area": 0.1219515000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.894722,
+          48.348326
+        ]
+      },
+      "properties": {
+        "RS": "09761",
+        "GEN": "Augsburg",
+        "BEZ": "KS",
+        "id": 304,
+        "area": 0.015599500000000118
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.620667,
+          47.879667
+        ]
+      },
+      "properties": {
+        "RS": "09762",
+        "GEN": "Kaufbeuren",
+        "BEZ": "KS",
+        "id": 305,
+        "area": 0.003681499999999812
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.305014,
+          47.742972
+        ]
+      },
+      "properties": {
+        "RS": "09763",
+        "GEN": "Kempten (Allgäu)",
+        "BEZ": "KS",
+        "id": 306,
+        "area": 0.007402999999999873
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.165299,
+          47.990176
+        ]
+      },
+      "properties": {
+        "RS": "09764",
+        "GEN": "Memmingen",
+        "BEZ": "KS",
+        "id": 307,
+        "area": 0.007956499999999898
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.056166,
+          48.428134
+        ]
+      },
+      "properties": {
+        "RS": "09771",
+        "GEN": "Aichach-Friedberg",
+        "BEZ": "LK",
+        "id": 308,
+        "area": 0.0961654999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.731478,
+          48.355901
+        ]
+      },
+      "properties": {
+        "RS": "09772",
+        "GEN": "Augsburg",
+        "BEZ": "LK",
+        "id": 309,
+        "area": 0.13364900000000038
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.524173,
+          48.594562
+        ]
+      },
+      "properties": {
+        "RS": "09773",
+        "GEN": "Dillingen a.d. Donau",
+        "BEZ": "LK",
+        "id": 310,
+        "area": 0.09698350000000065
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.378616,
+          48.356663
+        ]
+      },
+      "properties": {
+        "RS": "09774",
+        "GEN": "Günzburg",
+        "BEZ": "LK",
+        "id": 311,
+        "area": 0.08775699999999922
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.144763,
+          48.299026
+        ]
+      },
+      "properties": {
+        "RS": "09775",
+        "GEN": "Neu-Ulm",
+        "BEZ": "LK",
+        "id": 312,
+        "area": 0.0644035000000003
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.88892,
+          47.605234
+        ]
+      },
+      "properties": {
+        "RS": "09776",
+        "GEN": "Lindau (Bodensee)",
+        "BEZ": "LK",
+        "id": 313,
+        "area": 0.03819599999999973
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.640667,
+          47.766172
+        ]
+      },
+      "properties": {
+        "RS": "09777",
+        "GEN": "Ostallgäu",
+        "BEZ": "LK",
+        "id": 314,
+        "area": 0.16504200000000038
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.395022,
+          48.040889
+        ]
+      },
+      "properties": {
+        "RS": "09778",
+        "GEN": "Unterallgäu",
+        "BEZ": "LK",
+        "id": 315,
+        "area": 0.15094200000000038
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.713134,
+          48.808094
+        ]
+      },
+      "properties": {
+        "RS": "09779",
+        "GEN": "Donau-Ries",
+        "BEZ": "LK",
+        "id": 316,
+        "area": 0.1584040000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.265041,
+          47.574001
+        ]
+      },
+      "properties": {
+        "RS": "09780",
+        "GEN": "Oberallgäu",
+        "BEZ": "LK",
+        "id": 317,
+        "area": 0.17858849999999943
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.958465,
+          49.255829
+        ]
+      },
+      "properties": {
+        "RS": "10041",
+        "GEN": "Regionalverband Saarbrücken",
+        "BEZ": "LK",
+        "id": 318,
+        "area": 0.052617499999999394
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.687108,
+          49.494407
+        ]
+      },
+      "properties": {
+        "RS": "10042",
+        "GEN": "Merzig-Wadern",
+        "BEZ": "LK",
+        "id": 319,
+        "area": 0.06909550000000184
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.122765,
+          49.374034
+        ]
+      },
+      "properties": {
+        "RS": "10043",
+        "GEN": "Neunkirchen",
+        "BEZ": "LK",
+        "id": 320,
+        "area": 0.028749999999999522
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.774954,
+          49.356504
+        ]
+      },
+      "properties": {
+        "RS": "10044",
+        "GEN": "Saarlouis",
+        "BEZ": "LK",
+        "id": 321,
+        "area": 0.054759999999998796
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.245053,
+          49.248091
+        ]
+      },
+      "properties": {
+        "RS": "10045",
+        "GEN": "Saarpfalz-Kreis",
+        "BEZ": "LK",
+        "id": 322,
+        "area": 0.05324299999999952
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.093889,
+          49.516028
+        ]
+      },
+      "properties": {
+        "RS": "10046",
+        "GEN": "St. Wendel",
+        "BEZ": "LK",
+        "id": 323,
+        "area": 0.05672350000000031
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.399523,
+          52.499095
+        ]
+      },
+      "properties": {
+        "RS": "11000",
+        "GEN": "Berlin",
+        "BEZ": "KS",
+        "id": 324,
+        "area": 0.12219399999999965
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.369675,
+          51.776174
+        ]
+      },
+      "properties": {
+        "RS": "12052",
+        "GEN": "Cottbus",
+        "BEZ": "KS",
+        "id": 326,
+        "area": 0.02191850000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.491744,
+          52.315879
+        ]
+      },
+      "properties": {
+        "RS": "12053",
+        "GEN": "Frankfurt (Oder)",
+        "BEZ": "KS",
+        "id": 327,
+        "area": 0.019426000000000488
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.033425,
+          52.422029
+        ]
+      },
+      "properties": {
+        "RS": "12054",
+        "GEN": "Potsdam",
+        "BEZ": "KS",
+        "id": 328,
+        "area": 0.0254059999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.702696,
+          52.821015
+        ]
+      },
+      "properties": {
+        "RS": "12060",
+        "GEN": "Barnim",
+        "BEZ": "LK",
+        "id": 329,
+        "area": 0.19694900000000012
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.819934,
+          52.042918
+        ]
+      },
+      "properties": {
+        "RS": "12061",
+        "GEN": "Dahme-Spreewald",
+        "BEZ": "LK",
+        "id": 330,
+        "area": 0.29151849999999985
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.467845,
+          51.616086
+        ]
+      },
+      "properties": {
+        "RS": "12062",
+        "GEN": "Elbe-Elster",
+        "BEZ": "LK",
+        "id": 331,
+        "area": 0.24454199999999962
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.629252,
+          52.618722
+        ]
+      },
+      "properties": {
+        "RS": "12063",
+        "GEN": "Havelland",
+        "BEZ": "LK",
+        "id": 332,
+        "area": 0.23611550000000048
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.151253,
+          52.608641
+        ]
+      },
+      "properties": {
+        "RS": "12064",
+        "GEN": "Märkisch-Oderland",
+        "BEZ": "LK",
+        "id": 333,
+        "area": 0.28747349999999944
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.21023,
+          52.910828
+        ]
+      },
+      "properties": {
+        "RS": "12065",
+        "GEN": "Oberhavel",
+        "BEZ": "LK",
+        "id": 334,
+        "area": 0.23493299999999956
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.949305,
+          51.619767
+        ]
+      },
+      "properties": {
+        "RS": "12066",
+        "GEN": "Oberspreewald-Lausitz",
+        "BEZ": "LK",
+        "id": 335,
+        "area": 0.16254100000000046
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.211828,
+          52.245303
+        ]
+      },
+      "properties": {
+        "RS": "12067",
+        "GEN": "Oder-Spree",
+        "BEZ": "LK",
+        "id": 336,
+        "area": 0.3026569999999994
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.641212,
+          52.989879
+        ]
+      },
+      "properties": {
+        "RS": "12068",
+        "GEN": "Ostprignitz-Ruppin",
+        "BEZ": "LK",
+        "id": 337,
+        "area": 0.3430204999999988
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.690369,
+          52.242872
+        ]
+      },
+      "properties": {
+        "RS": "12069",
+        "GEN": "Potsdam-Mittelmark",
+        "BEZ": "LK",
+        "id": 338,
+        "area": 0.3293374999999991
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.96578,
+          53.113367
+        ]
+      },
+      "properties": {
+        "RS": "12070",
+        "GEN": "Prignitz",
+        "BEZ": "LK",
+        "id": 339,
+        "area": 0.2836974999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.435916,
+          51.753436
+        ]
+      },
+      "properties": {
+        "RS": "12071",
+        "GEN": "Spree-Neiße",
+        "BEZ": "LK",
+        "id": 340,
+        "area": 0.21245550000000069
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.273589,
+          52.070768
+        ]
+      },
+      "properties": {
+        "RS": "12072",
+        "GEN": "Teltow-Fläming",
+        "BEZ": "LK",
+        "id": 341,
+        "area": 0.2756069999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.862639,
+          53.205559
+        ]
+      },
+      "properties": {
+        "RS": "12073",
+        "GEN": "Uckermark",
+        "BEZ": "LK",
+        "id": 342,
+        "area": 0.4093654999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.141652,
+          54.148861
+        ]
+      },
+      "properties": {
+        "RS": "13003",
+        "GEN": "Rostock",
+        "BEZ": "KS",
+        "id": 343,
+        "area": 0.02482249999999964
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.419013,
+          53.615883
+        ]
+      },
+      "properties": {
+        "RS": "13004",
+        "GEN": "Schwerin",
+        "BEZ": "KS",
+        "id": 344,
+        "area": 0.015835499999999877
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.001429,
+          53.54201
+        ]
+      },
+      "properties": {
+        "RS": "13071",
+        "GEN": "Mecklenburgische Seenplatte",
+        "BEZ": "LK",
+        "id": 345,
+        "area": 0.7466199999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.224542,
+          53.912045
+        ]
+      },
+      "properties": {
+        "RS": "13072",
+        "GEN": "Rostock",
+        "BEZ": "LK",
+        "id": 346,
+        "area": 0.4649015000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.78037,
+          53.786172
+        ]
+      },
+      "properties": {
+        "RS": "13075",
+        "GEN": "Vorpommern-Greifswald",
+        "BEZ": "LK",
+        "id": 349,
+        "area": 0.5158185000000038
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.536869,
+          53.451917
+        ]
+      },
+      "properties": {
+        "RS": "13076",
+        "GEN": "Ludwigslust-Parchim",
+        "BEZ": "LK",
+        "id": 350,
+        "area": 0.641529500000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.916268,
+          50.827441
+        ]
+      },
+      "properties": {
+        "RS": "14511",
+        "GEN": "Chemnitz",
+        "BEZ": "KS",
+        "id": 351,
+        "area": 0.025215500000000064
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.946763,
+          50.611104
+        ]
+      },
+      "properties": {
+        "RS": "14521",
+        "GEN": "Erzgebirgskreis",
+        "BEZ": "LK",
+        "id": 352,
+        "area": 0.23260950000000138
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.136757,
+          50.956925
+        ]
+      },
+      "properties": {
+        "RS": "14522",
+        "GEN": "Mittelsachsen",
+        "BEZ": "LK",
+        "id": 353,
+        "area": 0.2766569999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.233657,
+          50.457955
+        ]
+      },
+      "properties": {
+        "RS": "14523",
+        "GEN": "Vogtlandkreis",
+        "BEZ": "LK",
+        "id": 354,
+        "area": 0.18161700000000044
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.526401,
+          50.750581
+        ]
+      },
+      "properties": {
+        "RS": "14524",
+        "GEN": "Zwickau",
+        "BEZ": "LK",
+        "id": 355,
+        "area": 0.11833700000000015
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.793299,
+          51.069596
+        ]
+      },
+      "properties": {
+        "RS": "14612",
+        "GEN": "Dresden",
+        "BEZ": "KS",
+        "id": 356,
+        "area": 0.04133499999999944
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.231151,
+          51.27018
+        ]
+      },
+      "properties": {
+        "RS": "14625",
+        "GEN": "Bautzen",
+        "BEZ": "LK",
+        "id": 357,
+        "area": 0.30287150000000024
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.753507,
+          51.223191
+        ]
+      },
+      "properties": {
+        "RS": "14626",
+        "GEN": "Görlitz",
+        "BEZ": "LK",
+        "id": 358,
+        "area": 0.26785049999999944
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.483898,
+          51.241084
+        ]
+      },
+      "properties": {
+        "RS": "14627",
+        "GEN": "Meißen",
+        "BEZ": "LK",
+        "id": 359,
+        "area": 0.19004150000000025
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.879085,
+          50.91911
+        ]
+      },
+      "properties": {
+        "RS": "14628",
+        "GEN": "Sächsische Schweiz-Osterzgebirge",
+        "BEZ": "LK",
+        "id": 360,
+        "area": 0.21033199999999894
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.379292,
+          51.34588
+        ]
+      },
+      "properties": {
+        "RS": "14713",
+        "GEN": "Leipzig",
+        "BEZ": "KS",
+        "id": 361,
+        "area": 0.03852450000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.593957,
+          51.222022
+        ]
+      },
+      "properties": {
+        "RS": "14729",
+        "GEN": "Leipzig",
+        "BEZ": "LK",
+        "id": 362,
+        "area": 0.21149599999999988
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.791928,
+          51.472843
+        ]
+      },
+      "properties": {
+        "RS": "14730",
+        "GEN": "Nordsachsen",
+        "BEZ": "LK",
+        "id": 363,
+        "area": 0.26234949999999907
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.223637,
+          51.85576
+        ]
+      },
+      "properties": {
+        "RS": "15001",
+        "GEN": "Dessau-Roßlau",
+        "BEZ": "KS",
+        "id": 364,
+        "area": 0.0340950000000006
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.974588,
+          51.481192
+        ]
+      },
+      "properties": {
+        "RS": "15002",
+        "GEN": "Halle (Saale)",
+        "BEZ": "KS",
+        "id": 365,
+        "area": 0.017760500000000054
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.641766,
+          52.111313
+        ]
+      },
+      "properties": {
+        "RS": "15003",
+        "GEN": "Magdeburg",
+        "BEZ": "KS",
+        "id": 366,
+        "area": 0.026734999999999436
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.23292,
+          52.67926
+        ]
+      },
+      "properties": {
+        "RS": "15081",
+        "GEN": "Altmarkkreis Salzwedel",
+        "BEZ": "LK",
+        "id": 367,
+        "area": 0.30310550000000086
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.138722,
+          51.798767
+        ]
+      },
+      "properties": {
+        "RS": "15082",
+        "GEN": "Anhalt-Bitterfeld",
+        "BEZ": "LK",
+        "id": 368,
+        "area": 0.19207599999999933
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.351496,
+          52.220053
+        ]
+      },
+      "properties": {
+        "RS": "15083",
+        "GEN": "Börde",
+        "BEZ": "LK",
+        "id": 369,
+        "area": 0.3099254999999995
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.895673,
+          51.144247
+        ]
+      },
+      "properties": {
+        "RS": "15084",
+        "GEN": "Burgenlandkreis",
+        "BEZ": "LK",
+        "id": 370,
+        "area": 0.18499949999999812
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.954369,
+          51.821423
+        ]
+      },
+      "properties": {
+        "RS": "15085",
+        "GEN": "Harz",
+        "BEZ": "LK",
+        "id": 371,
+        "area": 0.27593649999999853
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.031748,
+          52.266938
+        ]
+      },
+      "properties": {
+        "RS": "15086",
+        "GEN": "Jerichower Land",
+        "BEZ": "LK",
+        "id": 372,
+        "area": 0.20825050000000023
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.351416,
+          51.533029
+        ]
+      },
+      "properties": {
+        "RS": "15087",
+        "GEN": "Mansfeld-Südharz",
+        "BEZ": "LK",
+        "id": 373,
+        "area": 0.18691450000000037
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.870088,
+          51.427935
+        ]
+      },
+      "properties": {
+        "RS": "15088",
+        "GEN": "Saalekreis",
+        "BEZ": "LK",
+        "id": 374,
+        "area": 0.1902260000000014
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.637924,
+          51.851278
+        ]
+      },
+      "properties": {
+        "RS": "15089",
+        "GEN": "Salzlandkreis",
+        "BEZ": "LK",
+        "id": 375,
+        "area": 0.18876000000000095
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.835029,
+          52.70136
+        ]
+      },
+      "properties": {
+        "RS": "15090",
+        "GEN": "Stendal",
+        "BEZ": "LK",
+        "id": 376,
+        "area": 0.3239684999999992
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.699538,
+          51.821258
+        ]
+      },
+      "properties": {
+        "RS": "15091",
+        "GEN": "Wittenberg",
+        "BEZ": "LK",
+        "id": 377,
+        "area": 0.25377150000000065
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.018917,
+          50.981943
+        ]
+      },
+      "properties": {
+        "RS": "16051",
+        "GEN": "Erfurt",
+        "BEZ": "KS",
+        "id": 378,
+        "area": 0.03351400000000069
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.08246,
+          50.891257
+        ]
+      },
+      "properties": {
+        "RS": "16052",
+        "GEN": "Gera",
+        "BEZ": "KS",
+        "id": 379,
+        "area": 0.019746000000000204
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.590187,
+          50.916536
+        ]
+      },
+      "properties": {
+        "RS": "16053",
+        "GEN": "Jena",
+        "BEZ": "KS",
+        "id": 380,
+        "area": 0.013884999999999755
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.687467,
+          50.614023
+        ]
+      },
+      "properties": {
+        "RS": "16054",
+        "GEN": "Suhl",
+        "BEZ": "KS",
+        "id": 381,
+        "area": 0.01130499999999937
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.317965,
+          50.976743
+        ]
+      },
+      "properties": {
+        "RS": "16055",
+        "GEN": "Weimar",
+        "BEZ": "KS",
+        "id": 382,
+        "area": 0.008935000000000259
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.256047,
+          51.383421
+        ]
+      },
+      "properties": {
+        "RS": "16061",
+        "GEN": "Eichsfeld",
+        "BEZ": "LK",
+        "id": 384,
+        "area": 0.12108550000000035
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.732289,
+          51.499671
+        ]
+      },
+      "properties": {
+        "RS": "16062",
+        "GEN": "Nordhausen",
+        "BEZ": "LK",
+        "id": 385,
+        "area": 0.08955100000000071
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.215046,
+          50.891656
+        ]
+      },
+      "properties": {
+        "RS": "16063",
+        "GEN": "Wartburgkreis",
+        "BEZ": "LK",
+        "id": 386,
+        "area": 0.17826449999999927
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.547874,
+          51.185358
+        ]
+      },
+      "properties": {
+        "RS": "16064",
+        "GEN": "Unstrut-Hainich-Kreis",
+        "BEZ": "LK",
+        "id": 387,
+        "area": 0.1220760000000004
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.978027,
+          51.323477
+        ]
+      },
+      "properties": {
+        "RS": "16065",
+        "GEN": "Kyffhäuserkreis",
+        "BEZ": "LK",
+        "id": 388,
+        "area": 0.1362114999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.404831,
+          50.633693
+        ]
+      },
+      "properties": {
+        "RS": "16066",
+        "GEN": "Schmalkalden-Meiningen",
+        "BEZ": "LK",
+        "id": 389,
+        "area": 0.15312749999999944
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.695167,
+          50.910898
+        ]
+      },
+      "properties": {
+        "RS": "16067",
+        "GEN": "Gotha",
+        "BEZ": "LK",
+        "id": 390,
+        "area": 0.12295800000000066
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.154248,
+          51.158109
+        ]
+      },
+      "properties": {
+        "RS": "16068",
+        "GEN": "Sömmerda",
+        "BEZ": "LK",
+        "id": 391,
+        "area": 0.10434800000000022
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.73815,
+          50.437299
+        ]
+      },
+      "properties": {
+        "RS": "16069",
+        "GEN": "Hildburghausen",
+        "BEZ": "LK",
+        "id": 392,
+        "area": 0.12311550000000039
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.968966,
+          50.737865
+        ]
+      },
+      "properties": {
+        "RS": "16070",
+        "GEN": "Ilm-Kreis",
+        "BEZ": "LK",
+        "id": 393,
+        "area": 0.1039484999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.368818,
+          50.971587
+        ]
+      },
+      "properties": {
+        "RS": "16071",
+        "GEN": "Weimarer Land",
+        "BEZ": "LK",
+        "id": 394,
+        "area": 0.11079499999999938
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.137198,
+          50.406303
+        ]
+      },
+      "properties": {
+        "RS": "16072",
+        "GEN": "Sonneberg",
+        "BEZ": "LK",
+        "id": 395,
+        "area": 0.05181350000000044
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.302984,
+          50.631813
+        ]
+      },
+      "properties": {
+        "RS": "16073",
+        "GEN": "Saalfeld-Rudolstadt",
+        "BEZ": "LK",
+        "id": 396,
+        "area": 0.13317699999999888
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.736547,
+          50.903798
+        ]
+      },
+      "properties": {
+        "RS": "16074",
+        "GEN": "Saale-Holzland-Kreis",
+        "BEZ": "LK",
+        "id": 397,
+        "area": 0.10429500000000225
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.709032,
+          50.58
+        ]
+      },
+      "properties": {
+        "RS": "16075",
+        "GEN": "Saale-Orla-Kreis",
+        "BEZ": "LK",
+        "id": 398,
+        "area": 0.14702449999999953
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.06861,
+          50.743398
+        ]
+      },
+      "properties": {
+        "RS": "16076",
+        "GEN": "Greiz",
+        "BEZ": "LK",
+        "id": 399,
+        "area": 0.10139449999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.402377,
+          50.949906
+        ]
+      },
+      "properties": {
+        "RS": "16077",
+        "GEN": "Altenburger Land",
+        "BEZ": "LK",
+        "id": 400,
+        "area": 0.07374550000000021
+      }
+    }
+  ]
+}

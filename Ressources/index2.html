@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hexagon Map of Germany</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <style>
+        .hexagon {
+            stroke: #54bb0f;
+            stroke-width: 1px;
+            fill: lightblue;
+        }
+        .hex-label {
+            visibility: hidden;
+            font-size: 12px;
+        }
+        .hex-label.show {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Load the GeoJSON data
+        d3.json('output_lk_metadata2.geojson').then(function(data) {
+            // Set up the SVG canvas dimensions with extra padding for hexagons
+            const padding = 40;
+            const hexRadius = 20;  // Adjust radius as needed
+            const hexWidth = Math.sqrt(3) * hexRadius;
+            const hexHeight = 2 * hexRadius;
+            const width = 800 + padding * 2;
+            const height = 600 + padding * 2;
+            const svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", `-${padding} -${padding} ${width} ${height}`);
+
+            // Set up the hexbin generator
+            const hexbin = d3.hexbin()
+                .radius(hexRadius)
+                .extent([[0, 0], [width, height]]);
+
+            // Create a projection to fit the map
+            const projection = d3.geoMercator()
+                .fitSize([width - padding * 2, height - padding * 2], data);
+
+            const path = d3.geoPath().projection(projection);
+
+            // Generate hexagon centers based on the projection
+            const hexCenters = data.features.map(d => {
+                const centroid = path.centroid(d);
+                return [centroid[0], centroid[1]];
+            });
+
+            // Calculate the number of columns and rows for dense packing
+            const numHexagons = data.features.length;
+            const numCols = Math.ceil(Math.sqrt(numHexagons));
+            const numRows = Math.ceil(numHexagons / numCols);
+
+            // Create a function to calculate hexagon positions
+            function hexPosition(i) {
+                const col = i % numCols;
+                const row = Math.floor(i / numCols);
+                const x = col * hexWidth + (row % 2 ? hexWidth / 2 : 0);
+                const y = row * hexHeight * 3/4;
+                return [x, y];
+            }
+
+            // Draw hexagons
+            const hexagons = svg.append("g")
+                .selectAll(".hexagon")
+                .data(hexCenters)
+                .enter().append("path")
+                .attr("class", "hexagon")
+                .attr("d", hexbin.hexagon())
+                .attr("transform", (d, i) => {
+                    const [x, y] = hexPosition(i);
+                    return `translate(${x},${y})`;
+                })
+                .on("mouseover", function(event, d) {
+                    const i = hexCenters.indexOf(d);
+                    d3.select(`#label-${i}`).classed("show", true);
+                })
+                .on("mouseout", function(event, d) {
+                    const i = hexCenters.indexOf(d);
+                    d3.select(`#label-${i}`).classed("show", false);
+                });
+
+            // Optionally, add labels or other elements
+            svg.append("g")
+                .selectAll("text")
+                .data(hexCenters)
+                .enter().append("text")
+                .attr("class", "hex-label")
+                .attr("id", (d, i) => `label-${i}`)
+                .attr("x", (d, i) => {
+                    const [x] = hexPosition(i);
+                    return x;
+                })
+                .attr("y", (d, i) => {
+                    const [, y] = hexPosition(i);
+                    return y;
+                })
+                .text((d, i) => data.features[i].properties.GEN)
+                .attr("text-anchor", "middle")
+                .attr("dy", ".35em");
+        });
+    </script>
+</body>
+</html>

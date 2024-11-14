@@ -1,0 +1,460 @@
+// Erstelle eine Farbskala für die Layer (z.B. von weiß bis blau)
+const colorScale = d3.scaleLinear()
+    .domain([0, 1000])  // Anpassen je nach Wertebereich
+    .range(["white", "blue"]);
+
+barChartInital = 0
+
+// Lade beide JSON-Dateien
+Promise.all([
+    d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
+    d3.json('multivariate_test_data2.json')  // Multivariate Testdaten
+]).then(([geoData, multivariateData]) => {
+    const mapContainer = document.getElementById('mockup2-leftContainer');
+    const availableWidth = mapContainer.clientWidth;
+    const availableHeight = mapContainer.clientHeight;
+
+    barChartInital = document.getElementById("chart-container").clientHeight;
+    console.log(barChartInital)
+    // Definiere die Margins
+    const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+    const width = availableWidth - margin.left - margin.right;
+    const height = availableHeight - margin.top - margin.bottom;
+
+    // Erstelle das SVG und setze eine Transformationsgruppe mit Margin
+    const svg = d3.select("#map")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Definiere die Zoom-Funktion
+    const zoom = d3.zoom()
+    .scaleExtent([1, 8])  // Begrenze den Zoomfaktor auf 1x bis 8x
+    .on('zoom', zoomed);
+
+    // Füge die Zoom-Funktion zum SVG hinzu
+    svg.call(zoom);
+
+    // Funktion, die das Zoom- und Pan-Verhalten steuert
+    function zoomed(event) {
+    svg.attr('transform', event.transform);  // Wende die Zoom-Transformation auf die gesamte SVG-Gruppe an
+    }
+
+    // Tooltip erstellen
+    const tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("padding", "5px")
+        .style("border", "1px solid black")
+        .style("border-radius", "5px")
+        .style("visibility", "hidden"); // Standardmäßig unsichtbar
+
+    // Erstelle eine Projektionsfunktion
+    const projection = d3.geoMercator().fitSize([width, height], geoData);
+    const path = d3.geoPath().projection(projection);
+
+    // Füge Layer 1 hinzu (lightgray)
+    const mapLayer1 = svg.append("g").attr("class", "layer1");
+    mapLayer1.selectAll("path")
+        .data(geoData.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", "lightgray")
+        .style("stroke", "black")
+        .on("mouseover", function(event, d) {
+            //d3.select(this).style("fill", "orange"); // Highlight beim Hover // Gerade Buggy
+            tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        })
+        // Aktualisiere den mouseout-Handler für Layer 1, 2 und 3:
+        .on("mouseout", function(event, d) {
+            tooltip.style("visibility", "hidden"); // Tooltip verstecken
+            resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
+        })
+        .on("click", function(event, d) {
+            const selectedDate1 = document.getElementById('datum1-select').value;
+            const selectedDate2 = document.getElementById('datum2-select').value;
+            const selectedDate3 = document.getElementById('datum3-select').value;
+            console.log(d)
+            console.log(d.properties.id)
+            const data = {
+                data: d,
+                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
+                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
+                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                selectedDate1: selectedDate1,
+                selectedDate2: selectedDate2,
+                selectedDate3: selectedDate3,
+            };
+            updateInfoBox(data.data);
+            updateBarChartForRegion(data);
+        });
+
+    // Füge Layer 2 hinzu (steelblue)
+    const mapLayer2 = svg.append("g").attr("class", "layer2");
+    mapLayer2.selectAll("path")
+        .data(geoData.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", "steelblue")
+        .style("stroke", "black")
+        .on("mouseover", function(event, d) {
+            //d3.select(this).style("fill", "orange"); // Highlight beim Hover
+            tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        })
+        // Aktualisiere den mouseout-Handler für Layer 1, 2 und 3:
+        .on("mouseout", function(event, d) {
+            tooltip.style("visibility", "hidden"); // Tooltip verstecken
+            resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
+        })
+        .on("click", function(event, d) {
+            const selectedDate1 = document.getElementById('datum1-select').value;
+            const selectedDate2 = document.getElementById('datum2-select').value;
+            const selectedDate3 = document.getElementById('datum3-select').value;
+
+            const data = {
+                data: d,
+                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
+                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
+                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                selectedDate1: selectedDate1,
+                selectedDate2: selectedDate2,
+                selectedDate3: selectedDate3,
+            };
+            updateInfoBox(data.data);
+            updateBarChartForRegion(data);
+        });
+
+    // Füge Layer 3 hinzu (lightgreen)
+    const mapLayer3 = svg.append("g").attr("class", "layer3");
+    mapLayer3.selectAll("path")
+        .data(geoData.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", "lightgreen")
+        .style("stroke", "black")
+        .on("mouseover", function(event, d) {
+            //d3.select(this).style("fill", "orange"); // Highlight beim Hover
+            tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        })
+        // Aktualisiere den mouseout-Handler für Layer 1, 2 und 3:
+        .on("mouseout", function(event, d) {
+            tooltip.style("visibility", "hidden"); // Tooltip verstecken
+            resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
+        })
+        .on("click", function(event, d) {
+            const selectedDate1 = document.getElementById('datum1-select').value;
+            const selectedDate2 = document.getElementById('datum2-select').value;
+            const selectedDate3 = document.getElementById('datum3-select').value;
+
+            const data = {
+                data: d,
+                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
+                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
+                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                selectedDate1: selectedDate1,
+                selectedDate2: selectedDate2,
+                selectedDate3: selectedDate3,
+            };
+            updateInfoBox(data.data);
+            updateBarChartForRegion(data);
+
+        });
+
+    // Definiere die Clip-Pfade für drei Bereiche
+    const clipPath1 = svg.append("clipPath").attr("id", "clipArea1");
+    const clipPath2 = svg.append("clipPath").attr("id", "clipArea2");
+    const clipPath3 = svg.append("clipPath").attr("id", "clipArea3");
+
+    // Weise die Clip-Pfade den Layern zu
+    mapLayer1.attr("clip-path", "url(#clipArea1)");
+    mapLayer2.attr("clip-path", "url(#clipArea2)");
+    mapLayer3.attr("clip-path", "url(#clipArea3)");
+
+    // Füge die Trennlinien hinzu
+    const line1 = svg.append("line").attr("stroke", "black").attr("stroke-width", 3).attr("vector-effect", "non-scaling-stroke");
+    const line2 = svg.append("line").attr("stroke", "black").attr("stroke-width", 3).attr("vector-effect", "non-scaling-stroke");
+    const line3 = svg.append("line").attr("stroke", "black").attr("stroke-width", 3).attr("vector-effect", "non-scaling-stroke");
+
+    // Startpunkt für den interaktiven Punkt in der Mitte der Karte
+    let centerX = width / 2;
+    let centerY = height / 2;
+
+    // Interaktiver Punkt, der die Trennlinien steuert
+    const dragPoint = svg.append("circle")
+        .attr("cx", centerX)
+        .attr("cy", centerY)
+        .attr("r", 10)
+        .attr("fill", "none")
+        .attr("stroke", "red") // Roter Rand
+        .attr("stroke-width", 3)  // Dicke des Randes
+        .attr("vector-effect", "non-scaling-stroke")
+        .style("cursor", "move")
+        .call(d3.drag()
+            .on("drag", function(event) {
+                const newX = Math.max(0, Math.min(width, event.x));
+                const newY = Math.max(0, Math.min(height, event.y));
+
+                // Aktualisiere die Position des Punkts
+                dragPoint.attr("cx", newX).attr("cy", newY);
+
+                // Aktualisiere die Trennlinien und Kartenbereiche
+                updateLinesAndAreas(newX, newY);
+            })
+        );
+
+        const dates = Object.keys(multivariateData); // Extrahiere die Tage als Schlüssel aus der JSON-Datei
+
+        // Fülle die Dropdowns mit den extrahierten Tagen
+        const datum1Select = document.getElementById('datum1-select');
+        const datum2Select = document.getElementById('datum2-select');
+        const datum3Select = document.getElementById('datum3-select');
+    
+        dates.forEach(date => {
+            const option1 = document.createElement('option');
+            option1.value = date;
+            option1.text = date;
+            datum1Select.add(option1);
+    
+            const option2 = document.createElement('option');
+            option2.value = date;
+            option2.text = date;
+            datum2Select.add(option2);
+    
+            const option3 = document.createElement('option');
+            option3.value = date;
+            option3.text = date;
+            datum3Select.add(option3);
+        });
+   
+       document.getElementById('selectButton').addEventListener('click', function () {
+           const date1 = document.getElementById('datum1-select').value;
+           const date2 = document.getElementById('datum2-select').value;
+           const date3 = document.getElementById('datum3-select').value;
+       
+           // Die Funktionen, die die Daten aktualisieren
+           //updateLegend(date1, date2, date3, multivariateData);
+           
+           updateLayerColors(date1, date2, date3);
+           // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
+       });
+       
+       // Setze die Trennlinien und Bereiche initial
+       updateLinesAndAreas(centerX, centerY);
+       // Setze Legende initial
+       updateLegend(0, 1000);
+    // Funktion zur Aktualisierung der Polygonfarben im mouseout-Event
+    function resetPolygonColors(d) {
+        // Hole die aktuellen Werte aus den Dropdowns
+        const selectedDatum1 = datum1Select.value;
+        const selectedDatum2 = datum2Select.value;
+        const selectedDatum3 = datum3Select.value;
+
+        // Daten für die Layer
+        const datum1Data = multivariateData[selectedDatum1];
+        const datum2Data = multivariateData[selectedDatum2];
+        const datum3Data = multivariateData[selectedDatum3];
+
+        // Überprüfe, zu welchem Layer das aktuelle Element gehört, und setze die Farbe basierend auf den ausgewählten Daten
+        if (d3.select(this).classed('layer1')) {
+            const value = datum1Data.find(item => item.id === d.properties.id)?.value || 0;
+            d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 1
+        } else if (d3.select(this).classed('layer2')) {
+            const value = datum2Data.find(item => item.id === d.properties.id)?.value || 0;
+            d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 2
+        } else if (d3.select(this).classed('layer3')) {
+            const value = datum3Data.find(item => item.id === d.properties.id)?.value || 0;
+            d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 3
+        }
+    }
+        function updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3) {
+            // Daten für die einzelnen Layer basierend auf den Dropdown-Auswahlen extrahieren
+            const datum1Data = multivariateData[selectedDatum1];
+            const datum2Data = multivariateData[selectedDatum2];
+            const datum3Data = multivariateData[selectedDatum3];
+        
+            // Update Layer 1 basierend auf Datum 1
+            mapLayer1.selectAll("path")
+                .data(geoData.features)
+                .style("fill", d => {
+                    const value = datum1Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    return colorScale(value);
+                });
+        
+            // Update Layer 2 basierend auf Datum 2
+            mapLayer2.selectAll("path")
+                .data(geoData.features)
+                .style("fill", d => {
+                    const value = datum2Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    return colorScale(value);
+                });
+        
+            // Update Layer 3 basierend auf Datum 3
+            mapLayer3.selectAll("path")
+                .data(geoData.features)
+                .style("fill", d => {
+                    const value = datum3Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    return colorScale(value);
+                });
+        }
+
+    // Funktion zur Aktualisierung der Trennlinien und Bereiche
+    function updateLinesAndAreas(newX, newY) {
+        centerX = newX;
+        centerY = newY;
+
+        // Linie 1: Vom Punkt zur oberen linken Ecke
+        line1.attr("x1", centerX)
+            .attr("y1", centerY)
+            .attr("x2", 0)
+            .attr("y2", 0);
+
+        // Linie 2: Vom Punkt zur oberen rechten Ecke
+        line2.attr("x1", centerX)
+            .attr("y1", centerY)
+            .attr("x2", width)
+            .attr("y2", 0);
+
+        // Linie 3: Vom Punkt zur Mitte des unteren Rands
+        line3.attr("x1", centerX)
+            .attr("y1", centerY)
+            .attr("x2", width / 2)
+            .attr("y2", height);
+
+        // Aktualisiere die Clip-Pfade basierend auf der neuen Position
+        updateClipPaths(centerX, centerY);
+        // Aktualisiere die Farben der Layer erneut basierend auf den Dropdown-Auswahlen
+        const selectedDatum1 = datum1Select.value;
+        const selectedDatum2 = datum2Select.value;
+        const selectedDatum3 = datum3Select.value;
+        updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3); // Farben erneut anwenden
+    }
+
+    // Funktion zur Aktualisierung der Clip-Pfade für die drei Layer
+    function updateClipPaths(centerX, centerY) {
+        // Berechne die Polygone für die drei Bereiche
+        const area1 = `M0,0 L${centerX},${centerY} L${width / 2},${height} L0,${height} Z`;
+        const area2 = `M${centerX},${centerY} L${width},0 L${width},${height} L${width / 2},${height} Z`;
+        const area3 = `M${centerX},${centerY} L0,0 L${width},0 Z`;
+
+        // Setze die Clip-Pfade
+        clipPath1.selectAll("path").remove(); // Lösche den alten Pfad
+        clipPath1.append("path").attr("d", area1);
+
+        clipPath2.selectAll("path").remove(); // Lösche den alten Pfad
+        clipPath2.append("path").attr("d", area2);
+
+        clipPath3.selectAll("path").remove(); // Lösche den alten Pfad
+        clipPath3.append("path").attr("d", area3);
+    }
+
+    // Funktion zur Anzeige des Info-Textes
+    function updateInfoBox(data) {
+        // Hole die Werte für das erste Datum aus den Dropdown-Daten
+        const date1 = d3.select("#datum1-select").property("value");
+        const date2 = d3.select("#datum2-select").property("value");
+        const date3 = d3.select("#datum3-select").property("value");
+        console.log(data)
+        const value1 = getValueForRegion(data.properties.id, date1, multivariateData);
+        const value2 = getValueForRegion(data.properties.id, date2, multivariateData);
+        const value3 = getValueForRegion(data.properties.id, date3, multivariateData);
+        // Zeige die Informationen im Info-Bereich an
+        d3.select("#info-content-box").html(`
+            <p><strong>Region:</strong> ${data.properties.GEN}</p>
+            <p><strong>ID:</strong> ${data.properties.id}</p>
+            <p><strong>${date1} Wert:</strong> ${value1}</p>
+            <p><strong>${date2} Wert:</strong> ${value2}</p>
+            <p><strong>${date3} Wert:</strong> ${value3}</p>
+        `);
+    }
+
+    // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
+    function getValueForRegion(id, date, data) {
+        const dateData = data[date]; // Hole die Daten für das ausgewählte Datum
+        const foundData = dateData.find(d => d.id === id); // Finde das Hexagon mit der passenden ID
+        return foundData ? foundData.value : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
+    }
+
+    // Funktion zur Anzeige der Legende (farblich abgestufte Skala)
+    function updateLegend(minValue, maxValue) {
+        const legendContainer = d3.select("#legend-container");
+        legendContainer.selectAll("*").remove();
+
+        // SVG für die Legende
+        const svg = legendContainer.append("svg").attr("width", 100).attr("height", 200);
+
+        // Farbverlauf erstellen
+        const gradient = svg.append("defs")
+            .append("linearGradient")
+            .attr("id", "legendGradient")
+            .attr("x1", "0%")
+            .attr("x2", "0%")
+            .attr("y1", "0%")
+            .attr("y2", "100%");
+
+        gradient.append("stop").attr("offset", "0%").attr("stop-color", "blue");
+        gradient.append("stop").attr("offset", "100%").attr("stop-color", "white");
+
+        // Rechteck für den Farbverlauf
+        svg.append("rect")
+            .attr("width", 20)
+            .attr("height", 180)
+            .style("fill", "url(#legendGradient)")
+            .attr("transform", "translate(30,10)");
+
+        // Legendenwerte
+        svg.append("text").attr("x", 60).attr("y", 20).text(maxValue);
+        svg.append("text").attr("x", 60).attr("y", 190).text(minValue);
+    }
+
+// Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
+    function updateBarChartForRegion(data) {
+        const chartData = [
+            { date: data.selectedDate1, value: data.date1 },
+            { date: data.selectedDate3, value: data.date2 },
+            { date: data.selectedDate2, value: data.date3 }
+        ];
+        console.log(chartData)
+        //const chartContainer = document.getElementById("chart-container");
+        const width = barChartInital - 40;
+        const height = barChartInital - 40;
+
+        d3.select("#chart-container").selectAll("*").remove();
+        const svg = d3.select("#chart-container").append("svg")
+            .attr("width", width + 40)
+            .attr("height", height + 40)
+            .append("g")
+            .attr("transform", `translate(20,20)`);
+
+        // Skalen
+        const x = d3.scaleBand().domain(chartData.map(d => d.date)).range([0, width]).padding(0.2);
+        const y = d3.scaleLinear().domain([0, d3.max(chartData, d => d.value)]).range([height, 0]);
+
+        // X- und Y-Achsen
+        svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
+        svg.append("g").call(d3.axisLeft(y));
+
+        // Balken
+        svg.selectAll(".bar").data(chartData).enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", d => x(d.date))
+            .attr("y", d => y(d.value))
+            .attr("width", x.bandwidth())
+            .attr("height", d => height - y(d.value))
+            .attr("fill", d => colorScale(d.value));
+        }   
+});

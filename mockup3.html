@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup 3 - Drei Karten</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>Mockup 3 - Drei Karten</h1>
+
+    <div class="mockup3-container">
+        <div class="mockup3-map" id="mockup3-top-right">
+            <select id="mockup3-datum2-select"></select>
+            <svg></svg>
+        </div>
+        <div class="mockup3-map" id="mockup3-top-left">
+            <select id="mockup3-datum1-select"></select>
+            <svg></svg>
+        </div>
+        <div class="mockup3-map" id="mockup3-bottom-left">
+            <select id="mockup3-datum3-select"></select>
+            <svg></svg>
+        </div>
+        <div id="mockup3-infoContainer">
+            <div id="info-container" style="display: flex; height: 100%;">
+                <!-- Linker Bereich (obere Hälfte Info, untere Hälfte Legende) -->
+                <div id="left-info" style="flex: 1; display: flex; flex-direction: column;">
+                    <!-- Blaue Box (Info-Text) -->
+                    <div id="info-content-box" style="flex: 1; padding: 10px; border: 1px solid blue;">
+                        <!-- Hier wird der Textinhalt angezeigt -->
+                    </div>
+            
+                    <!-- Grüne Box (Legende) -->
+                    <div id="legend-container" style="flex: 1; padding: 10px; border: 1px solid green;">
+                        <!-- Hier wird die Legende eingefügt -->
+                    </div>
+                </div>
+            
+                <!-- Rechter Bereich (Balkendiagramm, nimmt die rechte Hälfte ein) -->
+                <div id="chart-container" style="flex: 1; padding: 10px; border: 1px solid red;">
+                    <!-- Hier wird das Balkendiagramm eingefügt -->
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <script src="germany_visualization_mockup3.js"></script>
+</body>
+</html>

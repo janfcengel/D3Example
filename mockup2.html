@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup 2 - Slider Map</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Verlinkt deine wiederverwendete CSS-Datei -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>Mockup 2 - Slider Map</h1>
+    <!-- Tabs für Navigation -->
+    <div class="tab-container">
+        <a class="tab-button" href="index.html">Zurück zur Landing Page</a>
+        <a class="tab-button active" href="mockup2.html">Mockup 2</a>
+        <a class="tab-button" href="mockup3.html">Mockup 3</a>
+    </div>
+
+    <div id="mockup2-container">
+        <!-- Linker Container für die Karte -->
+        <div id="mockup2-leftContainer">
+            <svg width="100%" height="100%" id="map"></svg> <!-- Hier wird die Karte gezeichnet -->
+        </div>
+    
+        <!-- Rechter Container für zusätzliche Informationen -->
+        <div id="mockup2-rightContainer">
+            <div id="mockup2-selectionContainer">
+                <h2>Datenauswahl</h2>
+                    <!-- Datum 1 mit Bild daneben -->
+                    <div class="input-group">
+                        <svg id="svg1" class="input-icon" width="40" height="40" viewBox="0 0 100 100">
+                            <!-- Zeichne ein einfaches Quadrat -->
+                            <polygon points="0,0 50,50 100,0 " fill="none" stroke="black" stroke-width="1"/> 
+                            <polygon points="100,0 100,100 50,100, 50,50" fill="none" stroke="black" stroke-width="1"/> 
+                            <polygon points="50,100 0,100 0,0 50,50" fill="lightgray" stroke="black" stroke-width="1"/>
+                             
+                        </svg>
+                        <label for="datum1-select">Datum 1:</label>
+                        <select id="datum1-select">
+                            <!-- Optionen werden dynamisch hinzugefügt -->
+                        </select>
+                    </div>
+
+                    <!-- Datum 2 mit Bild daneben -->
+                    <div class="input-group">
+                        <svg id="svg2"class="input-icon" width="40" height="40" viewBox="0 0 100 100">
+                            <!-- Zeichne ein einfaches Quadrat -->
+                            <polygon points="0,0 50,50 100,0 " fill="none" stroke="black" stroke-width="1"/> 
+                            <polygon points="100,0 100,100 50,100, 50,50" fill="lightgray" stroke="black" stroke-width="1"/> 
+                            <polygon points="50,100 0,100 0,0 50,50" fill="none" stroke="black" stroke-width="1"/>
+                        </svg>
+                        <label for="datum2-select">Datum 2:</label>
+                        <select id="datum2-select">
+                            <!-- Optionen werden dynamisch hinzugefügt -->
+                        </select>
+                    </div>
+
+                    <!-- Datum 3 mit Bild daneben -->
+                    <div class="input-group">
+                        <svg id="svg3" class="input-icon" width="40" height="40" viewBox="0 0 100 100">
+                            <polygon points="0,0 50,50 100,0 " fill="lightgray" stroke="black" stroke-width="1"/> 
+                            <polygon points="100,0 100,100 50,100, 50,50" fill="none" stroke="black" stroke-width="1"/> 
+                            <polygon points="50,100 0,100 0,0 50,50" fill="none" stroke="black" stroke-width="1"/>
+                        </svg>
+                        <label for="datum3-select">Datum 3:</label>
+                        <select id="datum3-select">
+                            <!-- Optionen werden dynamisch hinzugefügt -->
+                        </select>
+                    </div>
+                    <button id="selectButton">Selektieren</button>
+                </div>
+                <div id="mockup2-infoContainer">
+                    <div id="info-container" style="display: flex; height: 100%;">
+                        <!-- Linker Bereich (obere Hälfte Info, untere Hälfte Legende) -->
+                        <div id="left-info" style="flex: 1; display: flex; flex-direction: column;">
+                            <!-- Blaue Box (Info-Text) -->
+                            <div id="info-content-box" style="flex: 1; padding: 10px; border: 1px solid blue;">
+                                <!-- Hier wird der Textinhalt angezeigt -->
+                            </div>
+                    
+                            <!-- Grüne Box (Legende) -->
+                            <div id="legend-container" style="flex: 1; padding: 10px; border: 1px solid green;">
+                                <!-- Hier wird die Legende eingefügt -->
+                            </div>
+                        </div>
+                    
+                        <!-- Rechter Bereich (Balkendiagramm, nimmt die rechte Hälfte ein) -->
+                        <div id="chart-container" style="flex: 1; padding: 10px; border: 1px solid red;">
+                            <!-- Hier wird das Balkendiagramm eingefügt -->
+                        </div>
+                    </div>     
+                </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- Lade das externe JavaScript -->
+    <script src="germany_visualization_mockup2.js"></script> <!-- Externes JS-File -->
+    
+</body>
+</html>
