@@ -1,2 +1,4 @@
 .vscode/*
 Ressources/*
+
+#git rm --cached .vscode/* -r
