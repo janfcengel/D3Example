@@ -3,8 +3,11 @@
     // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
-    d3.json('multivariate_test_data2.json')  // Multivariate Testdaten
-]).then(([geoData, multivariateData]) => {
+    d3.json('multivariate_test_data2.json'),  // Multivariate Testdaten
+    d3.json('2023-12-07_rki_data.json'),
+    d3.json('2023-12-14_rki_data.json'),
+    d3.json('2023-12-21_rki_data.json')
+]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
 
     // Erstelle eine Farbskala (z.B. von weiß bis blau)
     const colorScale = d3.scaleLinear()

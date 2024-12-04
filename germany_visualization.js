@@ -7,8 +7,12 @@ chartContainerHeight = 0;
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
 Promise.all([
     d3.json('landkreis_data.json'), // Landkreisdaten (Koordinaten und IDs)
-    d3.json('multivariate_test_data2.json') // Multivariate Daten (Werte für verschiedene Tage)
-]).then(([landkreisData, multivariateData]) => {
+    d3.json('multivariate_test_data2.json'), // Multivariate Daten (Werte für verschiedene Tage)
+    d3.json('2023-12-07_rki_data.json'),
+    d3.json('2023-12-14_rki_data.json'),
+    d3.json('2023-12-21_rki_data.json')
+]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
+//]).then(([landkreisData, multivariateData]) => {
     // Extrahiere die Tage als Schlüssel aus den multivariaten Daten
     const dates = Object.keys(multivariateData);
 
@@ -121,7 +125,6 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3, multivariateDa
         .attr("fill", d => colorScale(d.value)); // Farbe basierend auf der Farbskala
 }
 
-
 // Funktion zur Anzeige der vertikalen Legende in der neuen Box (Grüne Box)
 function updateLegend(date1, date2, date3, multivariateData) {
     const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1, multivariateData);
@@ -194,16 +197,13 @@ function getMinMaxValues(date, multivariateData) {
     const maxValue = Math.max(...values);
     return { minValue, maxValue };
 }
+
+const hexRadius = 14; // Größe des Hexagons
+const outerHexRadius = 16; // Größe für die äußere Umrandung (etwas größer)
+
 // Funktion zur Initialisierung der Hexagon-Karte
 function initializeHexagonMap(landkreisData, multivariateData) {
     const svg = d3.select("#leftContainer svg");
-
-    const hexRadius = 14; // Größe des Hexagons
-    const outerHexRadius = 16; // Größe für die äußere Umrandung (etwas größer)
-
-    // Hexagon-Abstände berechnen
-    const hexWidth = Math.sqrt(3) * hexRadius; // Horizontale Breite
-    const hexHeight = 3 / 2 * hexRadius;       // Vertikaler Abstand
 
     // Skaliere die Positionen basierend auf den geographischen Koordinaten
     const xExtent = d3.extent(landkreisData.features, d => d.geometry.coordinates[0]);
@@ -226,12 +226,12 @@ function initializeHexagonMap(landkreisData, multivariateData) {
 
     // Weises jedem eindeutigen X-Wert einen aufsteigenden `Hex_x`-Wert zu
     let currentHexX = 1;
-    let previousX = nodes[0].x;
+    let previousX = Math.round(nodes[0].x*10)/10;
 
     nodes.forEach((node, index) => {
-        if (node.x !== previousX) {
+        if (Math.round(node.x*10)/10 !== previousX) {
             currentHexX++;  // Erhöhe `Hex_x` nur bei einem neuen X-Wert
-            previousX = node.x;
+            previousX = Math.round(node.x*10)/10;
         }
         node.Hex_x = currentHexX;
     });
@@ -241,18 +241,16 @@ function initializeHexagonMap(landkreisData, multivariateData) {
 
     // Weises jedem eindeutigen Y-Wert einen aufsteigenden `Hex_y`-Wert zu
     let currentHexY = 1;
-    let previousY = nodes[0].y;
+    let previousY = Math.round(nodes[0].y*10)/10;
 
     nodes.forEach((node, index) => {
-        if (node.y !== previousY) {
+        if (Math.round(node.y*10)/10 !== previousY) {
             currentHexY++;  // Erhöhe `Hex_y` nur bei einem neuen Y-Wert
-            previousY = node.y;
+            previousY = Math.round(node.y*10)/10;
         }
         node.Hex_y = currentHexY;
     });
 
-    // Die `nodes`-Liste enthält jetzt sowohl `Hex_x`- als auch `Hex_y`-Werte
-    console.log(nodes);
     // Funktion zur Berechnung der Hexagon-Punkte für drei gleich große Segmente
     function calculateThreeSegmentHexagonPoints(x, y, radius, segment) {
         const hexagonPoints = [];
@@ -311,8 +309,19 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         return points.join(" "); // Die Punkte zu einem String verbinden
     }
 
-
-    // Zeichne die äußeren Hexagone (Umrandungen)
+    // Zeichne jede Seite eines Hexagons als separate Linie
+    svg.append("g")
+    .attr("class", "hexagons-outer")
+    .selectAll("g")
+    .data(nodes)
+    .enter()
+    .append("g")
+    .attr("class", "hexagon-outer")
+    .each(function (d) {
+        drawOuterHexagon(d, this);
+        colorHexagonSides(d, getNodeNeighbours(d, nodes), this)   
+    });
+    /*/ Zeichne die äußeren Hexagone (Umrandungen)
     svg.append("g")
         .attr("class", "hexagons-outer")
         .selectAll("polygon")
@@ -324,7 +333,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         .style("stroke", d => getColorByBL(d.properties.BL)) // Färbung basierend auf dem Bundesland
         .style("stroke-width", 2) // Umrandung etwas dicker
         .attr("transform", d => `rotate(30, ${d.x}, ${d.y})`); // Rotation um 30 Grad
-
+    */
     // Zeichne das erste Drittel der Hexagone
     svg.append("g")
     .attr("class", "hexagons-first")
@@ -354,7 +363,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const value1 = getValueForHexagon(d.id, date1, multivariateData);
         const value2 = getValueForHexagon(d.id, date2, multivariateData);
         const value3 = getValueForHexagon(d.id, date3, multivariateData);
-        console.log("Hexkachel X: "+ d.x + " Y: " + d.y)
+
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
@@ -398,7 +407,6 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const value2 = getValueForHexagon(d.id, date2, multivariateData);
         const value3 = getValueForHexagon(d.id, date3, multivariateData);
 
-        console.log("Hexkachel X: "+ d.x + " Y: " + d.y)
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
@@ -440,7 +448,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const value1 = getValueForHexagon(d.id, date1, multivariateData);
         const value2 = getValueForHexagon(d.id, date2, multivariateData);
         const value3 = getValueForHexagon(d.id, date3, multivariateData);
-        console.log("Hexkachel X: "+ Math.round((d.x/35) -15) + " Y: " + d.y)
+
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
@@ -467,15 +475,15 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         .style("font-size", "10px")
         .style("fill", "black")
         .style("visibility", "hidden"); // Standardmäßig verstecken
-
+    
 }
 
-    // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
-    function getValueForHexagon(id, date, multivariateData) {
-        const dateData = multivariateData[date]; // Hole die Daten für das ausgewählte Datum
-        const hexData = dateData.find(d => d.id === id); // Finde das Hexagon mit der passenden ID
-        return hexData ? hexData.value : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
-    }
+// Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
+function getValueForHexagon(id, date, multivariateData) {
+    const dateData = multivariateData[date]; // Hole die Daten für das ausgewählte Datum
+    const hexData = dateData.find(d => d.id === id); // Finde das Hexagon mit der passenden ID
+    return hexData ? hexData.value : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
+}
 
 // Funktion zur Aktualisierung der Hexagon-Farben basierend auf den ausgewählten Tagesdaten
 function updateHexagonColors(date1, date2, date3, multivariateData, landkreisData) {
@@ -528,7 +536,6 @@ function updateHexagonColors(date1, date2, date3, multivariateData, landkreisDat
             return colorScale(value); // Nutze die Farbskala für den Farbverlauf
         });
 }
-
 
 // Funktion zur Rückgabe der Farbe basierend auf dem Bundesland
 function getColorByBL(bl) {
@@ -608,4 +615,121 @@ function renderSingleHexagon(svgId, segment) {
             .style("fill", seg === segment ? "lightgray" : "none")
             .style("stroke", "black");
     });
+}
+
+function colorHexagonSides(node, neighbours, dom) {
+    const hexGroup = d3.select(dom);
+    // Definiere die relativen Positionen der sechs Nachbarn udn der Seiten
+    neighbours.forEach((nb, iteration) => {
+        if(nb === "NoNeighbour")
+        {
+            side = getSideByIndex(iteration)
+            hexGroup.select(`.side-${side}`)
+                    .style("stroke", getColorByBL(node.properties.BL));
+        }
+        else if(nb.properties.BL != node.properties.BL)
+            {
+                //side = getSideByOffset(node.Hex_x-nb.Hex_x, node.Hex_y-nb.Hex_y)
+                side = getSideByOffset(nb.Hex_x-node.Hex_x, nb.Hex_y-node.Hex_y)
+                hexGroup.select(`.side-${side}`)
+                    .style("stroke", getColorByBL(node.properties.BL)); // Verwende die Farbe für die entsprechende Seite
+            }
+        
+    });
+}
+
+// Funktion zur Abfrage des Seitenindex 's' basierend auf dx und dy
+function getSideByOffset(dx, dy) {
+    // Suche in der neighbourOffsets-Liste nach dem passenden Eintrag
+    const neighbourOffsets = [
+        { dx: -2, dy: 0, s: 3 },   // Linker Nachbar
+        { dx: 2, dy: 0, s: 0 },    // Rechter Nachbar
+        { dx: -1, dy: -1, s: 4},   // Oben links
+        { dx: -1, dy: 1, s: 2 },   // Unten links
+        { dx: 1, dy: -1, s: 5 },   // Oben rechts
+        { dx: 1, dy: 1, s: 1 }     // Unten rechts
+    ];
+    const match = neighbourOffsets.find(offset => offset.dx === dx && offset.dy === dy);
+    
+    // Wenn ein Eintrag gefunden wurde, gib 's' zurück, ansonsten null (falls kein Match)
+    return match ? match.s : null;
+}
+
+function getSideByIndex(side) {
+    // Suche in der neighbourOffsets-Liste nach dem passenden Eintrag
+    const neighbourOffsets = [
+        { dx: -2, dy: 0, s: 3 },   // Linker Nachbar
+        { dx: 2, dy: 0, s: 0 },    // Rechter Nachbar
+        { dx: -1, dy: -1, s: 4},   // Oben links
+        { dx: -1, dy: 1, s: 2 },   // Unten links
+        { dx: 1, dy: -1, s: 5 },   // Oben rechts
+        { dx: 1, dy: 1, s: 1 }     // Unten rechts
+    ];
+    return neighbourOffsets[side].s;
+}
+
+
+// Funktion zur Ermittlung der Nachbarn eines Hexagons
+function getNodeNeighbours(node, nodes) {
+    neighbours = []
+    // Definiere die relativen Positionen der sechs Nachbarn
+    const neighbourOffsets = [
+        { dx: -2, dy: 0},   // Linker Nachbar
+        { dx: 2, dy: 0},    // Rechter Nachbar
+        { dx: -1, dy: -1},   // Oben links
+        { dx: -1, dy: 1},   // Unten links
+        { dx: 1, dy: -1},   // Oben rechts
+        { dx: 1, dy: 1}     // Unten rechts
+    ];
+    
+    // Nachbarn anhand der Offsets suchen
+    neighbourOffsets.forEach(nO => {
+        neighbourFound = false
+        dx = nO.dx
+        dy = nO.dy
+        node_neighbour_x = node.Hex_x + dx
+        node_neighbour_y = node.Hex_y + dy
+        nodes.forEach(n => {
+            if(n.Hex_x === node_neighbour_x && n.Hex_y === node_neighbour_y)
+                {
+                    neighbours.push(n);
+                    neighbourFound = true
+                }
+        });
+        if(neighbourFound == false)
+        {
+            neighbours.push("NoNeighbour")
+        }
+    });
+    return neighbours;
+}
+
+function calculateHexagonPoints(x, y, radius) {
+    const angleOffset = Math.PI / 6; // 30 Grad Offset für pointy-top
+    const points = [];
+    for (let i = 0; i < 6; i++) {
+        const angle = (2 * Math.PI / 6) * i - angleOffset;
+        const x_i = x + radius * Math.cos(angle);
+        const y_i = y + radius * Math.sin(angle);
+        points.push([x_i, y_i]);
+    }
+    return points;
+}
+
+function drawOuterHexagon(d, hexgroupelement) {
+    const points = calculateHexagonPoints(d.x, d.y, outerHexRadius);
+    const hexGroup = d3.select(hexgroupelement);
+
+    for (let i = 0; i < 6; i++) {
+        const start = points[i];
+        const end = points[(i + 1) % 6];
+        hexGroup.append("line")
+            .attr("x1", start[0])
+            .attr("y1", start[1])
+            .attr("x2", end[0])
+            .attr("y2", end[1])
+            .style("stroke", "none") // Standardfarbe für alle Seiten
+            .style("stroke-width", 2)
+            .attr("class", `side-${i}`);
+    }
 }
