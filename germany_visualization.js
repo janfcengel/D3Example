@@ -4,6 +4,7 @@ const colorScale = d3.scaleLinear()
     .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau
 
 chartContainerHeight = 0;
+dataFiles = [];
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
 Promise.all([
     d3.json('landkreis_data.json'), // Landkreisdaten (Koordinaten und IDs)
@@ -11,10 +12,16 @@ Promise.all([
     d3.json('2023-12-07_rki_data.json'),
     d3.json('2023-12-14_rki_data.json'),
     d3.json('2023-12-21_rki_data.json')
-]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
+]).then(([landkreisData, multivariateData, rki231207, rki231214, rki231221]) => {
 //]).then(([landkreisData, multivariateData]) => {
     // Extrahiere die Tage als Schlüssel aus den multivariaten Daten
-    const dates = Object.keys(multivariateData);
+    //const dates = Object.keys(multivariateData);
+
+    dataFiles = [rki231207, rki231214, rki231221];
+    dates = []
+    dataFiles.forEach(dataFile => {
+        dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
+    });
 
     // Fülle die Dropdowns mit den extrahierten Tagen
     const date1Select = document.getElementById('date1Selection');
@@ -45,8 +52,8 @@ Promise.all([
         const date3 = document.getElementById('date3Selection').value;
     
         // Die Funktionen, die die Daten aktualisieren
-        updateLegend(date1, date2, date3, multivariateData);
-        updateHexagonColors(date1, date2, date3, multivariateData, landkreisData);
+        updateLegend(date1, date2, date3, dataFiles);
+        updateHexagonColors(date1, date2, date3);
         // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
     });
     
@@ -60,18 +67,31 @@ Promise.all([
     renderSingleHexagon('hex-date3', 'third');
 });
 
+function getDataFileByDate(date) {
+    console.log(dataFiles)
+    dataFile = null
+    dataFiles.forEach(dF => {
+        if (date === dF.results[1].day)
+            {
+                dataFile = dF;
+            } 
+    });
+    return dataFile;
+}
+
 // Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
-function updateBarChartForHexagon(hexagonId, date1, date2, date3, multivariateData) {
+function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
     // Versuche, die Daten für das Hexagon basierend auf den Datenpunkten zu finden
-    const date1Data = multivariateData[date1] ? multivariateData[date1].find(d => d.id === hexagonId) : null;
-    const date2Data = multivariateData[date2] ? multivariateData[date2].find(d => d.id === hexagonId) : null;
-    const date3Data = multivariateData[date3] ? multivariateData[date3].find(d => d.id === hexagonId) : null;
+    const date1Data = getDataFileByDate(date1) ? getDataFileByDate(date1).results.find(d => d.name === hexagonId) : null;
+    const date2Data = getDataFileByDate(date2) ? getDataFileByDate(date2).results.find(d => d.name === hexagonId) : null;
+    const date3Data = getDataFileByDate(date3) ? getDataFileByDate(date3).results.find(d => d.name === hexagonId) : null;
+    //const date3Data = multivariateData[date3] ? multivariateData[date3].find(d => d.id === hexagonId) : null;
 
     // Wenn es keine Daten gibt, setze Standardwerte
     const chartData = [
-        { date: date1, value: date1Data ? date1Data.value : 0 }, // Wert für Datum 1
-        { date: date2, value: date2Data ? date2Data.value : 0 }, // Wert für Datum 2
-        { date: date3, value: date3Data ? date3Data.value : 0 }  // Wert für Datum 3
+        { date: date1, value: date1Data ? date1Data.compartments.MildInfections : 0 }, // Wert für Datum 1
+        { date: date2, value: date2Data ? date2Data.compartments.MildInfections : 0 }, // Wert für Datum 2
+        { date: date3, value: date3Data ? date3Data.compartments.MildInfections : 0 }  // Wert für Datum 3
     ];
 
     // Ermittle die verfügbare Höhe der Box dynamisch
@@ -126,10 +146,10 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3, multivariateDa
 }
 
 // Funktion zur Anzeige der vertikalen Legende in der neuen Box (Grüne Box)
-function updateLegend(date1, date2, date3, multivariateData) {
-    const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1, multivariateData);
-    const { minValue: min2, maxValue: max2 } = getMinMaxValues(date2, multivariateData);
-    const { minValue: min3, maxValue: max3 } = getMinMaxValues(date3, multivariateData);
+function updateLegend(date1, date2, date3) {
+    const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1);
+    const { minValue: min2, maxValue: max2 } = getMinMaxValues(date2);
+    const { minValue: min3, maxValue: max3 } = getMinMaxValues(date3);
 
     // Finde den kleineren Min-Wert und den größeren Max-Wert
     const overallMinValue = Math.min(min1, min2, min3);
@@ -190,9 +210,9 @@ function updateLegend(date1, date2, date3, multivariateData) {
 }
 
 // Funktion zur Berechnung der Min- und Max-Werte eines bestimmten Datums
-function getMinMaxValues(date, multivariateData) {
-    const dateData = multivariateData[date];
-    const values = dateData.map(d => d.value);
+function getMinMaxValues(date) {
+    const dateData = getDataFileByDate(date);
+    const values = dateData.results.map(d => d.compartments.MildInfections);
     const minValue = Math.min(...values);
     const maxValue = Math.max(...values);
     return { minValue, maxValue };
@@ -214,7 +234,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
 
     // Aktualisiere die Positionen der Hexagone basierend auf den geographischen Daten
     const nodes = landkreisData.features.map((d, i) => ({
-        id: d.properties.id, // Verwende die ID aus den Landkreisdaten
+        id: d.properties.RS, // Verwende die ID aus den Landkreisdaten
         x: xScale(d.geometry.coordinates[0]),
         y: yScale(d.geometry.coordinates[1]),
         properties: d.properties
@@ -228,7 +248,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
     let currentHexX = 1;
     let previousX = Math.round(nodes[0].x*10)/10;
 
-    nodes.forEach((node, index) => {
+    nodes.forEach((node) => {
         if (Math.round(node.x*10)/10 !== previousX) {
             currentHexX++;  // Erhöhe `Hex_x` nur bei einem neuen X-Wert
             previousX = Math.round(node.x*10)/10;
@@ -243,7 +263,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
     let currentHexY = 1;
     let previousY = Math.round(nodes[0].y*10)/10;
 
-    nodes.forEach((node, index) => {
+    nodes.forEach((node) => {
         if (Math.round(node.y*10)/10 !== previousY) {
             currentHexY++;  // Erhöhe `Hex_y` nur bei einem neuen Y-Wert
             previousY = Math.round(node.y*10)/10;
@@ -360,10 +380,10 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const date1 = d3.select("#date1Selection").property("value");
         const date2 = d3.select("#date2Selection").property("value");
         const date3 = d3.select("#date3Selection").property("value");
-        const value1 = getValueForHexagon(d.id, date1, multivariateData);
-        const value2 = getValueForHexagon(d.id, date2, multivariateData);
-        const value3 = getValueForHexagon(d.id, date3, multivariateData);
-
+        const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
+        const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
+        const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
+        //const value3 = getValueForHexagon(d.id, date3, multivariateData);
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
@@ -374,7 +394,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         `);
 
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
-        updateBarChartForHexagon(d.id, date1, date2, date3, multivariateData);
+        updateBarChartForHexagon(d.id, date1, date2, date3);
     });
 
     // Zeichne das zweite Drittel der Hexagone
@@ -403,9 +423,9 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const date1 = d3.select("#date1Selection").property("value");
         const date2 = d3.select("#date2Selection").property("value");
         const date3 = d3.select("#date3Selection").property("value");
-        const value1 = getValueForHexagon(d.id, date1, multivariateData);
-        const value2 = getValueForHexagon(d.id, date2, multivariateData);
-        const value3 = getValueForHexagon(d.id, date3, multivariateData);
+        const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
+        const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
+        const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
@@ -417,7 +437,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         `);
 
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
-        updateBarChartForHexagon(d.id, date1, date2, date3, multivariateData);
+        updateBarChartForHexagon(d.id, date1, date2, date3);
     });
     // Zeichne das dritte Drittel der Hexagone
     svg.append("g")
@@ -445,9 +465,9 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         const date1 = d3.select("#date1Selection").property("value");
         const date2 = d3.select("#date2Selection").property("value");
         const date3 = d3.select("#date3Selection").property("value");
-        const value1 = getValueForHexagon(d.id, date1, multivariateData);
-        const value2 = getValueForHexagon(d.id, date2, multivariateData);
-        const value3 = getValueForHexagon(d.id, date3, multivariateData);
+        const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
+        const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
+        const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
@@ -459,7 +479,7 @@ function initializeHexagonMap(landkreisData, multivariateData) {
         `);
 
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
-        updateBarChartForHexagon(d.id, date1, date2, date3, multivariateData);
+        updateBarChartForHexagon(d.id, date1, date2, date3);
     });
 
     // Füge die unsichtbaren Labels hinzu
@@ -479,32 +499,35 @@ function initializeHexagonMap(landkreisData, multivariateData) {
 }
 
 // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
-function getValueForHexagon(id, date, multivariateData) {
-    const dateData = multivariateData[date]; // Hole die Daten für das ausgewählte Datum
-    const hexData = dateData.find(d => d.id === id); // Finde das Hexagon mit der passenden ID
-    return hexData ? hexData.value : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
+function getValueForHexagon(id, date, dateData) {
+    console.log(id)
+    console.log(date)
+    //dateData = getDataFileByDate(date); // Hole die Daten für das ausgewählte Datum
+    console.log(dateData)
+    const hexData = dateData.results.find(d => d.name === id); // Finde das Hexagon mit der passenden ID
+    return hexData ? hexData.compartments.MildInfections : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
 }
 
 // Funktion zur Aktualisierung der Hexagon-Farben basierend auf den ausgewählten Tagesdaten
-function updateHexagonColors(date1, date2, date3, multivariateData, landkreisData) {
-    const date1Data = multivariateData[date1]; // Daten für Datum 1
-    const date2Data = multivariateData[date2]; // Daten für Datum 2
-    const date3Data = multivariateData[date3]; // Daten für Datum 3
+function updateHexagonColors(date1, date2, date3) {
+    const date1Data = getDataFileByDate(date1); // Daten für Datum 1
+    const date2Data = getDataFileByDate(date2); // Daten für Datum 2
+    const date3Data = getDataFileByDate(date3); // Daten für Datum 3
     const valueByIdDate1 = {};
     const valueByIdDate2 = {};
     const valueByIdDate3 = {};
 
     // Mappe die Werte nach den IDs der Hexagone
-    date1Data.forEach(d => {
-        valueByIdDate1[d.id] = d.value; // Beispiel: ID 1 hat den Wert 527 für Datum 1
+    date1Data.results.forEach(d => {
+        valueByIdDate1[d.name] = d.compartments.MildInfections; // Beispiel: ID 1 hat den Wert 527 für Datum 1
     });
 
-    date2Data.forEach(d => {
-        valueByIdDate2[d.id] = d.value; // Beispiel: ID 1 hat den Wert 300 für Datum 2
+    date2Data.results.forEach(d => {
+        valueByIdDate2[d.name] = d.compartments.MildInfections; // Beispiel: ID 1 hat den Wert 300 für Datum 2
     });
 
-    date3Data.forEach(d => {
-        valueByIdDate3[d.id] = d.value; // Beispiel: ID 1 hat den Wert 400 für Datum 3
+    date3Data.results.forEach(d => {
+        valueByIdDate3[d.name] = d.compartments.MildInfections; // Beispiel: ID 1 hat den Wert 400 für Datum 3
     });
 
     // Erstelle eine Farbskala für die Hexagone (Weiß bis Blau)
