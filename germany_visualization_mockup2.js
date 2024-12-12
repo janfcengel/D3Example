@@ -1,15 +1,28 @@
 // Erstelle eine Farbskala für die Layer (z.B. von weiß bis blau)
-const colorScale = d3.scaleLinear()
+colorScale = d3.scaleLinear()
     .domain([0, 1000])  // Anpassen je nach Wertebereich
     .range(["white", "blue"]);
 
 barChartInital = 0
-
+dataFiles = [];
+datesGlobal = [];
 // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
-    d3.json('multivariate_test_data2.json')  // Multivariate Testdaten
-]).then(([geoData, multivariateData]) => {
+    d3.json('multivariate_test_data2.json'),  // Multivariate Testdaten
+    d3.json('2023-12-07_rki_data.json'),
+    d3.json('2023-12-14_rki_data.json'),
+    d3.json('2023-12-21_rki_data.json')
+]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
+//]).then(([geoData, multivariateData]) => {
+
+    dataFiles = [rki231207, rki231214, rki231221];
+    rkiDates = [];
+    dataFiles.forEach(dataFile => {
+        rkiDates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
+        dataFile.results = dataFile.results.filter(entry => entry.name !== "00000"); // Filter die Aufsummierung von Deutschland heraus
+    });
+    datesGlobal = rkiDates;
     const mapContainer = document.getElementById('mockup2-leftContainer');
     const availableWidth = mapContainer.clientWidth;
     const availableHeight = mapContainer.clientHeight;
@@ -85,9 +98,9 @@ Promise.all([
             console.log(d.properties.id)
             const data = {
                 data: d,
-                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
-                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
-                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
                 selectedDate1: selectedDate1,
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
@@ -124,9 +137,9 @@ Promise.all([
 
             const data = {
                 data: d,
-                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
-                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
-                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
                 selectedDate1: selectedDate1,
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
@@ -160,12 +173,12 @@ Promise.all([
             const selectedDate1 = document.getElementById('datum1-select').value;
             const selectedDate2 = document.getElementById('datum2-select').value;
             const selectedDate3 = document.getElementById('datum3-select').value;
-
+            console.log(d)
             const data = {
                 data: d,
-                date1: multivariateData[selectedDate1].find(x => x.id === d.properties.id)?.value || 0,
-                date2: multivariateData[selectedDate2].find(x => x.id === d.properties.id)?.value || 0,
-                date3: multivariateData[selectedDate3].find(x => x.id === d.properties.id)?.value || 0,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
                 selectedDate1: selectedDate1,
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
@@ -217,14 +230,14 @@ Promise.all([
             })
         );
 
-        const dates = Object.keys(multivariateData); // Extrahiere die Tage als Schlüssel aus der JSON-Datei
+        //const dates = Object.keys(multivariateData); // Extrahiere die Tage als Schlüssel aus der JSON-Datei
 
         // Fülle die Dropdowns mit den extrahierten Tagen
         const datum1Select = document.getElementById('datum1-select');
         const datum2Select = document.getElementById('datum2-select');
         const datum3Select = document.getElementById('datum3-select');
     
-        dates.forEach(date => {
+        datesGlobal.forEach(date => {
             const option1 = document.createElement('option');
             option1.value = date;
             option1.text = date;
@@ -240,14 +253,24 @@ Promise.all([
             option3.text = date;
             datum3Select.add(option3);
         });
-   
+        const { minValue: min1, maxValue: max1 } = getMinMaxValues(document.getElementById('datum1-select').value);
+        const { minValue: min2, maxValue: max2 } = getMinMaxValues(document.getElementById('datum2-select').value);
+        const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('datum3-select').value);
+ 
+    // Finde den kleineren Min-Wert und den größeren Max-Wert
+        const overallMinValue = Math.min(min1, min2, min3);
+        const overallMaxValue = Math.max(max1, max2, max3);
+
+        colorScale = d3.scaleLinear()
+            .domain([overallMinValue, overallMaxValue])  // Anpassen je nach Wertebereich
+            .range(["white", "blue"]);
        document.getElementById('selectButton').addEventListener('click', function () {
            const date1 = document.getElementById('datum1-select').value;
            const date2 = document.getElementById('datum2-select').value;
            const date3 = document.getElementById('datum3-select').value;
        
            // Die Funktionen, die die Daten aktualisieren
-           //updateLegend(date1, date2, date3, multivariateData);
+           updateLegend(overallMinValue, overallMaxValue);
            
            updateLayerColors(date1, date2, date3);
            // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
@@ -256,7 +279,8 @@ Promise.all([
        // Setze die Trennlinien und Bereiche initial
        updateLinesAndAreas(centerX, centerY);
        // Setze Legende initial
-       updateLegend(0, 1000);
+       updateLegend(overallMinValue, overallMaxValue);
+       
     // Funktion zur Aktualisierung der Polygonfarben im mouseout-Event
     function resetPolygonColors(d) {
         // Hole die aktuellen Werte aus den Dropdowns
@@ -265,33 +289,33 @@ Promise.all([
         const selectedDatum3 = datum3Select.value;
 
         // Daten für die Layer
-        const datum1Data = multivariateData[selectedDatum1];
-        const datum2Data = multivariateData[selectedDatum2];
-        const datum3Data = multivariateData[selectedDatum3];
+        const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum1)];
+        const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum2)];
+        const datum3Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum3)];
 
         // Überprüfe, zu welchem Layer das aktuelle Element gehört, und setze die Farbe basierend auf den ausgewählten Daten
         if (d3.select(this).classed('layer1')) {
-            const value = datum1Data.find(item => item.id === d.properties.id)?.value || 0;
+            const value = datum1Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
             d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 1
         } else if (d3.select(this).classed('layer2')) {
-            const value = datum2Data.find(item => item.id === d.properties.id)?.value || 0;
+            const value = datum2Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
             d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 2
         } else if (d3.select(this).classed('layer3')) {
-            const value = datum3Data.find(item => item.id === d.properties.id)?.value || 0;
+            const value = datum3Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
             d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 3
         }
     }
         function updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3) {
             // Daten für die einzelnen Layer basierend auf den Dropdown-Auswahlen extrahieren
-            const datum1Data = multivariateData[selectedDatum1];
-            const datum2Data = multivariateData[selectedDatum2];
-            const datum3Data = multivariateData[selectedDatum3];
+            const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum1)]
+            const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum2)]
+            const datum3Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum3)]
         
             // Update Layer 1 basierend auf Datum 1
             mapLayer1.selectAll("path")
                 .data(geoData.features)
                 .style("fill", d => {
-                    const value = datum1Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    const value = datum1Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
                     return colorScale(value);
                 });
         
@@ -299,7 +323,7 @@ Promise.all([
             mapLayer2.selectAll("path")
                 .data(geoData.features)
                 .style("fill", d => {
-                    const value = datum2Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    const value = datum2Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
                     return colorScale(value);
                 });
         
@@ -307,7 +331,7 @@ Promise.all([
             mapLayer3.selectAll("path")
                 .data(geoData.features)
                 .style("fill", d => {
-                    const value = datum3Data.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                    const value = datum3Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
                     return colorScale(value);
                 });
         }
@@ -369,9 +393,9 @@ Promise.all([
         const date2 = d3.select("#datum2-select").property("value");
         const date3 = d3.select("#datum3-select").property("value");
         console.log(data)
-        const value1 = getValueForRegion(data.properties.id, date1, multivariateData);
-        const value2 = getValueForRegion(data.properties.id, date2, multivariateData);
-        const value3 = getValueForRegion(data.properties.id, date3, multivariateData);
+        const value1 = getValueForRegion(data.properties.RS, date1);
+        const value2 = getValueForRegion(data.properties.RS, date2);
+        const value3 = getValueForRegion(data.properties.RS, date3);
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${data.properties.GEN}</p>
@@ -383,10 +407,10 @@ Promise.all([
     }
 
     // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
-    function getValueForRegion(id, date, data) {
-        const dateData = data[date]; // Hole die Daten für das ausgewählte Datum
-        const foundData = dateData.find(d => d.id === id); // Finde das Hexagon mit der passenden ID
-        return foundData ? foundData.value : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
+    function getValueForRegion(id, date) {
+        const dateData = dataFiles[datesGlobal.findIndex(entry => entry === date)]; // Hole die Daten für das ausgewählte Datum
+        const foundData = dateData.results.find(d => d.name === id); // Finde das Hexagon mit der passenden ID
+        return foundData ? foundData.compartments.MildInfections : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
     }
 
     // Funktion zur Anzeige der Legende (farblich abgestufte Skala)
@@ -415,7 +439,7 @@ Promise.all([
             .attr("height", 180)
             .style("fill", "url(#legendGradient)")
             .attr("transform", "translate(30,10)");
-
+        
         // Legendenwerte
         svg.append("text").attr("x", 60).attr("y", 20).text(maxValue);
         svg.append("text").attr("x", 60).attr("y", 190).text(minValue);
@@ -428,6 +452,15 @@ Promise.all([
             { date: data.selectedDate3, value: data.date2 },
             { date: data.selectedDate2, value: data.date3 }
         ];
+
+        const { minValue: min1, maxValue: max1 } = getMinMaxValues(data.selectedDate1);
+        const { minValue: min2, maxValue: max2 } = getMinMaxValues(data.selectedDate2);
+        const { minValue: min3, maxValue: max3 } = getMinMaxValues(data.selectedDate3);
+
+    // Finde den kleineren Min-Wert und den größeren Max-Wert
+        const overallMinValue = Math.min(min1, min2, min3);
+        const overallMaxValue = Math.max(max1, max2, max3);
+        
         console.log(chartData)
         //const chartContainer = document.getElementById("chart-container");
         const width = barChartInital - 40;
@@ -442,7 +475,7 @@ Promise.all([
 
         // Skalen
         const x = d3.scaleBand().domain(chartData.map(d => d.date)).range([0, width]).padding(0.2);
-        const y = d3.scaleLinear().domain([0, d3.max(chartData, d => d.value)]).range([height, 0]);
+        const y = d3.scaleLinear().domain([overallMinValue, overallMaxValue]).range([height, 0]);
 
         // X- und Y-Achsen
         svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
@@ -457,4 +490,23 @@ Promise.all([
             .attr("height", d => height - y(d.value))
             .attr("fill", d => colorScale(d.value));
         }   
+
+        function getDataFileByDate(date) {
+            dataFile = null
+            dataFiles.forEach(dF => {
+                if (date === dF.results[1].day)
+                    {
+                        dataFile = dF;
+                    } 
+            });
+            return dataFile;
+        }
+
+        function getMinMaxValues(date) {
+            const dateData = getDataFileByDate(date);
+            const values = dateData.results.map(d => d.compartments.MildInfections);
+            const minValue = Math.min(...values);
+            const maxValue = Math.max(...values);
+            return { minValue, maxValue };
+        }
 });

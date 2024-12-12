@@ -8,11 +8,11 @@ dataFiles = [];
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
 Promise.all([
     d3.json('landkreis_data.json'), // Landkreisdaten (Koordinaten und IDs)
-    d3.json('multivariate_test_data2.json'), // Multivariate Daten (Werte für verschiedene Tage)
+    //d3.json('multivariate_test_data2.json'), // Multivariate Daten (Werte für verschiedene Tage)
     d3.json('2023-12-07_rki_data.json'),
     d3.json('2023-12-14_rki_data.json'),
     d3.json('2023-12-21_rki_data.json')
-]).then(([landkreisData, multivariateData, rki231207, rki231214, rki231221]) => {
+]).then(([landkreisData, rki231207, rki231214, rki231221]) => {
 //]).then(([landkreisData, multivariateData]) => {
     // Extrahiere die Tage als Schlüssel aus den multivariaten Daten
     //const dates = Object.keys(multivariateData);
@@ -21,6 +21,7 @@ Promise.all([
     dates = []
     dataFiles.forEach(dataFile => {
         dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
+        dataFile.results = dataFile.results.filter(entry => entry.name !== "00000");
     });
 
     // Fülle die Dropdowns mit den extrahierten Tagen
@@ -59,7 +60,7 @@ Promise.all([
     
     // Initialisiere die Karte mit den Landkreisdaten
     chartContainerHeight = document.getElementById("chart-container").clientHeight;
-    initializeHexagonMap(landkreisData, multivariateData);
+    initializeHexagonMap(landkreisData);
     
     // Hexagone neben den Dropdowns anzeigen
     renderSingleHexagon('hex-date1', 'first');
@@ -68,7 +69,6 @@ Promise.all([
 });
 
 function getDataFileByDate(date) {
-    console.log(dataFiles)
     dataFile = null
     dataFiles.forEach(dF => {
         if (date === dF.results[1].day)
@@ -222,7 +222,7 @@ const hexRadius = 14; // Größe des Hexagons
 const outerHexRadius = 16; // Größe für die äußere Umrandung (etwas größer)
 
 // Funktion zur Initialisierung der Hexagon-Karte
-function initializeHexagonMap(landkreisData, multivariateData) {
+function initializeHexagonMap(landkreisData) {
     const svg = d3.select("#leftContainer svg");
 
     // Skaliere die Positionen basierend auf den geographischen Koordinaten
@@ -500,10 +500,6 @@ function initializeHexagonMap(landkreisData, multivariateData) {
 
 // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
 function getValueForHexagon(id, date, dateData) {
-    console.log(id)
-    console.log(date)
-    //dateData = getDataFileByDate(date); // Hole die Daten für das ausgewählte Datum
-    console.log(dateData)
     const hexData = dateData.results.find(d => d.name === id); // Finde das Hexagon mit der passenden ID
     return hexData ? hexData.compartments.MildInfections : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
 }
@@ -648,14 +644,16 @@ function colorHexagonSides(node, neighbours, dom) {
         {
             side = getSideByIndex(iteration)
             hexGroup.select(`.side-${side}`)
-                    .style("stroke", getColorByBL(node.properties.BL));
+                    //.style("stroke", getColorByBL(node.properties.BL));
+                    .style("stroke", "black");
         }
         else if(nb.properties.BL != node.properties.BL)
             {
                 //side = getSideByOffset(node.Hex_x-nb.Hex_x, node.Hex_y-nb.Hex_y)
                 side = getSideByOffset(nb.Hex_x-node.Hex_x, nb.Hex_y-node.Hex_y)
                 hexGroup.select(`.side-${side}`)
-                    .style("stroke", getColorByBL(node.properties.BL)); // Verwende die Farbe für die entsprechende Seite
+                    //.style("stroke", getColorByBL(node.properties.BL)); // Verwende die Farbe für die entsprechende Seite
+                    .style("stroke", "black");
             }
         
     });

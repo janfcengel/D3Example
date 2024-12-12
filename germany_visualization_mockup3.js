@@ -1,5 +1,5 @@
 
-
+dates = []
     // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
@@ -9,11 +9,14 @@ Promise.all([
     d3.json('2023-12-21_rki_data.json')
 ]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
 
-    // Erstelle eine Farbskala (z.B. von weiß bis blau)
-    const colorScale = d3.scaleLinear()
-        .domain([0, 1000]) // Beispielhafte Werte für min/max (anpassen je nach Daten)
-        .range(["white", "blue"]);
+    dataFiles = [rki231207, rki231214, rki231221];
+    dates = []
+    dataFiles.forEach(dataFile => {
+        dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
+        dataFile.results = dataFile.results.filter(entry => entry.name !== "00000");
+    });
 
+   
     // SVGs und Zoom initialisieren
     const svgElements = [
         { svg: d3.select("#mockup3-top-left svg"), layer: "layer1" },
@@ -37,12 +40,12 @@ Promise.all([
     });
 
     function updateMap(svg, selectedDate, mapLayer, colorScale) {
-        const dateData = multivariateData[selectedDate];
+        const dateData = getDataFileByDate(selectedDate);
 
         mapLayer.selectAll("path")
             .data(geoData.features)
             .style("fill", d => {
-                const value = dateData.find(item => item.id - 1 === d.properties.id)?.value || 0;
+                const value = dateData.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
                 return colorScale(value);
             });
     }
@@ -149,7 +152,7 @@ Promise.all([
 
         const data = selectedDates.map(date => ({
             date,
-            value: multivariateData[date].find(d => d.id === regionData.id)?.value || 0
+            value: getDataFileByDate(date).results.find(d => d.name === regionData.RS)?.compartments.MildInfections || 0
         }));
 
         const width = chartContainer.node().clientWidth - 80;
@@ -184,7 +187,7 @@ Promise.all([
             .attr("fill", d => colorScale(d.value));
     }
 
-    const dates = Object.keys(multivariateData);
+    //const dates = Object.keys(multivariateData);
     const datum1Select = document.getElementById('mockup3-datum1-select');
     const datum2Select = document.getElementById('mockup3-datum2-select');
     const datum3Select = document.getElementById('mockup3-datum3-select');
@@ -197,6 +200,20 @@ Promise.all([
         const option3 = new Option(date, date);
         datum3Select.add(option3);
     });
+
+    const { minValue: min1, maxValue: max1 } = getMinMaxValues(document.getElementById('mockup3-datum1-select').value);
+    const { minValue: min2, maxValue: max2 } = getMinMaxValues(document.getElementById('mockup3-datum2-select').value);
+    const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('mockup3-datum3-select').value);
+ 
+    // Finde den kleineren Min-Wert und den größeren Max-Wert
+    const overallMinValue = Math.min(min1, min2, min3);
+    const overallMaxValue = Math.max(max1, max2, max3);
+    
+    // Erstelle eine Farbskala (z.B. von weiß bis blau)
+    const colorScale = d3.scaleLinear()
+        .domain([overallMinValue, overallMaxValue]) // Beispielhafte Werte für min/max (anpassen je nach Daten)
+        .range(["white", "blue"]);
+
 
     datum1Select.addEventListener('change', function () {
         const selectedDate = this.value;
@@ -213,5 +230,25 @@ Promise.all([
         updateMap(svgElements[2].svg, selectedDate, svgElements[2].svg.select(`.${svgElements[2].layer}`), colorScale);
     });
 
-    updateLegend(0, 1000);
+    updateLegend(overallMinValue, overallMaxValue);
+
+    function getDataFileByDate(date) {
+        dataFile = null
+        dataFiles.forEach(dF => {
+            if (date === dF.results[1].day)
+                {
+                    dataFile = dF;
+                } 
+        });
+        return dataFile;
+    }
+
+    function getMinMaxValues(date) {
+        const dateData = getDataFileByDate(date);
+        console.log(dateData)
+        const values = dateData.results.map(d => d.compartments.MildInfections);
+        const minValue = Math.min(...values);
+        const maxValue = Math.max(...values);
+        return { minValue, maxValue };
+    }
 });
