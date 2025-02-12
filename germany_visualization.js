@@ -74,6 +74,7 @@ Promise.all([
     hexRadius *= scaleFactor;
     outerHexRadius *= scaleFactor;
     initializeHexagonMap();
+    
     // Hexagone neben den Dropdowns anzeigen
     renderSingleHexagon('hex-date1', 'first');
     renderSingleHexagon('hex-date2', 'second');
