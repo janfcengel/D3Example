@@ -74,7 +74,7 @@ Promise.all([
     hexRadius *= scaleFactor;
     outerHexRadius *= scaleFactor;
     initializeHexagonMap();
-    
+
     // Hexagone neben den Dropdowns anzeigen
     renderSingleHexagon('hex-date1', 'first');
     renderSingleHexagon('hex-date2', 'second');
@@ -193,6 +193,16 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
         .attr("fill", d => colorScale(d.value)); // Farbe basierend auf der Farbskala
 }
 
+function updateInfoBox(d, dates, values) {
+        // Zeige die Informationen im Info-Bereich an
+        d3.select("#info-content-box").html(`
+            <p><strong>Region:</strong> ${d.properties.GEN}</p>
+            <p><strong>${dates[0]} Wert:</strong> ${Math.round(values[0])}</p>
+            <p><strong>${dates[1]} Wert:</strong> ${Math.round(values[1])}</p>
+            <p><strong>${dates[2]} Wert:</strong> ${Math.round(values[2])}</p>
+        `);
+}
+
 // Funktion zur Anzeige der vertikalen Legende in der neuen Box (Grüne Box)
 function updateLegend(date1, date2, date3) {
     const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1);
@@ -251,14 +261,14 @@ function updateLegend(date1, date2, date3) {
       .attr("x", 40)
       .attr("y", 15)
       .attr("text-anchor", "start")
-      .text(`${overallMaxValue}`);
+      .text(`${Math.round(overallMaxValue)}`);
 
     // Min-Wert (unten) anzeigen
     legendSvg.append("text")
       .attr("x", 40)
       .attr("y", svgHeight - 20)
       .attr("text-anchor", "start")
-      .text(`${overallMinValue}`);
+      .text(`${Math.round(overallMinValue)}`);
 }
 
 // Funktion zur Berechnung der Min- und Max-Werte eines bestimmten Datums
@@ -363,16 +373,9 @@ function initializeHexagonMap() {
         const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
-        //const value3 = getValueForHexagon(d.id, date3, multivariateData);
-        // Zeige die Informationen im Info-Bereich an
-        d3.select("#info-content-box").html(`
-            <p><strong>Region:</strong> ${d.properties.GEN}</p>
-            <p><strong>ID:</strong> ${d.id}</p>
-            <p><strong>${date1} Wert:</strong> ${value1}</p>
-            <p><strong>${date2} Wert:</strong> ${value2}</p>
-            <p><strong>${date3} Wert:</strong> ${value3}</p>
-        `);
 
+        //Update InfoBox 
+        updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
         updateBarChartForHexagon(d.id, date1, date2, date3);
     });
@@ -407,15 +410,8 @@ function initializeHexagonMap() {
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
-        // Zeige die Informationen im Info-Bereich an
-        d3.select("#info-content-box").html(`
-            <p><strong>Region:</strong> ${d.properties.GEN}</p>
-            <p><strong>ID:</strong> ${d.id}</p>
-            <p><strong>${date1} Wert:</strong> ${value1}</p>
-            <p><strong>${date2} Wert:</strong> ${value2}</p>
-            <p><strong>${date3} Wert:</strong> ${value3}</p>
-        `);
-
+        //Update InfoBox 
+        updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
         updateBarChartForHexagon(d.id, date1, date2, date3);
     });
@@ -449,15 +445,8 @@ function initializeHexagonMap() {
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
-        // Zeige die Informationen im Info-Bereich an
-        d3.select("#info-content-box").html(`
-            <p><strong>Region:</strong> ${d.properties.GEN}</p>
-            <p><strong>ID:</strong> ${d.id}</p>
-            <p><strong>${date1} Wert:</strong> ${value1}</p>
-            <p><strong>${date2} Wert:</strong> ${value2}</p>
-            <p><strong>${date3} Wert:</strong> ${value3}</p>
-        `);
-
+        //Update InfoBox 
+        updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
         updateBarChartForHexagon(d.id, date1, date2, date3);
     });
