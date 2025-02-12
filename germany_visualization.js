@@ -1,10 +1,16 @@
 // Erstelle eine Farbskala für die Hexagone (Weiß bis Blau)
-const colorScale = d3.scaleLinear()
+let colorScale = d3.scaleLinear()
     .domain([0, 1000]) // Wertebereich
     .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau
 
-chartContainerHeight = 0;
-dataFiles = [];
+let chartContainerHeight = 0;
+let dataFiles = [];
+
+let hexRadius = 14; // Größe des Hexagons (Standardwert)
+let outerHexRadius = 16; // Größe für die äußere Umrandung (Standardwert)
+let xScale, yScale; 
+let nodes;
+let scaleFactor;
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
 Promise.all([
     d3.json('landkreis_data.json'), // Landkreisdaten (Koordinaten und IDs)
@@ -13,9 +19,7 @@ Promise.all([
     d3.json('2023-12-14_rki_data.json'),
     d3.json('2023-12-21_rki_data.json')
 ]).then(([landkreisData, rki231207, rki231214, rki231221]) => {
-//]).then(([landkreisData, multivariateData]) => {
     // Extrahiere die Tage als Schlüssel aus den multivariaten Daten
-    //const dates = Object.keys(multivariateData);
 
     dataFiles = [rki231207, rki231214, rki231221];
     dates = []
@@ -60,13 +64,56 @@ Promise.all([
     
     // Initialisiere die Karte mit den Landkreisdaten
     chartContainerHeight = document.getElementById("chart-container").clientHeight;
-    initializeHexagonMap(landkreisData);
-    
+    createNodeList(landkreisData)
+    hexMapContainer = document.getElementById("leftContainer");
+    scaleFactor = getScaleFactor(nodes, hexMapContainer.clientWidth, hexMapContainer.clientHeight);
+    nodes.forEach(node => {
+        node.x *= scaleFactor;
+        node.y *= scaleFactor;
+    });
+    hexRadius *= scaleFactor;
+    outerHexRadius *= scaleFactor;
+    initializeHexagonMap();
     // Hexagone neben den Dropdowns anzeigen
     renderSingleHexagon('hex-date1', 'first');
     renderSingleHexagon('hex-date2', 'second');
     renderSingleHexagon('hex-date3', 'third');
+
+    //Event Listener für Größenveränderung
+    window.addEventListener("resize", () => {
+        newWidth = container.clientWidth;
+        newHeight = container.clientHeight;
+        newScaleFactor = getScaleFactor(nodes, newWidth, newHeight);
+    
+        nodes.forEach(node => {
+            node.x *= newScaleFactor;
+            node.y *= newScaleFactor;
+        });
+    
+        hexRadius *= newScaleFactor;
+        outerHexRadius *= newScaleFactor;
+    
+        d3.select("#leftContainer svg").selectAll("*").remove();
+        initializeHexagonMap();
+    })
 });
+
+function getScaleFactor(landkreisData, containerWidth, containerHeight) {
+    // Bestimme den min/max-Wert der X- und Y-Koordinaten in den Nodes
+    const xExtent = d3.extent(nodes, d => d.x);
+    const yExtent = d3.extent(nodes, d => d.y);
+
+    // Berechne die Breite und Höhe der Datenverteilung (Spannweite)
+    const dataWidth = xExtent[1] - xExtent[0];
+    const dataHeight = yExtent[1] - yExtent[0];
+
+    // Berechne den Skalierungsfaktor für beide Achsen
+    const scaleX = containerWidth / dataWidth;
+    const scaleY = containerHeight / dataHeight;
+    // Verwende den kleineren der beiden Faktoren, um Verzerrungen zu vermeiden
+    return Math.min(scaleX, scaleY) * 0.9; // 90% des Containers nutzen, damit Abstand bleibt
+}
+
 
 function getDataFileByDate(date) {
     dataFile = null
@@ -155,6 +202,10 @@ function updateLegend(date1, date2, date3) {
     const overallMinValue = Math.min(min1, min2, min3);
     const overallMaxValue = Math.max(max1, max2, max3);
 
+    colorScale = d3.scaleLinear()
+        .domain([overallMinValue, overallMaxValue]) // Wertebereich
+        .range(["white", "blue"]);
+
     // Lösche die vorherige Legende
     d3.select("#legend-container").selectAll("*").remove();
 
@@ -218,22 +269,16 @@ function getMinMaxValues(date) {
     return { minValue, maxValue };
 }
 
-const hexRadius = 14; // Größe des Hexagons
-const outerHexRadius = 16; // Größe für die äußere Umrandung (etwas größer)
-
-// Funktion zur Initialisierung der Hexagon-Karte
-function initializeHexagonMap(landkreisData) {
-    const svg = d3.select("#leftContainer svg");
-
+function createNodeList(landkreisData) {
     // Skaliere die Positionen basierend auf den geographischen Koordinaten
     const xExtent = d3.extent(landkreisData.features, d => d.geometry.coordinates[0]);
     const yExtent = d3.extent(landkreisData.features, d => d.geometry.coordinates[1]);
 
-    const xScale = d3.scaleLinear().domain(xExtent).range([50, 750]);
-    const yScale = d3.scaleLinear().domain(yExtent).range([750, 50]); // Spiegelung der Y-Achse
+    xScale = d3.scaleLinear().domain(xExtent).range([50, 750]);
+    yScale = d3.scaleLinear().domain(yExtent).range([750, 50]); // Spiegelung der Y-Achse
 
     // Aktualisiere die Positionen der Hexagone basierend auf den geographischen Daten
-    const nodes = landkreisData.features.map((d, i) => ({
+    nodes = landkreisData.features.map((d, i) => ({
         id: d.properties.RS, // Verwende die ID aus den Landkreisdaten
         x: xScale(d.geometry.coordinates[0]),
         y: yScale(d.geometry.coordinates[1]),
@@ -270,64 +315,11 @@ function initializeHexagonMap(landkreisData) {
         }
         node.Hex_y = currentHexY;
     });
+}
 
-    // Funktion zur Berechnung der Hexagon-Punkte für drei gleich große Segmente
-    function calculateThreeSegmentHexagonPoints(x, y, radius, segment) {
-        const hexagonPoints = [];
-        
-        // Berechne die sechs Punkte eines Hexagons
-        for (let i = 0; i < 12; i++) {
-            const angle = 2 * Math.PI / 12 * i; // 30 Grad Schritte
-            const x_i = x + radius * Math.cos(angle);
-            const y_i = y + radius * Math.sin(angle);
-            hexagonPoints.push([x_i, y_i]);
-        }
-
-        // Wähle die Punkte für das gewünschte Segment aus
-        let points = [];
-        points.push([x, y]); // Mittelpunkt des Hexagons
-
-        if (segment === 'first') {
-            // Segment von 300 bis 60 Grad
-            points.push([(hexagonPoints[9][0] + hexagonPoints[11][0])/2, (hexagonPoints[9][1] + hexagonPoints[11][1])/2 ]);
-            points.push(hexagonPoints[11]); // 300 Grad
-            points.push([(hexagonPoints[11][0] + hexagonPoints[1][0])/2, (hexagonPoints[11][1] + hexagonPoints[1][1])/2 ]);
-            points.push(hexagonPoints[1]);  // 60 Grad
-            points.push([(hexagonPoints[1][0] + hexagonPoints[3][0])/2, (hexagonPoints[1][1] + hexagonPoints[3][1])/2 ]);
-        } else if (segment === 'second') {
-            // Segment von 60 bis 180 Grad
-            points.push([(hexagonPoints[1][0] + hexagonPoints[3][0])/2, (hexagonPoints[1][1] + hexagonPoints[3][1])/2 ]);
-            points.push(hexagonPoints[3]); 
-            points.push([(hexagonPoints[3][0] + hexagonPoints[5][0])/2, (hexagonPoints[3][1] + hexagonPoints[5][1])/2 ]);
-            points.push(hexagonPoints[5]); 
-            points.push([(hexagonPoints[5][0] + hexagonPoints[7][0])/2, (hexagonPoints[5][1] + hexagonPoints[7][1])/2 ]);
-              // 180 Grad
-        } else if (segment === 'third') {
-            // Segment von 180 bis 300 Grad
-            points.push([(hexagonPoints[5][0] + hexagonPoints[7][0])/2, (hexagonPoints[5][1] + hexagonPoints[7][1])/2 ]);
-            points.push(hexagonPoints[7]);
-            points.push([(hexagonPoints[7][0] + hexagonPoints[9][0])/2, (hexagonPoints[7][1] + hexagonPoints[9][1])/2 ]);
-            points.push(hexagonPoints[9]);  // 240 Grad
-            points.push([(hexagonPoints[9][0] + hexagonPoints[11][0])/2, (hexagonPoints[9][1] + hexagonPoints[11][1])/2]);
-        }
-
-        // Rückgabe als String, um sie als Polygonpunkte zu verwenden
-        return points.map(point => point.join(',')).join(' ');
-    }
-    // Funktion zur Berechnung der vollständigen Hexagon-Punkte
-    function calculateFullHexagonPoints(x, y, radius) {
-        const angle = Math.PI / 3; // 60 Grad für jedes Segment
-        const points = [];
-
-        // Berechne die sechs Ecken des Hexagons
-        for (let i = 0; i < 6; i++) {
-            const x_i = x + radius * Math.cos(angle * i);
-            const y_i = y + radius * Math.sin(angle * i);
-            points.push(`${x_i},${y_i}`);
-        }
-
-        return points.join(" "); // Die Punkte zu einem String verbinden
-    }
+// Funktion zur Initialisierung der Hexagon-Karte
+function initializeHexagonMap() {
+    const svg = d3.select("#leftContainer svg");
 
     // Zeichne jede Seite eines Hexagons als separate Linie
     svg.append("g")
@@ -341,19 +333,6 @@ function initializeHexagonMap(landkreisData) {
         drawOuterHexagon(d, this);
         colorHexagonSides(d, getNodeNeighbours(d, nodes), this)   
     });
-    /*/ Zeichne die äußeren Hexagone (Umrandungen)
-    svg.append("g")
-        .attr("class", "hexagons-outer")
-        .selectAll("polygon")
-        .data(nodes)
-        .enter().append("polygon")
-        .attr("class", "hexagon-outer")
-        .attr("points", d => calculateFullHexagonPoints(d.x, d.y, outerHexRadius)) // Äußere Hexagone
-        .style("fill", "none") // Keine Füllung
-        .style("stroke", d => getColorByBL(d.properties.BL)) // Färbung basierend auf dem Bundesland
-        .style("stroke-width", 2) // Umrandung etwas dicker
-        .attr("transform", d => `rotate(30, ${d.x}, ${d.y})`); // Rotation um 30 Grad
-    */
     // Zeichne das erste Drittel der Hexagone
     svg.append("g")
     .attr("class", "hexagons-first")
@@ -498,6 +477,50 @@ function initializeHexagonMap(landkreisData) {
     
 }
 
+// Funktion zur Berechnung der Hexagon-Punkte für drei gleich große Segmente
+function calculateThreeSegmentHexagonPoints(x, y, radius, segment) {
+    const hexagonPoints = [];
+    
+    // Berechne die sechs Punkte eines Hexagons
+    for (let i = 0; i < 12; i++) {
+        const angle = 2 * Math.PI / 12 * i; // 30 Grad Schritte
+        const x_i = x + radius * Math.cos(angle);
+        const y_i = y + radius * Math.sin(angle);
+        hexagonPoints.push([x_i, y_i]);
+    }
+
+    // Wähle die Punkte für das gewünschte Segment aus
+    let points = [];
+    points.push([x, y]); // Mittelpunkt des Hexagons
+
+    if (segment === 'first') {
+        // Segment von 300 bis 60 Grad
+        points.push([(hexagonPoints[9][0] + hexagonPoints[11][0])/2, (hexagonPoints[9][1] + hexagonPoints[11][1])/2 ]);
+        points.push(hexagonPoints[11]); // 300 Grad
+        points.push([(hexagonPoints[11][0] + hexagonPoints[1][0])/2, (hexagonPoints[11][1] + hexagonPoints[1][1])/2 ]);
+        points.push(hexagonPoints[1]);  // 60 Grad
+        points.push([(hexagonPoints[1][0] + hexagonPoints[3][0])/2, (hexagonPoints[1][1] + hexagonPoints[3][1])/2 ]);
+    } else if (segment === 'second') {
+        // Segment von 60 bis 180 Grad
+        points.push([(hexagonPoints[1][0] + hexagonPoints[3][0])/2, (hexagonPoints[1][1] + hexagonPoints[3][1])/2 ]);
+        points.push(hexagonPoints[3]); 
+        points.push([(hexagonPoints[3][0] + hexagonPoints[5][0])/2, (hexagonPoints[3][1] + hexagonPoints[5][1])/2 ]);
+        points.push(hexagonPoints[5]); 
+        points.push([(hexagonPoints[5][0] + hexagonPoints[7][0])/2, (hexagonPoints[5][1] + hexagonPoints[7][1])/2 ]);
+          // 180 Grad
+    } else if (segment === 'third') {
+        // Segment von 180 bis 300 Grad
+        points.push([(hexagonPoints[5][0] + hexagonPoints[7][0])/2, (hexagonPoints[5][1] + hexagonPoints[7][1])/2 ]);
+        points.push(hexagonPoints[7]);
+        points.push([(hexagonPoints[7][0] + hexagonPoints[9][0])/2, (hexagonPoints[7][1] + hexagonPoints[9][1])/2 ]);
+        points.push(hexagonPoints[9]);  // 240 Grad
+        points.push([(hexagonPoints[9][0] + hexagonPoints[11][0])/2, (hexagonPoints[9][1] + hexagonPoints[11][1])/2]);
+    }
+
+    // Rückgabe als String, um sie als Polygonpunkte zu verwenden
+    return points.map(point => point.join(',')).join(' ');
+}
+
 // Funktion, um den Wert eines Hexagons (ID) für ein bestimmtes Datum zu holen
 function getValueForHexagon(id, date, dateData) {
     const hexData = dateData.results.find(d => d.name === id); // Finde das Hexagon mit der passenden ID
@@ -527,9 +550,9 @@ function updateHexagonColors(date1, date2, date3) {
     });
 
     // Erstelle eine Farbskala für die Hexagone (Weiß bis Blau)
-    const colorScale = d3.scaleLinear()
+    /*const colorScale = d3.scaleLinear()
         .domain([0, 1000]) // Wertebereich
-        .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau
+        .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau*/
 
     // Aktualisiere das erste Segment der Hexagon-Füllfarben basierend auf den Daten von Datum 1
     d3.selectAll(".hexagon-first")
