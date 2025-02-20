@@ -194,13 +194,16 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
 }
 
 function updateInfoBox(d, dates, values) {
+    const params = new URLSearchParams(window.location.search);
+    const randQ = params.get("randQ");
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
             <p><strong>${dates[0]} Wert:</strong> ${Math.round(values[0])}</p>
             <p><strong>${dates[1]} Wert:</strong> ${Math.round(values[1])}</p>
             <p><strong>${dates[2]} Wert:</strong> ${Math.round(values[2])}</p>
-            <p><strong>${window.location.href}</p> 
+            <p><strong>${window.location.href}</p>
+            <p><strong>${randQ}</p> 
         `);
 }
 
