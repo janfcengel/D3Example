@@ -200,7 +200,7 @@ function updateInfoBox(d, dates, values) {
             <p><strong>${dates[0]} Wert:</strong> ${Math.round(values[0])}</p>
             <p><strong>${dates[1]} Wert:</strong> ${Math.round(values[1])}</p>
             <p><strong>${dates[2]} Wert:</strong> ${Math.round(values[2])}</p>
-            <p><strong>${window.location.href} </p> 
+            <p><strong>${window.location.href}</p> 
         `);
 }
 
