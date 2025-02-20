@@ -47,7 +47,7 @@
                 window.location.href = targetUrl; // Automatische Weiterleitung
             } else {
                 console.error("Fehlende Parameter, bleibe auf dieser Seite.");
-                d3.select("body").append("p").text("Fehler: URL-Parameter fehlen.");
+                d3.select("body").append("p").text("Fehler:"+window.location.href + " URL-Parameter fehlen." + params.permutation + " " + params.questionNumber);
             }
         }
 
