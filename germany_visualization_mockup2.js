@@ -3,9 +3,11 @@ colorScale = d3.scaleLinear()
     .domain([0, 1000])  // Anpassen je nach Wertebereich
     .range(["white", "blue"]);
 
-barChartInital = 0
-dataFiles = [];
-datesGlobal = [];
+let barChartInital = 0
+let dataFiles = [];
+let datesGlobal = [];
+
+let selectedPolygonId = null; 
 // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
@@ -76,6 +78,7 @@ Promise.all([
         .enter()
         .append("path")
         .attr("d", path)
+        .attr("data-id", d => d.properties.id)
         .style("fill", "lightgray")
         .style("stroke", "black")
         .on("mouseover", function(event, d) {
@@ -94,8 +97,7 @@ Promise.all([
             const selectedDate1 = document.getElementById('datum1-select').value;
             const selectedDate2 = document.getElementById('datum2-select').value;
             const selectedDate3 = document.getElementById('datum3-select').value;
-            console.log(d)
-            console.log(d.properties.id)
+
             const data = {
                 data: d,
                 date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
@@ -105,6 +107,8 @@ Promise.all([
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
             };
+            selectedPolygonId = d.properties.id;
+            highlightSelectedPolygon(selectedPolygonId);
             updateInfoBox(data.data);
             updateBarChartForRegion(data);
         });
@@ -116,6 +120,7 @@ Promise.all([
         .enter()
         .append("path")
         .attr("d", path)
+        .attr("data-id", d => d.properties.id)
         .style("fill", "steelblue")
         .style("stroke", "black")
         .on("mouseover", function(event, d) {
@@ -144,6 +149,8 @@ Promise.all([
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
             };
+            selectedPolygonId = d.properties.id;
+            highlightSelectedPolygon(selectedPolygonId);
             updateInfoBox(data.data);
             updateBarChartForRegion(data);
         });
@@ -155,6 +162,7 @@ Promise.all([
         .enter()
         .append("path")
         .attr("d", path)
+        .attr("data-id", d => d.properties.id)
         .style("fill", "lightgreen")
         .style("stroke", "black")
         .on("mouseover", function(event, d) {
@@ -173,7 +181,6 @@ Promise.all([
             const selectedDate1 = document.getElementById('datum1-select').value;
             const selectedDate2 = document.getElementById('datum2-select').value;
             const selectedDate3 = document.getElementById('datum3-select').value;
-            console.log(d)
             const data = {
                 data: d,
                 date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
@@ -183,6 +190,8 @@ Promise.all([
                 selectedDate2: selectedDate2,
                 selectedDate3: selectedDate3,
             };
+            selectedPolygonId = d.properties.id;
+            highlightSelectedPolygon(selectedPolygonId);
             updateInfoBox(data.data);
             updateBarChartForRegion(data);
 
@@ -281,6 +290,21 @@ Promise.all([
        // Setze Legende initial
        updateLegend(overallMinValue, overallMaxValue);
        
+    function highlightSelectedPolygon(selectedId) {
+        // Entferne vorherige Hervorhebung
+        d3.selectAll(".polygon-selected").classed("polygon-selected", false)
+            .style("stroke", "black") // Standardfarbe zurücksetzen
+            .style("stroke-width", 1); // Standard-Stärke zurücksetzen
+    
+        // Falls ein Hexagon ausgewählt wurde, markiere es rot
+        if (selectedId !== null) {
+            d3.selectAll(`[data-id='${selectedId}']`)
+                .classed("polygon-selected", true)
+                .style("stroke", "red")
+                .style("stroke-width", 3);
+        }
+    }
+    
     // Funktion zur Aktualisierung der Polygonfarben im mouseout-Event
     function resetPolygonColors(d) {
         // Hole die aktuellen Werte aus den Dropdowns
@@ -305,7 +329,8 @@ Promise.all([
             d3.select(this).style("fill", colorScale(value)); // Aktualisiere die Farbe für Layer 3
         }
     }
-        function updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3) {
+
+    function updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3) {
             // Daten für die einzelnen Layer basierend auf den Dropdown-Auswahlen extrahieren
             const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum1)]
             const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum2)]
@@ -334,7 +359,7 @@ Promise.all([
                     const value = datum3Data.results.find(item => item.name === d.properties.RS)?.compartments.MildInfections || 0;
                     return colorScale(value);
                 });
-        }
+    }
 
     // Funktion zur Aktualisierung der Trennlinien und Bereiche
     function updateLinesAndAreas(newX, newY) {
@@ -489,7 +514,7 @@ Promise.all([
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d.value))
             .attr("fill", d => colorScale(d.value));
-        }   
+    }   
 
         function getDataFileByDate(date) {
             dataFile = null
