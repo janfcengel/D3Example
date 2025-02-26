@@ -11,6 +11,8 @@ let outerHexRadius = 16; // Größe für die äußere Umrandung (Standardwert)
 let xScale, yScale; 
 let nodes;
 let scaleFactor;
+
+let selectedHexagonId = null; 
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
 Promise.all([
     d3.json('landkreis_data.json'), // Landkreisdaten (Koordinaten und IDs)
@@ -332,6 +334,22 @@ function createNodeList(landkreisData) {
     });
 }
 
+function highlightSelectedHexagon(selectedId) {
+    // Entferne vorherige Hervorhebung
+    d3.selectAll(".hexagon-selected").classed("hexagon-selected", false)
+        .style("stroke", "black") // Standardfarbe zurücksetzen
+        .style("stroke-width", 1); // Standard-Stärke zurücksetzen
+
+    // Falls ein Hexagon ausgewählt wurde, markiere es rot
+    if (selectedId !== null) {
+        d3.selectAll(`[data-id='${selectedId}']`)
+            .classed("hexagon-selected", true)
+            .style("stroke", "red")
+            .style("stroke-width", 1);
+    }
+}
+
+
 // Funktion zur Initialisierung der Hexagon-Karte
 function initializeHexagonMap() {
     const svg = d3.select("#leftContainer svg");
@@ -355,6 +373,7 @@ function initializeHexagonMap() {
     .data(nodes)
     .enter().append("polygon")
     .attr("class", "hexagon-first")
+    .attr("data-id", d => d.id)  
     .attr("points", d => calculateThreeSegmentHexagonPoints(d.x, d.y, hexRadius, 'first')) // Erstes Drittel
     .style("fill", "lightgray")
     .style("stroke", "black")
@@ -377,7 +396,9 @@ function initializeHexagonMap() {
         const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
-
+        
+        selectedHexagonId = d.id;
+        highlightSelectedHexagon(selectedHexagonId);
         //Update InfoBox 
         updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
@@ -391,6 +412,7 @@ function initializeHexagonMap() {
     .data(nodes)
     .enter().append("polygon")
     .attr("class", "hexagon-second")
+    .attr("data-id", d => d.id)  
     .attr("points", d => calculateThreeSegmentHexagonPoints(d.x, d.y, hexRadius, 'second')) // Zweites Drittel
     .style("fill", "lightgray")
     .style("stroke", "black")
@@ -414,6 +436,8 @@ function initializeHexagonMap() {
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
+        selectedHexagonId = d.id;
+        highlightSelectedHexagon(selectedHexagonId);
         //Update InfoBox 
         updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
@@ -426,6 +450,7 @@ function initializeHexagonMap() {
     .data(nodes)
     .enter().append("polygon")
     .attr("class", "hexagon-third")
+    .attr("data-id", d => d.id)  
     .attr("points", d => calculateThreeSegmentHexagonPoints(d.x, d.y, hexRadius, 'third')) // Drittes Drittel
     .style("fill", "lightgray")
     .style("stroke", "black")
@@ -449,6 +474,8 @@ function initializeHexagonMap() {
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
 
+        selectedHexagonId = d.id;
+        highlightSelectedHexagon(selectedHexagonId);
         //Update InfoBox 
         updateInfoBox(d, [date1, date2, date3], [value1, value2, value3]);
         // Aktualisiere das Balkendiagramm basierend auf dem ersten Datum
