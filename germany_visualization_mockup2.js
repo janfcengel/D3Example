@@ -82,9 +82,8 @@ Promise.all([
         .style("fill", "lightgray")
         .style("stroke", "black")
         .on("mouseover", function(event, d) {
-            //d3.select(this).style("fill", "orange"); // Highlight beim Hover // Gerade Buggy
             tooltip.style("visibility", "visible") // Tooltip sichtbar machen
-                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
                 .style("top", (event.pageY - 10) + "px")
                 .style("left", (event.pageX + 10) + "px");
         })
@@ -126,7 +125,7 @@ Promise.all([
         .on("mouseover", function(event, d) {
             //d3.select(this).style("fill", "orange"); // Highlight beim Hover
             tooltip.style("visibility", "visible") // Tooltip sichtbar machen
-                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
                 .style("top", (event.pageY - 10) + "px")
                 .style("left", (event.pageX + 10) + "px");
         })
@@ -168,7 +167,7 @@ Promise.all([
         .on("mouseover", function(event, d) {
             //d3.select(this).style("fill", "orange"); // Highlight beim Hover
             tooltip.style("visibility", "visible") // Tooltip sichtbar machen
-                .html(`<strong>Region:</strong> ${d.properties.GEN}`) // GEN anzeigen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
                 .style("top", (event.pageY - 10) + "px")
                 .style("left", (event.pageX + 10) + "px");
         })

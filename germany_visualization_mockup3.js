@@ -25,6 +25,7 @@ Promise.all([
     ];
 
     let selectedPolygonId = null;
+    let tooltip;
 
     svgElements.forEach(({ svg, layer }) => {
         const mapLayer = svg.append("g").attr("class", layer);
@@ -71,8 +72,20 @@ Promise.all([
             .style("stroke", "black")
             .style("fill", "lightgray"); // Standardmäßige graue Füllung
 
+            // Tooltip erstellen
+        tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("background-color", "white")
+            .style("padding", "5px")
+            .style("border", "1px solid black")
+            .style("border-radius", "5px")
+            .style("visibility", "hidden"); // Standardmäßig unsichtbar
+
         // Füge das Klick-Event für jedes Polygon hinzu
         addPolygonClickEvent(mapLayer);
+        addPolygonMouseEvents(mapLayer);
     }
 
     // Funktion zum Hervorheben des ausgewählten Polygons
@@ -102,6 +115,20 @@ Promise.all([
             updateInfoBox(d.properties);  // Update InfoBox mit Polygon-Properties
             updateBarChart(d.properties, [selectedDate1, selectedDate2, selectedDate3]); 
         });
+    }
+
+    function addPolygonMouseEvents(mapLayer) {
+        mapLayer.selectAll("path")
+        .on("mouseover", function(event, d) {
+            tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+        })
+        // Aktualisiere den mouseout-Handler für Layer 1, 2 und 3:
+        .on("mouseout", function(event, d) {
+            tooltip.style("visibility", "hidden"); // Tooltip verstecken
+        })
     }
 
     function updateInfoBox(regionData) {

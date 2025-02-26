@@ -366,6 +366,18 @@ function initializeHexagonMap() {
         drawOuterHexagon(d, this);
         colorHexagonSides(d, getNodeNeighbours(d, nodes), this)   
     });
+
+    // Tooltip erstellen
+    tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "white")
+        .style("padding", "5px")
+        .style("border", "1px solid black")
+        .style("border-radius", "5px")
+        .style("visibility", "hidden"); // Standardmäßig unsichtbar
+
     // Zeichne das erste Drittel der Hexagone
     svg.append("g")
     .attr("class", "hexagons-first")
@@ -381,12 +393,15 @@ function initializeHexagonMap() {
     .on("mouseover", function(event, d) {
         // Hexagon hervorheben und Label sichtbar machen
         d3.select(this).style("stroke-width", 2).style("cursor", "pointer");
-        d3.select(`#label-${d.id}`).style("visibility", "visible"); // Label sichtbar machen
+        tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function(event, d) {
         // Hexagon zurücksetzen und Label verstecken
         d3.select(this).style("stroke-width", 1);
-        d3.select(`#label-${d.id}`).style("visibility", "hidden"); // Label verstecken
+        tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
         // Hole die Werte für das erste Datum aus den Dropdown-Daten
@@ -420,12 +435,15 @@ function initializeHexagonMap() {
     .on("mouseover", function(event, d) {
         // Hexagon hervorheben und Label sichtbar machen
         d3.select(this).style("stroke-width", 2).style("cursor", "pointer");
-        d3.select(`#label-${d.id}`).style("visibility", "visible"); // Label sichtbar machen
+        tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function(event, d) {
         // Hexagon zurücksetzen und Label verstecken
         d3.select(this).style("stroke-width", 1);
-        d3.select(`#label-${d.id}`).style("visibility", "hidden"); // Label verstecken
+        tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
         // Hole die Werte für das erste Datum aus den Dropdown-Daten
@@ -458,12 +476,15 @@ function initializeHexagonMap() {
     .on("mouseover", function(event, d) {
         // Hexagon hervorheben und Label sichtbar machen
         d3.select(this).style("stroke-width", 2).style("cursor", "pointer");
-        d3.select(`#label-${d.id}`).style("visibility", "visible"); // Label sichtbar machen
+        tooltip.style("visibility", "visible") // Tooltip sichtbar machen
+                .html(`${d.properties.GEN}`) // GEN anzeigen
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
     })
     .on("mouseout", function(event, d) {
         // Hexagon zurücksetzen und Label verstecken
         d3.select(this).style("stroke-width", 1);
-        d3.select(`#label-${d.id}`).style("visibility", "hidden"); // Label verstecken
+        tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
         // Hole die Werte für das erste Datum aus den Dropdown-Daten
