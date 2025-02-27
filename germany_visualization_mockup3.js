@@ -28,17 +28,34 @@ Promise.all([
     let selectedPolygonId = null;
     let tooltip;
 
+    // Gemeinsame Zoom-Funktion erstellen
+    const zoom = d3.zoom()
+        .scaleExtent([1, 8]) // Zoombereich von 1x bis 8x
+        .on("zoom", zoomed);
+
+        svgElements.forEach(({ svg }) => {
+            svg.call(zoom);
+        });
+
+    // Funktion zum synchronen Zoomen
+    function zoomed(event) {
+        svgElements.forEach(({ svg }) => {
+            svg.select("g").attr("transform", event.transform);
+        });
+    }
+
     svgElements.forEach(({ svg, layer }) => {
         const mapLayer = svg.append("g").attr("class", layer);
         createMap(svg, mapLayer);
         
-        const zoom = d3.zoom()
+        /*const zoom = d3.zoom()
             .scaleExtent([1, 8]) // Setzt den Zoombereich von 1x bis 8x
             .on("zoom", function(event) {
                 mapLayer.attr("transform", event.transform); // Zoom-Transformation auf die Kartenebene anwenden
             });
-
-        svg.call(zoom); // Zoom auf das SVG-Element anwenden
+          
+        //svg.call(zoom); // Zoom auf das SVG-Element anwenden*/
+        
     });
 
     function updateMap(svg, selectedDate, mapLayer, colorScale) {
@@ -271,7 +288,6 @@ Promise.all([
 
     function getMinMaxValues(date) {
         const dateData = getDataFileByDate(date);
-        console.log(dateData)
         const values = dateData.results.map(d => d.compartments.MildInfections);
         const minValue = Math.min(...values);
         const maxValue = Math.max(...values);

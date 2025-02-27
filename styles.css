@@ -241,7 +241,7 @@ body {
 #mockup2-info-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr ; 
+    grid-template-rows: minmax(50px, 1fr) minmax(50px, 1fr) ; 
     height: 100%;
 }
 
@@ -249,6 +249,7 @@ body {
     grid-column: 1;
     grid-row: 1;
     border: 1px solid green;
+    overflow: auto;
 }
 
 #mockup2-legend-container {
