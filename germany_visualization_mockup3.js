@@ -47,15 +47,6 @@ Promise.all([
     svgElements.forEach(({ svg, layer }) => {
         const mapLayer = svg.append("g").attr("class", layer);
         createMap(svg, mapLayer);
-        
-        /*const zoom = d3.zoom()
-            .scaleExtent([1, 8]) // Setzt den Zoombereich von 1x bis 8x
-            .on("zoom", function(event) {
-                mapLayer.attr("transform", event.transform); // Zoom-Transformation auf die Kartenebene anwenden
-            });
-          
-        //svg.call(zoom); // Zoom auf das SVG-Element anwenden*/
-        
     });
 
     function updateMap(svg, selectedDate, mapLayer, colorScale) {
