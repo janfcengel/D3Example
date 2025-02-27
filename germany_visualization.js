@@ -11,6 +11,7 @@ let outerHexRadius = 16; // Größe für die äußere Umrandung (Standardwert)
 let xScale, yScale; 
 let nodes;
 let scaleFactor;
+let date1, date2, date3
 
 let selectedHexagonId = null; 
 // Lade beide JSON-Dateien (Landkreisdaten und multivariate Daten)
@@ -30,40 +31,16 @@ Promise.all([
         dataFile.results = dataFile.results.filter(entry => entry.name !== "00000");
     });
 
-    // Fülle die Dropdowns mit den extrahierten Tagen
-    const date1Select = document.getElementById('date1Selection');
-    const date2Select = document.getElementById('date2Selection');
-    const date3Select = document.getElementById('date3Selection');
+    const elementDate1 = d3.select("#date1");
+    const elementDate2 = d3.select("#date2");
+    const elementDate3 = d3.select("#date3");
+    elementDate1.text(dates[0])
+    elementDate2.text(dates[1])
+    elementDate3.text(dates[2])
+    date1 = dates[0]
+    date2 = dates[1]
+    date3 = dates[2]
 
-    dates.forEach(date => {
-        const option1 = document.createElement('option');
-        option1.value = date;
-        option1.text = date;
-        date1Select.add(option1);
-    
-        const option2 = document.createElement('option');
-        option2.value = date;
-        option2.text = date;
-        date2Select.add(option2);
-    
-        const option3 = document.createElement('option');
-        option3.value = date;
-        option3.text = date;
-        date3Select.add(option3);
-    });
-
-        // Event-Listener für den Selektieren-Button
-    document.getElementById('selectButton').addEventListener('click', function () {
-        const date1 = document.getElementById('date1Selection').value;
-        const date2 = document.getElementById('date2Selection').value;
-        const date3 = document.getElementById('date3Selection').value;
-    
-        // Die Funktionen, die die Daten aktualisieren
-        updateLegend(date1, date2, date3, dataFiles);
-        updateHexagonColors(date1, date2, date3);
-        // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
-    });
-    
     // Initialisiere die Karte mit den Landkreisdaten
     chartContainerHeight = document.getElementById("chart-container").clientHeight;
     createNodeList(landkreisData)
@@ -98,8 +75,16 @@ Promise.all([
     
         d3.select("#leftContainer svg").selectAll("*").remove();
         initializeHexagonMap();
+        updateAll(date1, date2, date3);
     })
+    updateAll(date1, date2, date3);
 });
+
+function updateAll(date1, date2, date3) {
+    // Die Funktionen, die die Daten aktualisieren
+    updateLegend(date1, date2, date3, dataFiles);
+    updateHexagonColors(date1, date2, date3);
+}
 
 function getScaleFactor(landkreisData, containerWidth, containerHeight) {
     // Bestimme den min/max-Wert der X- und Y-Koordinaten in den Nodes
@@ -401,10 +386,6 @@ function initializeHexagonMap() {
         tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
-        // Hole die Werte für das erste Datum aus den Dropdown-Daten
-        const date1 = d3.select("#date1Selection").property("value");
-        const date2 = d3.select("#date2Selection").property("value");
-        const date3 = d3.select("#date3Selection").property("value");
         const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
@@ -443,10 +424,7 @@ function initializeHexagonMap() {
         tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
-        // Hole die Werte für das erste Datum aus den Dropdown-Daten
-        const date1 = d3.select("#date1Selection").property("value");
-        const date2 = d3.select("#date2Selection").property("value");
-        const date3 = d3.select("#date3Selection").property("value");
+
         const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
@@ -484,10 +462,7 @@ function initializeHexagonMap() {
         tooltip.style("visibility", "hidden"); // Tooltip verstecken
     })
     .on("click", function(event, d) {
-        // Hole die Werte für das erste Datum aus den Dropdown-Daten
-        const date1 = d3.select("#date1Selection").property("value");
-        const date2 = d3.select("#date2Selection").property("value");
-        const date3 = d3.select("#date3Selection").property("value");
+
         const value1 = getValueForHexagon(d.id, date1, getDataFileByDate(date1));
         const value2 = getValueForHexagon(d.id, date2, getDataFileByDate(date2));
         const value3 = getValueForHexagon(d.id, date3, getDataFileByDate(date3));
