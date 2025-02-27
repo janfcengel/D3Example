@@ -130,11 +130,9 @@ body {
 #bottomRightContainer {
     flex: 1; /* Nimmt die untere Hälfte der rechten Seite ein */
     background-color: #f0f0f0;
-    padding: 20px;
     box-sizing: border-box;
     border: 2px solid green; /* Sichtbare Umrandung */
     height: 100%;
-    
 }
 
 /* Flexbox für die grüne Box */
@@ -145,8 +143,6 @@ body {
 
 /* Linke Seite (Info und Legende) */
 #left-info {
-    flex: 1; /* Nimmt die linke Hälfte der grünen Box ein */
-    display: flex;
     flex-direction: column;
     height: 100%;
 }
@@ -154,20 +150,10 @@ body {
 /* Info-Text oben links */
 #info-content-box {
     flex: 1; /* Nimmt die obere Hälfte der linken Seite ein */
-    flex-grow: 0;
     padding: 10px;
     border: 1px solid blue;
     overflow: auto; /* Falls der Text zu groß ist */
 }
-
-/* Legende unten links 
-#legend-container {
-    flex: 1; /* Nimmt die untere Hälfte der linken Seite ein 
-    padding: 10px;
-    border: 1px solid green;
-    overflow: hidden; /* Falls die Legende zu groß ist 
-    height: 100%; /* Volle Höhe nutzen 
-}*/
 
 /* Rechte Seite (Balkendiagramm) */
 #chart-container {
@@ -206,24 +192,33 @@ body {
     height: 100%;
     border: 1px solid red;
 }
+#mockup2-leftContainer svg {
+    width: 100%;
+}
 
-#mockup2-rightContainer {
+/*#mockup2-rightContainer {
     display: flex;
-    flex-direction: column; /* Ordnet die beiden Container (oben und unten) untereinander */
+    flex-direction: column; /* Ordnet die beiden Container (oben und unten) untereinander 
+    width: 50%; /* Nimmt die rechte Hälfte des Bildschirms ein 
+    height: 100%; /* Volle Höhe 
+}*/
+#mockup2-rightContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten */
+    grid-template-rows: repeat(6, 1fr);/* 6 Reihen */
     width: 50%; /* Nimmt die rechte Hälfte des Bildschirms ein */
     height: 100%; /* Volle Höhe */
 }
 
-
 #mockup2-selectionContainer {
-    flex: 1;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
     background-color: #f9f9f9;
     border: 2px solid blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 10px;
 }
 
@@ -237,10 +232,38 @@ body {
 }
 
 #mockup2-infoContainer {
-    flex: 1; /* Nimmt den verbleibenden Platz ein */
+    grid-column: 1 / 3;
+    grid-row: 3 / 7;
     padding: 10;
     border: 1px solid green;
 }
+
+#mockup2-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr ; 
+    height: 100%;
+}
+
+#mockup2-info-content-box {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid green;
+}
+
+#mockup2-legend-container {
+    grid-column: 1;
+    grid-row: 2;
+    border: 1px solid green;
+}
+
+#mockup2-chart-container {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    border: 1px solid green;
+    padding: 20px;
+}
+
 
 /* Styles für Mockup 3 */
 .mockup3-container {
@@ -277,20 +300,16 @@ body {
 #mockup3-info-content-box {
     grid-column: 1;
     grid-row: 1;
-
 }
 
 #mockup3-legend-container {
     grid-column: 1;
     grid-row: 2;
-    align-self: stretch;
-    border: 1px solid green;
 }
 
 #chart-container {
     grid-column: 2;
     grid-row: 1 / 3;
-    align-self: stretch;
 }
 
 .mockup3-map select {

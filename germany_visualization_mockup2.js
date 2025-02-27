@@ -29,7 +29,7 @@ Promise.all([
     const availableWidth = mapContainer.clientWidth;
     const availableHeight = mapContainer.clientHeight;
 
-    barChartInital = document.getElementById("chart-container").clientHeight;
+    barChartInital = document.getElementById("mockup2-chart-container").clientHeight;
     console.log(barChartInital)
     // Definiere die Margins
     const margin = { top: 20, right: 30, bottom: 30, left: 40 };
@@ -421,7 +421,7 @@ Promise.all([
         const value2 = getValueForRegion(data.properties.RS, date2);
         const value3 = getValueForRegion(data.properties.RS, date3);
         // Zeige die Informationen im Info-Bereich an
-        d3.select("#info-content-box").html(`
+        d3.select("#mockup2-info-content-box").html(`
             <p><strong>Region:</strong> ${data.properties.GEN}</p>
             <p><strong>ID:</strong> ${data.properties.id}</p>
             <p><strong>${date1} Wert:</strong> ${value1}</p>
@@ -439,7 +439,7 @@ Promise.all([
 
     // Funktion zur Anzeige der Legende (farblich abgestufte Skala)
     function updateLegend(minValue, maxValue) {
-        const legendContainer = d3.select("#legend-container");
+        const legendContainer = d3.select("#mockup2-legend-container");
         legendContainer.selectAll("*").remove();
 
         // SVG für die Legende
@@ -485,28 +485,38 @@ Promise.all([
         const overallMinValue = Math.min(min1, min2, min3);
         const overallMaxValue = Math.max(max1, max2, max3);
         
-        console.log(chartData)
-        //const chartContainer = document.getElementById("chart-container");
-        const width = barChartInital - 40;
-        const height = barChartInital - 40;
+        const chartContainer = d3.select("#mockup2-chart-container");
+        chartContainer.selectAll("*").remove();
 
-        d3.select("#chart-container").selectAll("*").remove();
-        const svg = d3.select("#chart-container").append("svg")
-            .attr("width", width + 40)
-            .attr("height", height + 40)
-            .append("g")
-            .attr("transform", `translate(20,20)`);
-
+        const width = chartContainer.node().clientWidth - 80;
+        const height = chartContainer.node().clientHeight - 60;
+        
         // Skalen
-        const x = d3.scaleBand().domain(chartData.map(d => d.date)).range([0, width]).padding(0.2);
-        const y = d3.scaleLinear().domain([overallMinValue, overallMaxValue]).range([height, 0]);
+        const x = d3.scaleBand()
+            .domain(chartData.map(d => d.date))
+            .range([0, width])
+            .padding(0.2);
+        const y = d3.scaleLinear()
+            //.domain([overallMinValue, overallMaxValue])
+            .domain([0, d3.max(chartData, d => d.value)])
+            .range([height, 0]);
 
+
+        const svg = chartContainer.append("svg")
+            .attr("width", width + 80)
+            .attr("height", height + 60)
+            .append("g")
+            .attr("transform", `translate(40,20)`);
+
+        
         // X- und Y-Achsen
         svg.append("g").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
         svg.append("g").call(d3.axisLeft(y));
 
         // Balken
-        svg.selectAll(".bar").data(chartData).enter().append("rect")
+        svg.selectAll(".bar")
+            .data(chartData)
+            .enter().append("rect")
             .attr("class", "bar")
             .attr("x", d => x(d.date))
             .attr("y", d => y(d.value))
