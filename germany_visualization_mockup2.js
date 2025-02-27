@@ -512,7 +512,9 @@ Promise.all([
             .attr("y", d => y(d.value))
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d.value))
-            .attr("fill", d => colorScale(d.value));
+            .attr("fill", d => colorScale(d.value))
+            .attr("stroke", "black")  // **Schwarze Umrandung**
+            .attr("stroke-width", 1); // **Dicke der Umrandung**
     }   
 
         function getDataFileByDate(date) {

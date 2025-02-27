@@ -1,5 +1,5 @@
 
-dates = []
+let dates = [];
     // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
@@ -15,8 +15,9 @@ Promise.all([
         dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
         dataFile.results = dataFile.results.filter(entry => entry.name !== "00000");
     });
-
-   
+    const infoContainer = document.getElementById('mockup3-info-content-box');
+    const fixedHeight = infoContainer.clientHeight;
+    infoContainer.style.height = `${fixedHeight}px`;
     // SVGs und Zoom initialisieren
     const svgElements = [
         { svg: d3.select("#mockup3-top-left svg"), layer: "layer1" },
@@ -132,18 +133,15 @@ Promise.all([
     }
 
     function updateInfoBox(regionData) {
-        const infoContainer = document.getElementById('info-content-box');
+        const infoContainer = document.getElementById('mockup3-info-content-box');
         infoContainer.innerHTML = `
-            <h2>Region Informationen</h2>
-            <p><strong>GEN:</strong> ${regionData.GEN}</p>
-            <p><strong>RS:</strong> ${regionData.RS}</p>
-            <p><strong>BEZ:</strong> ${regionData.BEZ}</p>
-            <p><strong>ID:</strong> ${regionData.id}</p>
+            <h3>Informationen</h3>
+            <a><strong>GEN:</strong> ${regionData.GEN}</a>
         `;
     }
 
     function updateLegend(minValue, maxValue) {
-        const legendContainer = d3.select("#legend-container");
+        const legendContainer = d3.select("#mockup3-legend-container");
         legendContainer.selectAll("*").remove();
 
         const svgWidth = 80;
@@ -211,10 +209,11 @@ Promise.all([
             .attr("y", d => y(d.value))
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d.value))
-            .attr("fill", d => colorScale(d.value));
+            .attr("fill", d => colorScale(d.value))
+            .attr("stroke", "black")  // **Schwarze Umrandung**
+            .attr("stroke-width", 1); // **Dicke der Umrandung**
     }
 
-    //const dates = Object.keys(multivariateData);
     const datum1Select = document.getElementById('mockup3-datum1-select');
     const datum2Select = document.getElementById('mockup3-datum2-select');
     const datum3Select = document.getElementById('mockup3-datum3-select');

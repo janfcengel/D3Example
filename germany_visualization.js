@@ -192,7 +192,9 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
         .attr("y", d => y(d.value))
         .attr("width", Math.min(x.bandwidth(), maxBarWidth)) // Begrenze die Breite
         .attr("height", d => height - y(d.value))
-        .attr("fill", d => colorScale(d.value)); // Farbe basierend auf der Farbskala
+        .attr("fill", d => colorScale(d.value)) // Farbe basierend auf der Farbskala
+        .attr("stroke", "black")  // **Schwarze Umrandung**
+        .attr("stroke-width", 1); // **Dicke der Umrandung**
 }
 
 function updateInfoBox(d, dates, values) {
