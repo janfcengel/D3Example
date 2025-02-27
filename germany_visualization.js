@@ -180,9 +180,6 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
     svg.append("g")
         .call(d3.axisLeft(y));
 
-    // Feste maximale Balkenbreite (z.B. maximal 50 Pixel)
-    const maxBarWidth = 50;
-
     // Balken hinzufügen und die Breite begrenzen
     svg.selectAll(".bar")
         .data(chartData)
@@ -190,7 +187,7 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
         .attr("class", "bar")
         .attr("x", d => x(d.date))
         .attr("y", d => y(d.value))
-        .attr("width", Math.min(x.bandwidth(), maxBarWidth)) // Begrenze die Breite
+        .attr("width", x.bandwidth())
         .attr("height", d => height - y(d.value))
         .attr("fill", d => colorScale(d.value)) // Farbe basierend auf der Farbskala
         .attr("stroke", "black")  // **Schwarze Umrandung**

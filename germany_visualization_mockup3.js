@@ -180,7 +180,7 @@ Promise.all([
     }
 
     function updateBarChart(regionData, selectedDates) {
-        const chartContainer = d3.select("#chart-container");
+        const chartContainer = d3.select("#mockup3-chart-container");
         chartContainer.selectAll("*").remove();
 
         const data = selectedDates.map(date => ({

@@ -477,13 +477,13 @@ Promise.all([
             { date: data.selectedDate2, value: data.date3 }
         ];
 
-        const { minValue: min1, maxValue: max1 } = getMinMaxValues(data.selectedDate1);
-        const { minValue: min2, maxValue: max2 } = getMinMaxValues(data.selectedDate2);
-        const { minValue: min3, maxValue: max3 } = getMinMaxValues(data.selectedDate3);
+        //const { minValue: min1, maxValue: max1 } = getMinMaxValues(data.selectedDate1);
+        //const { minValue: min2, maxValue: max2 } = getMinMaxValues(data.selectedDate2);
+        //const { minValue: min3, maxValue: max3 } = getMinMaxValues(data.selectedDate3);
 
     // Finde den kleineren Min-Wert und den größeren Max-Wert
-        const overallMinValue = Math.min(min1, min2, min3);
-        const overallMaxValue = Math.max(max1, max2, max3);
+        //const overallMinValue = Math.min(min1, min2, min3);
+        //const overallMaxValue = Math.max(max1, max2, max3);
         
         const chartContainer = d3.select("#mockup2-chart-container");
         chartContainer.selectAll("*").remove();
