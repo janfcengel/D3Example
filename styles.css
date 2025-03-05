@@ -254,6 +254,7 @@ body {
 #mockup3-info-content-box {
     grid-column: 1;
     grid-row: 1;
+    padding: 10px;
 }
 
 #mockup3-legend-container {

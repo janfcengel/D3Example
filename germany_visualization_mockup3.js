@@ -150,9 +150,16 @@ Promise.all([
     function updateInfoBox(regionData) {
         const infoContainer = document.getElementById('mockup3-info-content-box');
         infoContainer.innerHTML = `
-            <h3>Informationen</h3>
             <a><strong>GEN:</strong> ${regionData.GEN}</a>
+            <p><strong>${dates[0]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date1)))}</p>
+            <p><strong>${dates[1]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date2)))}</p>
+            <p><strong>${dates[2]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date3)))}</p>
         `;
+    }
+
+    function getValueForPolygon(id, dateData) {
+        const hexData = dateData.results.find(d => d.name === id); // Finde das Hexagon mit der passenden ID
+        return hexData ? hexData.compartments.MildInfections : 'Keine Daten'; // Gib den Wert zurück, oder "Keine Daten", falls nicht gefunden
     }
 
     function updateLegend(minValue, maxValue) {
@@ -182,8 +189,8 @@ Promise.all([
             .attr("height", svgHeight - 40)
             .style("fill", "url(#legendGradient)");
 
-        legendSvg.append("text").attr("x", 40).attr("y", 15).text(`${maxValue}`);
-        legendSvg.append("text").attr("x", 40).attr("y", svgHeight - 20).text(`${minValue}`);
+        legendSvg.append("text").attr("x", 40).attr("y", 15).text(`${Math.round(maxValue)}`);
+        legendSvg.append("text").attr("x", 40).attr("y", svgHeight - 20).text(`${Math.round(minValue)}`);
     }
 
     function updateBarChart(regionData, selectedDates) {

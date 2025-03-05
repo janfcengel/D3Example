@@ -105,10 +105,6 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            //const selectedDate1 = document.getElementById('datum1-select').value;
-            //const selectedDate2 = document.getElementById('datum2-select').value;
-            //const selectedDate3 = document.getElementById('datum3-select').value;
-
             const data = {
                 data: d,
                 date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
@@ -147,10 +143,6 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            //const selectedDate1 = document.getElementById('datum1-select').value;
-            //const selectedDate2 = document.getElementById('datum2-select').value;
-            //const selectedDate3 = document.getElementById('datum3-select').value;
-
             const data = {
                 data: d,
                 date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
@@ -189,9 +181,6 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            //const selectedDate1 = document.getElementById('datum1-select').value;
-            //const selectedDate2 = document.getElementById('datum2-select').value;
-            //const selectedDate3 = document.getElementById('datum3-select').value;
             const data = {
                 data: d,
                 date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
@@ -250,32 +239,6 @@ Promise.all([
             })
         );
 
-        //const dates = Object.keys(multivariateData); // Extrahiere die Tage als Schlüssel aus der JSON-Datei
-
-        // Fülle die Dropdowns mit den extrahierten Tagen
-        /*const datum1Select = document.getElementById('datum1-select');
-        const datum2Select = document.getElementById('datum2-select');
-        const datum3Select = document.getElementById('datum3-select');
-    
-        datesGlobal.forEach(date => {
-            const option1 = document.createElement('option');
-            option1.value = date;
-            option1.text = date;
-            datum1Select.add(option1);
-    
-            const option2 = document.createElement('option');
-            option2.value = date;
-            option2.text = date;
-            datum2Select.add(option2);
-    
-            const option3 = document.createElement('option');
-            option3.value = date;
-            option3.text = date;
-            datum3Select.add(option3);
-        });
-        const { minValue: min1, maxValue: max1 } = getMinMaxValues(document.getElementById('datum1-select').value);
-        const { minValue: min2, maxValue: max2 } = getMinMaxValues(document.getElementById('datum2-select').value);
-        const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('datum3-select').value);*/
         const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1);
         const { minValue: min2, maxValue: max2 } = getMinMaxValues(date2);
         const { minValue: min3, maxValue: max3 } = getMinMaxValues(date3);
@@ -286,17 +249,7 @@ Promise.all([
         colorScale = d3.scaleLinear()
             .domain([overallMinValue, overallMaxValue])  // Anpassen je nach Wertebereich
             .range(["white", "blue"]);
-       /*document.getElementById('selectButton').addEventListener('click', function () {
-           const date1 = document.getElementById('datum1-select').value;
-           const date2 = document.getElementById('datum2-select').value;
-           const date3 = document.getElementById('datum3-select').value;
-       
-           // Die Funktionen, die die Daten aktualisieren
-           updateLegend(overallMinValue, overallMaxValue);
-           
-           updateLayerColors(date1, date2, date3);
-           // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
-       });*/
+
        updateAll(date1, date2, date3, overallMinValue, overallMaxValue);
        // Setze die Trennlinien und Bereiche initial
        updateLinesAndAreas(centerX, centerY);
@@ -326,11 +279,6 @@ Promise.all([
     
     // Funktion zur Aktualisierung der Polygonfarben im mouseout-Event
     function resetPolygonColors(d) {
-        // Hole die aktuellen Werte aus den Dropdowns
-        //const selectedDatum1 = datum1Select.value;
-        //const selectedDatum2 = datum2Select.value;
-        //const selectedDatum3 = datum3Select.value;
-
         // Daten für die Layer
         const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === date1)];
         const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === date2)];
@@ -435,10 +383,9 @@ Promise.all([
         // Zeige die Informationen im Info-Bereich an
         d3.select("#mockup2-info-content-box").html(`
             <p><strong>Region:</strong> ${data.properties.GEN}</p>
-            <p><strong>ID:</strong> ${data.properties.id}</p>
-            <p><strong>${date1} Wert:</strong> ${value1}</p>
-            <p><strong>${date2} Wert:</strong> ${value2}</p>
-            <p><strong>${date3} Wert:</strong> ${value3}</p>
+            <p><strong>${date1} Wert:</strong> ${Math.round(value1)}</p>
+            <p><strong>${date2} Wert:</strong> ${Math.round(value2)}</p>
+            <p><strong>${date3} Wert:</strong> ${Math.round(value3)}</p>
         `);
     }
 
@@ -477,8 +424,8 @@ Promise.all([
             .attr("transform", "translate(30,10)");
         
         // Legendenwerte
-        svg.append("text").attr("x", 60).attr("y", 20).text(maxValue);
-        svg.append("text").attr("x", 60).attr("y", 190).text(minValue);
+        svg.append("text").attr("x", 60).attr("y", 20).text(Math.round(maxValue));
+        svg.append("text").attr("x", 60).attr("y", 190).text(Math.round(minValue));
     }
 
 // Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
@@ -489,14 +436,8 @@ Promise.all([
             { date: data.selectedDate2, value: data.date3 }
         ];
 
-        //const { minValue: min1, maxValue: max1 } = getMinMaxValues(data.selectedDate1);
-        //const { minValue: min2, maxValue: max2 } = getMinMaxValues(data.selectedDate2);
-        //const { minValue: min3, maxValue: max3 } = getMinMaxValues(data.selectedDate3);
-
     // Finde den kleineren Min-Wert und den größeren Max-Wert
-        //const overallMinValue = Math.min(min1, min2, min3);
-        //const overallMaxValue = Math.max(max1, max2, max3);
-        
+    
         const chartContainer = d3.select("#mockup2-chart-container");
         chartContainer.selectAll("*").remove();
 
