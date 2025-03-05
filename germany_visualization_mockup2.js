@@ -6,6 +6,7 @@ colorScale = d3.scaleLinear()
 let barChartInital = 0
 let dataFiles = [];
 let datesGlobal = [];
+let date1, date2, date3
 
 let selectedPolygonId = null; 
 // Lade beide JSON-Dateien
@@ -25,6 +26,17 @@ Promise.all([
         dataFile.results = dataFile.results.filter(entry => entry.name !== "00000"); // Filter die Aufsummierung von Deutschland heraus
     });
     datesGlobal = rkiDates;
+    
+    const elementDate1 = d3.select("#date1");
+    const elementDate2 = d3.select("#date2");
+    const elementDate3 = d3.select("#date3");
+    elementDate1.text(datesGlobal[0])
+    elementDate2.text(datesGlobal[1])
+    elementDate3.text(datesGlobal[2])
+    date1 = datesGlobal[0]
+    date2 = datesGlobal[1]
+    date3 = datesGlobal[2]
+    
     const mapContainer = document.getElementById('mockup2-leftContainer');
     const availableWidth = mapContainer.clientWidth;
     const availableHeight = mapContainer.clientHeight;
@@ -93,18 +105,18 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            const selectedDate1 = document.getElementById('datum1-select').value;
-            const selectedDate2 = document.getElementById('datum2-select').value;
-            const selectedDate3 = document.getElementById('datum3-select').value;
+            //const selectedDate1 = document.getElementById('datum1-select').value;
+            //const selectedDate2 = document.getElementById('datum2-select').value;
+            //const selectedDate3 = document.getElementById('datum3-select').value;
 
             const data = {
                 data: d,
-                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                selectedDate1: selectedDate1,
-                selectedDate2: selectedDate2,
-                selectedDate3: selectedDate3,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === date2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === date3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                selectedDate1: date1,
+                selectedDate2: date2,
+                selectedDate3: date3,
             };
             selectedPolygonId = d.properties.id;
             highlightSelectedPolygon(selectedPolygonId);
@@ -135,18 +147,18 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            const selectedDate1 = document.getElementById('datum1-select').value;
-            const selectedDate2 = document.getElementById('datum2-select').value;
-            const selectedDate3 = document.getElementById('datum3-select').value;
+            //const selectedDate1 = document.getElementById('datum1-select').value;
+            //const selectedDate2 = document.getElementById('datum2-select').value;
+            //const selectedDate3 = document.getElementById('datum3-select').value;
 
             const data = {
                 data: d,
-                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                selectedDate1: selectedDate1,
-                selectedDate2: selectedDate2,
-                selectedDate3: selectedDate3,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === date2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === date3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                selectedDate1: date1,
+                selectedDate2: date2,
+                selectedDate3: date3,
             };
             selectedPolygonId = d.properties.id;
             highlightSelectedPolygon(selectedPolygonId);
@@ -177,17 +189,17 @@ Promise.all([
             resetPolygonColors.call(this, d); // Korrekt die Farbe auf Basis der Dropdowns wiederherstellen
         })
         .on("click", function(event, d) {
-            const selectedDate1 = document.getElementById('datum1-select').value;
-            const selectedDate2 = document.getElementById('datum2-select').value;
-            const selectedDate3 = document.getElementById('datum3-select').value;
+            //const selectedDate1 = document.getElementById('datum1-select').value;
+            //const selectedDate2 = document.getElementById('datum2-select').value;
+            //const selectedDate3 = document.getElementById('datum3-select').value;
             const data = {
                 data: d,
-                date1: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date2: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                date3: dataFiles[datesGlobal.findIndex(entry => entry === selectedDate3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
-                selectedDate1: selectedDate1,
-                selectedDate2: selectedDate2,
-                selectedDate3: selectedDate3,
+                date1: dataFiles[datesGlobal.findIndex(entry => entry === date1)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date2: dataFiles[datesGlobal.findIndex(entry => entry === date2)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                date3: dataFiles[datesGlobal.findIndex(entry => entry === date3)].results.find(x => x.name === d.properties.RS)?.compartments.MildInfections || 0,
+                selectedDate1: date1,
+                selectedDate2: date2,
+                selectedDate3: date3,
             };
             selectedPolygonId = d.properties.id;
             highlightSelectedPolygon(selectedPolygonId);
@@ -220,7 +232,7 @@ Promise.all([
         .attr("cx", centerX)
         .attr("cy", centerY)
         .attr("r", 10)
-        .attr("fill", "none")
+        .attr("fill", "transparent")
         .attr("stroke", "red") // Roter Rand
         .attr("stroke-width", 3)  // Dicke des Randes
         .attr("vector-effect", "non-scaling-stroke")
@@ -241,7 +253,7 @@ Promise.all([
         //const dates = Object.keys(multivariateData); // Extrahiere die Tage als Schlüssel aus der JSON-Datei
 
         // Fülle die Dropdowns mit den extrahierten Tagen
-        const datum1Select = document.getElementById('datum1-select');
+        /*const datum1Select = document.getElementById('datum1-select');
         const datum2Select = document.getElementById('datum2-select');
         const datum3Select = document.getElementById('datum3-select');
     
@@ -263,8 +275,10 @@ Promise.all([
         });
         const { minValue: min1, maxValue: max1 } = getMinMaxValues(document.getElementById('datum1-select').value);
         const { minValue: min2, maxValue: max2 } = getMinMaxValues(document.getElementById('datum2-select').value);
-        const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('datum3-select').value);
- 
+        const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('datum3-select').value);*/
+        const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1);
+        const { minValue: min2, maxValue: max2 } = getMinMaxValues(date2);
+        const { minValue: min3, maxValue: max3 } = getMinMaxValues(date3);
     // Finde den kleineren Min-Wert und den größeren Max-Wert
         const overallMinValue = Math.min(min1, min2, min3);
         const overallMaxValue = Math.max(max1, max2, max3);
@@ -272,7 +286,7 @@ Promise.all([
         colorScale = d3.scaleLinear()
             .domain([overallMinValue, overallMaxValue])  // Anpassen je nach Wertebereich
             .range(["white", "blue"]);
-       document.getElementById('selectButton').addEventListener('click', function () {
+       /*document.getElementById('selectButton').addEventListener('click', function () {
            const date1 = document.getElementById('datum1-select').value;
            const date2 = document.getElementById('datum2-select').value;
            const date3 = document.getElementById('datum3-select').value;
@@ -282,13 +296,19 @@ Promise.all([
            
            updateLayerColors(date1, date2, date3);
            // Falls nötig: updateBarChartForHexagon(...) anpassen, falls die Balkendiagramme auch aktualisiert werden sollen
-       });
-       
+       });*/
+       updateAll(date1, date2, date3, overallMinValue, overallMaxValue);
        // Setze die Trennlinien und Bereiche initial
        updateLinesAndAreas(centerX, centerY);
        // Setze Legende initial
-       updateLegend(overallMinValue, overallMaxValue);
+       //updateLegend(overallMinValue, overallMaxValue);
        
+    function updateAll(date1, date2, date3, overallMinValue, overallMaxValue) {
+        // Die Funktionen, die die Daten aktualisieren
+        updateLegend(overallMinValue, overallMaxValue);
+        updateLayerColors(date1, date2, date3);
+    }   
+
     function highlightSelectedPolygon(selectedId) {
         // Entferne vorherige Hervorhebung
         d3.selectAll(".polygon-selected").classed("polygon-selected", false)
@@ -307,14 +327,14 @@ Promise.all([
     // Funktion zur Aktualisierung der Polygonfarben im mouseout-Event
     function resetPolygonColors(d) {
         // Hole die aktuellen Werte aus den Dropdowns
-        const selectedDatum1 = datum1Select.value;
-        const selectedDatum2 = datum2Select.value;
-        const selectedDatum3 = datum3Select.value;
+        //const selectedDatum1 = datum1Select.value;
+        //const selectedDatum2 = datum2Select.value;
+        //const selectedDatum3 = datum3Select.value;
 
         // Daten für die Layer
-        const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum1)];
-        const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum2)];
-        const datum3Data = dataFiles[datesGlobal.findIndex(entry => entry === selectedDatum3)];
+        const datum1Data = dataFiles[datesGlobal.findIndex(entry => entry === date1)];
+        const datum2Data = dataFiles[datesGlobal.findIndex(entry => entry === date2)];
+        const datum3Data = dataFiles[datesGlobal.findIndex(entry => entry === date3)];
 
         // Überprüfe, zu welchem Layer das aktuelle Element gehört, und setze die Farbe basierend auf den ausgewählten Daten
         if (d3.select(this).classed('layer1')) {
@@ -386,10 +406,7 @@ Promise.all([
         // Aktualisiere die Clip-Pfade basierend auf der neuen Position
         updateClipPaths(centerX, centerY);
         // Aktualisiere die Farben der Layer erneut basierend auf den Dropdown-Auswahlen
-        const selectedDatum1 = datum1Select.value;
-        const selectedDatum2 = datum2Select.value;
-        const selectedDatum3 = datum3Select.value;
-        updateLayerColors(selectedDatum1, selectedDatum2, selectedDatum3); // Farben erneut anwenden
+        updateLayerColors(date1, date2, date3); // Farben erneut anwenden
     }
 
     // Funktion zur Aktualisierung der Clip-Pfade für die drei Layer
@@ -412,11 +429,6 @@ Promise.all([
 
     // Funktion zur Anzeige des Info-Textes
     function updateInfoBox(data) {
-        // Hole die Werte für das erste Datum aus den Dropdown-Daten
-        const date1 = d3.select("#datum1-select").property("value");
-        const date2 = d3.select("#datum2-select").property("value");
-        const date3 = d3.select("#datum3-select").property("value");
-        console.log(data)
         const value1 = getValueForRegion(data.properties.RS, date1);
         const value2 = getValueForRegion(data.properties.RS, date2);
         const value3 = getValueForRegion(data.properties.RS, date3);

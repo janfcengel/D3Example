@@ -202,6 +202,7 @@ body {
 #mockup2-info-content-box {
     grid-column: 1;
     grid-row: 1;
+    padding: 10px;
     border: 1px solid green;
     overflow: auto;
 }

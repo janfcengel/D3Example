@@ -1,5 +1,6 @@
 
 let dates = [];
+let date1, date2, date3
     // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
@@ -15,6 +16,17 @@ Promise.all([
         dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
         dataFile.results = dataFile.results.filter(entry => entry.name !== "00000");
     });
+
+    const elementDate1 = d3.select("#date1");
+    const elementDate2 = d3.select("#date2");
+    const elementDate3 = d3.select("#date3");
+    elementDate1.text(dates[0])
+    elementDate2.text(dates[1])
+    elementDate3.text(dates[2])
+    date1 = dates[0]
+    date2 = dates[1]
+    date3 = dates[2]
+
     const infoContainer = document.getElementById('mockup3-info-content-box');
     const fixedHeight = infoContainer.clientHeight;
     infoContainer.style.height = `${fixedHeight}px`;
@@ -115,14 +127,9 @@ Promise.all([
             // Aktualisiere die Hervorhebung in allen SVGs
             highlightSelectedPolygon(selectedPolygonId);
 
-            // Hole die aktuell ausgewählten Datumswerte aus den Dropdowns
-            const selectedDate1 = document.getElementById('mockup3-datum1-select').value;
-            const selectedDate2 = document.getElementById('mockup3-datum2-select').value;
-            const selectedDate3 = document.getElementById('mockup3-datum3-select').value;
-
             // Aktualisiere die Infobox und das Balkendiagramm mit den aktuellen Daten
             updateInfoBox(d.properties);  // Update InfoBox mit Polygon-Properties
-            updateBarChart(d.properties, [selectedDate1, selectedDate2, selectedDate3]); 
+            updateBarChart(d.properties, [date1, date2, date3]); 
         });
     }
 
@@ -222,22 +229,9 @@ Promise.all([
             .attr("stroke-width", 1); // **Dicke der Umrandung**
     }
 
-    const datum1Select = document.getElementById('mockup3-datum1-select');
-    const datum2Select = document.getElementById('mockup3-datum2-select');
-    const datum3Select = document.getElementById('mockup3-datum3-select');
-
-    dates.forEach(date => {
-        const option1 = new Option(date, date);
-        datum1Select.add(option1);
-        const option2 = new Option(date, date);
-        datum2Select.add(option2);
-        const option3 = new Option(date, date);
-        datum3Select.add(option3);
-    });
-
-    const { minValue: min1, maxValue: max1 } = getMinMaxValues(document.getElementById('mockup3-datum1-select').value);
-    const { minValue: min2, maxValue: max2 } = getMinMaxValues(document.getElementById('mockup3-datum2-select').value);
-    const { minValue: min3, maxValue: max3 } = getMinMaxValues(document.getElementById('mockup3-datum3-select').value);
+    const { minValue: min1, maxValue: max1 } = getMinMaxValues(date1);
+    const { minValue: min2, maxValue: max2 } = getMinMaxValues(date2);
+    const { minValue: min3, maxValue: max3 } = getMinMaxValues(date3);
  
     // Finde den kleineren Min-Wert und den größeren Max-Wert
     const overallMinValue = Math.min(min1, min2, min3);
@@ -248,21 +242,9 @@ Promise.all([
         .domain([overallMinValue, overallMaxValue]) // Beispielhafte Werte für min/max (anpassen je nach Daten)
         .range(["white", "blue"]);
 
-
-    datum1Select.addEventListener('change', function () {
-        const selectedDate = this.value;
-        updateMap(svgElements[0].svg, selectedDate, svgElements[0].svg.select(`.${svgElements[0].layer}`), colorScale);
-    });
-
-    datum2Select.addEventListener('change', function () {
-        const selectedDate = this.value;
-        updateMap(svgElements[1].svg, selectedDate, svgElements[1].svg.select(`.${svgElements[1].layer}`), colorScale);
-    });
-
-    datum3Select.addEventListener('change', function () {
-        const selectedDate = this.value;
-        updateMap(svgElements[2].svg, selectedDate, svgElements[2].svg.select(`.${svgElements[2].layer}`), colorScale);
-    });
+    updateMap(svgElements[0].svg, date1, svgElements[0].svg.select(`.${svgElements[0].layer}`), colorScale);
+    updateMap(svgElements[1].svg, date2, svgElements[1].svg.select(`.${svgElements[1].layer}`), colorScale);
+    updateMap(svgElements[2].svg, date3, svgElements[2].svg.select(`.${svgElements[2].layer}`), colorScale);
 
     updateLegend(overallMinValue, overallMaxValue);
 
