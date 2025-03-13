@@ -3,6 +3,8 @@ let colorScale = d3.scaleLinear()
     .domain([0, 1000]) // Wertebereich
     .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau
 
+const SHOW_BAR_CHART = false;
+
 let chartContainerHeight = 0;
 let dataFiles = [];
 
@@ -34,9 +36,9 @@ Promise.all([
     const elementDate1 = d3.select("#date1");
     const elementDate2 = d3.select("#date2");
     const elementDate3 = d3.select("#date3");
-    elementDate1.text(dates[0])
-    elementDate2.text(dates[1])
-    elementDate3.text(dates[2])
+    elementDate1.text(formatDate(dates[0]))
+    elementDate2.text(formatDate(dates[1]))
+    elementDate3.text(formatDate(dates[2]))
     date1 = dates[0]
     date2 = dates[1]
     date3 = dates[2]
@@ -116,6 +118,11 @@ function getDataFileByDate(date) {
 
 // Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
 function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
+
+    if(!SHOW_BAR_CHART)
+    {
+        return; 
+    }
     // Versuche, die Daten für das Hexagon basierend auf den Datenpunkten zu finden
     const date1Data = getDataFileByDate(date1) ? getDataFileByDate(date1).results.find(d => d.name === hexagonId) : null;
     const date2Data = getDataFileByDate(date2) ? getDataFileByDate(date2).results.find(d => d.name === hexagonId) : null;
@@ -147,7 +154,7 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
 
     // X-Skala für die Daten (Datum 1, Datum 2 und Datum 3)
     const x = d3.scaleBand()
-        .domain(chartData.map(d => d.date))
+        .domain(chartData.map(d => formatDate(d.date)))
         .range([0, width])
         .padding(0.2);
 
@@ -170,7 +177,7 @@ function updateBarChartForHexagon(hexagonId, date1, date2, date3) {
         .data(chartData)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", d => x(d.date))
+        .attr("x", d => x(formatDate(d.date)))
         .attr("y", d => y(d.value))
         .attr("width", x.bandwidth())
         .attr("height", d => height - y(d.value))
@@ -185,9 +192,9 @@ function updateInfoBox(d, dates, values) {
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
-            <p><strong>${dates[0]} Wert:</strong> ${Math.round(values[0])}</p>
-            <p><strong>${dates[1]} Wert:</strong> ${Math.round(values[1])}</p>
-            <p><strong>${dates[2]} Wert:</strong> ${Math.round(values[2])}</p>
+            <p><strong>${formatDate(dates[0])} Wert:</strong> ${Math.round(values[0])}</p>
+            <p><strong>${formatDate(dates[1])} Wert:</strong> ${Math.round(values[1])}</p>
+            <p><strong>${formatDate(dates[2])} Wert:</strong> ${Math.round(values[2])}</p>
         `);
 }
 
@@ -563,11 +570,6 @@ function updateHexagonColors(date1, date2, date3) {
         valueByIdDate3[d.name] = d.compartments.MildInfections; // Beispiel: ID 1 hat den Wert 400 für Datum 3
     });
 
-    // Erstelle eine Farbskala für die Hexagone (Weiß bis Blau)
-    /*const colorScale = d3.scaleLinear()
-        .domain([0, 1000]) // Wertebereich
-        .range(["white", "blue"]); // Farbverlauf von Weiß bis Blau*/
-
     // Aktualisiere das erste Segment der Hexagon-Füllfarben basierend auf den Daten von Datum 1
     d3.selectAll(".hexagon-first")
         .transition().duration(500)
@@ -668,7 +670,7 @@ function renderSingleHexagon(svgId, segment) {
         // Zeichne das Segment
         svg.append("polygon")
             .attr("points", points.map(point => point.join(",")).join(" "))
-            .style("fill", seg === segment ? "lightgray" : "none")
+            .style("fill", seg === segment ? "blue" : "white")
             .style("stroke", "black");
     });
 }
@@ -790,4 +792,9 @@ function drawOuterHexagon(d, hexgroupelement) {
             .style("stroke-width", 2)
             .attr("class", `side-${i}`);
     }
+}
+
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}.${month}.${year}`;
 }

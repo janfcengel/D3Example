@@ -1,6 +1,8 @@
 
 let dates = [];
 let date1, date2, date3
+
+const SHOW_BAR_CHART = false; 
     // Lade beide JSON-Dateien
 Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
@@ -20,9 +22,9 @@ Promise.all([
     const elementDate1 = d3.select("#date1");
     const elementDate2 = d3.select("#date2");
     const elementDate3 = d3.select("#date3");
-    elementDate1.text(dates[0])
-    elementDate2.text(dates[1])
-    elementDate3.text(dates[2])
+    elementDate1.text(formatDate(dates[0]))
+    elementDate2.text(formatDate(dates[1]))
+    elementDate3.text(formatDate(dates[2]))
     date1 = dates[0]
     date2 = dates[1]
     date3 = dates[2]
@@ -151,9 +153,9 @@ Promise.all([
         const infoContainer = document.getElementById('mockup3-info-content-box');
         infoContainer.innerHTML = `
             <a><strong>GEN:</strong> ${regionData.GEN}</a>
-            <p><strong>${dates[0]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date1)))}</p>
-            <p><strong>${dates[1]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date2)))}</p>
-            <p><strong>${dates[2]} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date3)))}</p>
+            <p><strong>${formatDate(dates[0])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date1)))}</p>
+            <p><strong>${formatDate(dates[1])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date2)))}</p>
+            <p><strong>${formatDate(dates[2])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date3)))}</p>
         `;
     }
 
@@ -194,6 +196,10 @@ Promise.all([
     }
 
     function updateBarChart(regionData, selectedDates) {
+        if(!SHOW_BAR_CHART)
+        {
+            return; 
+        }
         const chartContainer = d3.select("#mockup3-chart-container");
         chartContainer.selectAll("*").remove();
 
@@ -206,7 +212,7 @@ Promise.all([
         const height = chartContainer.node().clientHeight - 60;
 
         const x = d3.scaleBand()
-            .domain(data.map(d => d.date))
+            .domain(data.map(d => formatDate(d.date)))
             .range([0, width])
             .padding(0.2);
 
@@ -227,7 +233,7 @@ Promise.all([
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", d => x(d.date))
+            .attr("x", d => x(formatDate(d.date)))
             .attr("y", d => y(d.value))
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d.value))
@@ -272,5 +278,10 @@ Promise.all([
         const minValue = Math.min(...values);
         const maxValue = Math.max(...values);
         return { minValue, maxValue };
+    }
+    
+    function formatDate(dateString) {
+        const [year, month, day] = dateString.split("-");
+        return `${day}.${month}.${year}`;
     }
 });

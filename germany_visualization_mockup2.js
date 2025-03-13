@@ -3,6 +3,8 @@ colorScale = d3.scaleLinear()
     .domain([0, 1000])  // Anpassen je nach Wertebereich
     .range(["white", "blue"]);
 
+const SHOW_BAR_CHART = false; 
+
 let barChartInital = 0
 let dataFiles = [];
 let datesGlobal = [];
@@ -30,9 +32,9 @@ Promise.all([
     const elementDate1 = d3.select("#date1");
     const elementDate2 = d3.select("#date2");
     const elementDate3 = d3.select("#date3");
-    elementDate1.text(datesGlobal[0])
-    elementDate2.text(datesGlobal[1])
-    elementDate3.text(datesGlobal[2])
+    elementDate1.text(formatDate(datesGlobal[0]))
+    elementDate2.text(formatDate(datesGlobal[1]))
+    elementDate3.text(formatDate(datesGlobal[2]))
     date1 = datesGlobal[0]
     date2 = datesGlobal[1]
     date3 = datesGlobal[2]
@@ -383,9 +385,9 @@ Promise.all([
         // Zeige die Informationen im Info-Bereich an
         d3.select("#mockup2-info-content-box").html(`
             <p><strong>Region:</strong> ${data.properties.GEN}</p>
-            <p><strong>${date1} Wert:</strong> ${Math.round(value1)}</p>
-            <p><strong>${date2} Wert:</strong> ${Math.round(value2)}</p>
-            <p><strong>${date3} Wert:</strong> ${Math.round(value3)}</p>
+            <p><strong>${formatDate(date1)} Wert:</strong> ${Math.round(value1)}</p>
+            <p><strong>${formatDate(date2)} Wert:</strong> ${Math.round(value2)}</p>
+            <p><strong>${formatDate(date3)} Wert:</strong> ${Math.round(value3)}</p>
         `);
     }
 
@@ -430,6 +432,11 @@ Promise.all([
 
 // Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
     function updateBarChartForRegion(data) {
+        if(!SHOW_BAR_CHART)
+            {
+                return; 
+            }
+
         const chartData = [
             { date: data.selectedDate1, value: data.date1 },
             { date: data.selectedDate3, value: data.date2 },
@@ -446,7 +453,7 @@ Promise.all([
         
         // Skalen
         const x = d3.scaleBand()
-            .domain(chartData.map(d => d.date))
+            .domain(chartData.map(d => formatDate(d.date)))
             .range([0, width])
             .padding(0.2);
         const y = d3.scaleLinear()
@@ -471,7 +478,7 @@ Promise.all([
             .data(chartData)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", d => x(d.date))
+            .attr("x", d => x(formatDate(d.date)))
             .attr("y", d => y(d.value))
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d.value))
@@ -497,5 +504,11 @@ Promise.all([
             const minValue = Math.min(...values);
             const maxValue = Math.max(...values);
             return { minValue, maxValue };
+        }
+
+        
+        function formatDate(dateString) {
+            const [year, month, day] = dateString.split("-");
+            return `${day}.${month}.${year}`;
         }
 });
