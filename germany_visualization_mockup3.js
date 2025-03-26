@@ -1,4 +1,3 @@
-
 let dates = [];
 let date1, date2, date3
 
@@ -153,9 +152,7 @@ Promise.all([
         const infoContainer = document.getElementById('mockup3-info-content-box');
         infoContainer.innerHTML = `
             <a><strong>GEN:</strong> ${regionData.GEN}</a>
-            <p><strong>${formatDate(dates[0])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date1)))}</p>
-            <p><strong>${formatDate(dates[1])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date2)))}</p>
-            <p><strong>${formatDate(dates[2])} Wert:</strong> ${Math.round(getValueForPolygon(regionData.RS, getDataFileByDate(date3)))}</p>
+            <p><strong>Bundesland:</strong> ${getBundeslandName(regionData)}</p>
         `;
     }
 
@@ -284,4 +281,31 @@ Promise.all([
         const [year, month, day] = dateString.split("-");
         return `${day}.${month}.${year}`;
     }
+    
+    function getBundeslandName(d) {
+        const bundeslandMap = {
+            "01": "Schleswig-Holstein",
+            "02": "Hamburg",
+            "03": "Niedersachsen",
+            "04": "Bremen",
+            "05": "Nordrhein-Westfalen",
+            "06": "Hessen",
+            "07": "Rheinland-Pfalz",
+            "08": "Baden-Württemberg",
+            "09": "Bayern",
+            "10": "Saarland",
+            "11": "Berlin",
+            "12": "Brandenburg",
+            "13": "Mecklenburg-Vorpommern",
+            "14": "Sachsen",
+            "15": "Sachsen-Anhalt",
+            "16": "Thüringen"
+        };
+    
+        const rs = d.properties?.RS || d.RS || d.name || ""; // Fallback für verschiedene Formate
+        const key = rs.toString().substring(0, 2); // Extrahiere die ersten zwei Ziffern
+    
+        return bundeslandMap[key] || "Unbekanntes Bundesland";
+    }
+    
 });

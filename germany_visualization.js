@@ -192,9 +192,7 @@ function updateInfoBox(d, dates, values) {
         // Zeige die Informationen im Info-Bereich an
         d3.select("#info-content-box").html(`
             <p><strong>Region:</strong> ${d.properties.GEN}</p>
-            <p><strong>${formatDate(dates[0])} Wert:</strong> ${Math.round(values[0])}</p>
-            <p><strong>${formatDate(dates[1])} Wert:</strong> ${Math.round(values[1])}</p>
-            <p><strong>${formatDate(dates[2])} Wert:</strong> ${Math.round(values[2])}</p>
+            <p><strong>Bundesland:</strong> ${getBundeslandName(d)}</p>
         `);
 }
 
@@ -797,4 +795,29 @@ function drawOuterHexagon(d, hexgroupelement) {
 function formatDate(dateString) {
     const [year, month, day] = dateString.split("-");
     return `${day}.${month}.${year}`;
+}
+function getBundeslandName(d) {
+    const bundeslandMap = {
+        "01": "Schleswig-Holstein",
+        "02": "Hamburg",
+        "03": "Niedersachsen",
+        "04": "Bremen",
+        "05": "Nordrhein-Westfalen",
+        "06": "Hessen",
+        "07": "Rheinland-Pfalz",
+        "08": "Baden-Württemberg",
+        "09": "Bayern",
+        "10": "Saarland",
+        "11": "Berlin",
+        "12": "Brandenburg",
+        "13": "Mecklenburg-Vorpommern",
+        "14": "Sachsen",
+        "15": "Sachsen-Anhalt",
+        "16": "Thüringen"
+    };
+
+    const rs = d.properties?.RS || d.RS || d.name || ""; // Fallback für verschiedene Formate
+    const key = rs.toString().substring(0, 2); // Extrahiere die ersten zwei Ziffern
+
+    return bundeslandMap[key] || "Unbekanntes Bundesland";
 }

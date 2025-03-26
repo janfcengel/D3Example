@@ -1,3 +1,4 @@
+
 // Erstelle eine Farbskala für die Layer (z.B. von weiß bis blau)
 colorScale = d3.scaleLinear()
     .domain([0, 1000])  // Anpassen je nach Wertebereich
@@ -21,13 +22,13 @@ Promise.all([
 ]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
 //]).then(([geoData, multivariateData]) => {
 
-    dataFiles = [rki231207, rki231214, rki231221];
-    rkiDates = [];
+    let dataFiles = [rki231207, rki231214, rki231221];
+    let rkiDates = [];
     dataFiles.forEach(dataFile => {
         rkiDates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
         dataFile.results = dataFile.results.filter(entry => entry.name !== "00000"); // Filter die Aufsummierung von Deutschland heraus
     });
-    datesGlobal = rkiDates;
+    let datesGlobal = rkiDates;
     
     const elementDate1 = d3.select("#date1");
     const elementDate2 = d3.select("#date2");
@@ -385,9 +386,7 @@ Promise.all([
         // Zeige die Informationen im Info-Bereich an
         d3.select("#mockup2-info-content-box").html(`
             <p><strong>Region:</strong> ${data.properties.GEN}</p>
-            <p><strong>${formatDate(date1)} Wert:</strong> ${Math.round(value1)}</p>
-            <p><strong>${formatDate(date2)} Wert:</strong> ${Math.round(value2)}</p>
-            <p><strong>${formatDate(date3)} Wert:</strong> ${Math.round(value3)}</p>
+            <p><strong>Bundesland:</strong> ${getBundeslandName(data)}</p>
         `);
     }
 
@@ -511,4 +510,31 @@ Promise.all([
             const [year, month, day] = dateString.split("-");
             return `${day}.${month}.${year}`;
         }
+        
+        function getBundeslandName(d) {
+            const bundeslandMap = {
+                "01": "Schleswig-Holstein",
+                "02": "Hamburg",
+                "03": "Niedersachsen",
+                "04": "Bremen",
+                "05": "Nordrhein-Westfalen",
+                "06": "Hessen",
+                "07": "Rheinland-Pfalz",
+                "08": "Baden-Württemberg",
+                "09": "Bayern",
+                "10": "Saarland",
+                "11": "Berlin",
+                "12": "Brandenburg",
+                "13": "Mecklenburg-Vorpommern",
+                "14": "Sachsen",
+                "15": "Sachsen-Anhalt",
+                "16": "Thüringen"
+            };
+        
+            const rs = d.properties?.RS || d.RS || d.name || ""; // Fallback für verschiedene Formate
+            const key = rs.toString().substring(0, 2); // Extrahiere die ersten zwei Ziffern
+        
+            return bundeslandMap[key] || "Unbekanntes Bundesland";
+        }
+        
 });
