@@ -44,7 +44,7 @@
             if (params.questionNumber && params.permutation) {
                 targetUrl = getMockupForQuestion(params.permutation, params.questionNumber) || "mockup1.html"; // Fallback
                 console.log(targetUrl);
-                window.location.href = targetUrl; // Automatische Weiterleitung
+                window.location.href = targetUrl + "?questionNumber=" + params.questionNumber; // Automatische Weiterleitung
             } else {
                 console.error("Fehlende Parameter, bleibe auf dieser Seite.");
                 d3.select("body").append("p").text("Fehler:"+window.location.href + " URL-Parameter fehlen." + params.permutation + " " + params.questionNumber);

@@ -1,0 +1,2811 @@
+{
+  "results": [
+    {
+      "name": "01001",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 349.6585496962655
+      }
+    },
+    {
+      "name": "01002",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 331.301881828466
+      }
+    },
+    {
+      "name": "01003",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 346.02965239547825
+      }
+    },
+    {
+      "name": "01004",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 351.46308793220487
+      }
+    },
+    {
+      "name": "10041",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 373.63778063353124
+      }
+    },
+    {
+      "name": "10042",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 392.7414176550526
+      }
+    },
+    {
+      "name": "10043",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 383.12244327157316
+      }
+    },
+    {
+      "name": "10044",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 381.4491985617166
+      }
+    },
+    {
+      "name": "10045",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.61328838870173
+      }
+    },
+    {
+      "name": "10046",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 369.7472469265891
+      }
+    },
+    {
+      "name": "01051",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.58361684195614
+      }
+    },
+    {
+      "name": "01053",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 338.51059623732493
+      }
+    },
+    {
+      "name": "01054",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 366.9367377496093
+      }
+    },
+    {
+      "name": "01055",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 352.439513679178
+      }
+    },
+    {
+      "name": "01056",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 350.97501623935955
+      }
+    },
+    {
+      "name": "01057",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 351.10524518203044
+      }
+    },
+    {
+      "name": "01058",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 332.2646044325163
+      }
+    },
+    {
+      "name": "01059",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.6846890559715
+      }
+    },
+    {
+      "name": "01060",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 336.25593682294993
+      }
+    },
+    {
+      "name": "01061",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 347.30645068806587
+      }
+    },
+    {
+      "name": "01062",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 338.9676867881923
+      }
+    },
+    {
+      "name": "11000",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 812.8562235731886
+      }
+    },
+    {
+      "name": "12051",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 312.9562271280147
+      }
+    },
+    {
+      "name": "12052",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 339.15728043471347
+      }
+    },
+    {
+      "name": "12053",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 323.9767400507795
+      }
+    },
+    {
+      "name": "12054",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 327.66246825206713
+      }
+    },
+    {
+      "name": "12060",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 316.30031307055265
+      }
+    },
+    {
+      "name": "12061",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 333.22493792179694
+      }
+    },
+    {
+      "name": "12062",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 320.4536567986247
+      }
+    },
+    {
+      "name": "12063",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 313.8486142018857
+      }
+    },
+    {
+      "name": "12064",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 325.1763735460726
+      }
+    },
+    {
+      "name": "12065",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 314.5334753774114
+      }
+    },
+    {
+      "name": "12066",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 337.2070211924808
+      }
+    },
+    {
+      "name": "12067",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 334.16052448578967
+      }
+    },
+    {
+      "name": "12068",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 334.26008054249087
+      }
+    },
+    {
+      "name": "12069",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 350.338375550342
+      }
+    },
+    {
+      "name": "12070",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 327.2696579087131
+      }
+    },
+    {
+      "name": "12071",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 307.5664125853748
+      }
+    },
+    {
+      "name": "12072",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 310.8132167806017
+      }
+    },
+    {
+      "name": "12073",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 317.6413386735492
+      }
+    },
+    {
+      "name": "13003",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 382.716560251909
+      }
+    },
+    {
+      "name": "13004",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 365.0607259732309
+      }
+    },
+    {
+      "name": "13071",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 379.042700488396
+      }
+    },
+    {
+      "name": "13072",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 382.7234815135631
+      }
+    },
+    {
+      "name": "13073",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 374.7260920229859
+      }
+    },
+    {
+      "name": "13074",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 384.70347808884037
+      }
+    },
+    {
+      "name": "13075",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.7205156162702
+      }
+    },
+    {
+      "name": "13076",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 386.80924701738206
+      }
+    },
+    {
+      "name": "14511",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 287.8719677781106
+      }
+    },
+    {
+      "name": "14521",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 300.04793008069373
+      }
+    },
+    {
+      "name": "14522",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 285.18959667509046
+      }
+    },
+    {
+      "name": "14523",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 297.8553414655192
+      }
+    },
+    {
+      "name": "14524",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 305.23064137009254
+      }
+    },
+    {
+      "name": "14612",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 308.4769109802833
+      }
+    },
+    {
+      "name": "14625",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 334.88726065556074
+      }
+    },
+    {
+      "name": "14626",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 318.1520158253264
+      }
+    },
+    {
+      "name": "14627",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 301.1384687195773
+      }
+    },
+    {
+      "name": "14628",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 305.34361289590476
+      }
+    },
+    {
+      "name": "14713",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 305.8590923412831
+      }
+    },
+    {
+      "name": "14729",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 283.20594274156275
+      }
+    },
+    {
+      "name": "14730",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 317.18896918629554
+      }
+    },
+    {
+      "name": "15001",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 356.5399600935174
+      }
+    },
+    {
+      "name": "15002",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 340.2320238253901
+      }
+    },
+    {
+      "name": "15003",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 326.0060533348604
+      }
+    },
+    {
+      "name": "15081",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 347.36986812052527
+      }
+    },
+    {
+      "name": "15082",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 334.0251096108007
+      }
+    },
+    {
+      "name": "15083",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.83197379926423
+      }
+    },
+    {
+      "name": "15084",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 303.4541199057736
+      }
+    },
+    {
+      "name": "15085",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 368.3897618926178
+      }
+    },
+    {
+      "name": "15086",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 328.2120157378531
+      }
+    },
+    {
+      "name": "15087",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 338.5385994003881
+      }
+    },
+    {
+      "name": "15088",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 343.94309609684495
+      }
+    },
+    {
+      "name": "15089",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.9101827436423
+      }
+    },
+    {
+      "name": "15090",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 327.8292581663366
+      }
+    },
+    {
+      "name": "15091",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 356.80062074488814
+      }
+    },
+    {
+      "name": "16051",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 336.3651110126447
+      }
+    },
+    {
+      "name": "16052",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 346.4370535441493
+      }
+    },
+    {
+      "name": "16053",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 330.63848858049323
+      }
+    },
+    {
+      "name": "16054",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 312.0927821913807
+      }
+    },
+    {
+      "name": "16055",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 351.6436231609272
+      }
+    },
+    {
+      "name": "16061",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 332.09411771446105
+      }
+    },
+    {
+      "name": "16062",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 340.3883658279142
+      }
+    },
+    {
+      "name": "16063",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 326.95516816544085
+      }
+    },
+    {
+      "name": "16064",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 317.67435269834397
+      }
+    },
+    {
+      "name": "16065",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 318.0405758364143
+      }
+    },
+    {
+      "name": "16066",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 316.3552337246811
+      }
+    },
+    {
+      "name": "16067",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 309.7635874663504
+      }
+    },
+    {
+      "name": "16068",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 359.2358507779912
+      }
+    },
+    {
+      "name": "16069",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 317.5033086075353
+      }
+    },
+    {
+      "name": "16070",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 318.26984883506407
+      }
+    },
+    {
+      "name": "16071",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 320.7250735764238
+      }
+    },
+    {
+      "name": "16072",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 304.42895720215677
+      }
+    },
+    {
+      "name": "16073",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 322.882523341715
+      }
+    },
+    {
+      "name": "16074",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 354.109802289289
+      }
+    },
+    {
+      "name": "16075",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 346.7731635089041
+      }
+    },
+    {
+      "name": "16076",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 314.998824471293
+      }
+    },
+    {
+      "name": "16077",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 339.4696679721305
+      }
+    },
+    {
+      "name": "02000",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 768.1323468597626
+      }
+    },
+    {
+      "name": "03101",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 311.7933163960352
+      }
+    },
+    {
+      "name": "03102",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 319.3866149444913
+      }
+    },
+    {
+      "name": "03103",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 277.22434451980496
+      }
+    },
+    {
+      "name": "03151",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 312.1781677370455
+      }
+    },
+    {
+      "name": "03153",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 306.4289857372657
+      }
+    },
+    {
+      "name": "03154",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 335.3329854048197
+      }
+    },
+    {
+      "name": "03155",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 297.29743340238383
+      }
+    },
+    {
+      "name": "03157",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 298.14886106098726
+      }
+    },
+    {
+      "name": "03158",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 345.66737786819056
+      }
+    },
+    {
+      "name": "03159",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 319.8087706329051
+      }
+    },
+    {
+      "name": "03241",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 272.93968367264466
+      }
+    },
+    {
+      "name": "03251",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 314.7352346767677
+      }
+    },
+    {
+      "name": "03252",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 271.5525177963623
+      }
+    },
+    {
+      "name": "03254",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 325.6229842203916
+      }
+    },
+    {
+      "name": "03255",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 290.39979573793096
+      }
+    },
+    {
+      "name": "03256",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 311.70818271637273
+      }
+    },
+    {
+      "name": "03257",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 283.982516636326
+      }
+    },
+    {
+      "name": "03351",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 269.09416821495546
+      }
+    },
+    {
+      "name": "03352",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 254.45253921608486
+      }
+    },
+    {
+      "name": "03353",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 304.4088375770994
+      }
+    },
+    {
+      "name": "03354",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 294.6165430254173
+      }
+    },
+    {
+      "name": "03355",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 316.75935331539887
+      }
+    },
+    {
+      "name": "03356",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 294.3910356629546
+      }
+    },
+    {
+      "name": "03357",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 300.0789399943943
+      }
+    },
+    {
+      "name": "03358",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 281.59995657200136
+      }
+    },
+    {
+      "name": "03359",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 299.52471364544726
+      }
+    },
+    {
+      "name": "03360",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 302.30653180784793
+      }
+    },
+    {
+      "name": "03361",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 308.4397228487946
+      }
+    },
+    {
+      "name": "03401",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 262.4139019747049
+      }
+    },
+    {
+      "name": "03402",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 328.3486330300117
+      }
+    },
+    {
+      "name": "03403",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 305.5969783239095
+      }
+    },
+    {
+      "name": "03404",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 294.61582107894384
+      }
+    },
+    {
+      "name": "03405",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 311.825371369864
+      }
+    },
+    {
+      "name": "03451",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 304.8374095145959
+      }
+    },
+    {
+      "name": "03452",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 312.72105989670024
+      }
+    },
+    {
+      "name": "03453",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 276.3264798195542
+      }
+    },
+    {
+      "name": "03454",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 312.77503991726485
+      }
+    },
+    {
+      "name": "03455",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 269.50266318795025
+      }
+    },
+    {
+      "name": "03456",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 289.1053902528564
+      }
+    },
+    {
+      "name": "03457",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 314.22972216718154
+      }
+    },
+    {
+      "name": "03458",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 309.0185786993204
+      }
+    },
+    {
+      "name": "03459",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 307.4162970832951
+      }
+    },
+    {
+      "name": "03460",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 305.8677754421548
+      }
+    },
+    {
+      "name": "03461",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 306.506790475011
+      }
+    },
+    {
+      "name": "03462",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 303.02938052935036
+      }
+    },
+    {
+      "name": "04011",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 480.98748380798986
+      }
+    },
+    {
+      "name": "04012",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 468.0145561742622
+      }
+    },
+    {
+      "name": "05111",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 440.88844820290876
+      }
+    },
+    {
+      "name": "05112",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 407.57159448512465
+      }
+    },
+    {
+      "name": "05113",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 381.933794708005
+      }
+    },
+    {
+      "name": "05114",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 389.5645457529878
+      }
+    },
+    {
+      "name": "05116",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 388.15289126664993
+      }
+    },
+    {
+      "name": "05117",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 378.6298653081842
+      }
+    },
+    {
+      "name": "05119",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 376.9089801583932
+      }
+    },
+    {
+      "name": "05120",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 371.04774844260896
+      }
+    },
+    {
+      "name": "05122",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 405.231139068535
+      }
+    },
+    {
+      "name": "05124",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 397.24391692478855
+      }
+    },
+    {
+      "name": "05154",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 406.96836213388724
+      }
+    },
+    {
+      "name": "05158",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 446.0643563064985
+      }
+    },
+    {
+      "name": "05162",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 397.6603397287885
+      }
+    },
+    {
+      "name": "05166",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 390.62327551655204
+      }
+    },
+    {
+      "name": "05170",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.8244891059569
+      }
+    },
+    {
+      "name": "05314",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 434.2560283462885
+      }
+    },
+    {
+      "name": "05315",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 390.8862652499261
+      }
+    },
+    {
+      "name": "05316",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 413.87863969222866
+      }
+    },
+    {
+      "name": "05334",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 398.7515926780968
+      }
+    },
+    {
+      "name": "05358",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.5797919788496
+      }
+    },
+    {
+      "name": "05362",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 420.6453326934193
+      }
+    },
+    {
+      "name": "05366",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 342.8774419683054
+      }
+    },
+    {
+      "name": "05370",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 382.72867702335
+      }
+    },
+    {
+      "name": "05374",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 373.42935720783044
+      }
+    },
+    {
+      "name": "05378",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 411.7430945116493
+      }
+    },
+    {
+      "name": "05382",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 419.0579595429471
+      }
+    },
+    {
+      "name": "05512",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 420.4056414564384
+      }
+    },
+    {
+      "name": "05513",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 402.3311909037961
+      }
+    },
+    {
+      "name": "05515",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 379.0357824313798
+      }
+    },
+    {
+      "name": "05554",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 407.9321567119725
+      }
+    },
+    {
+      "name": "05558",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 443.6778737003577
+      }
+    },
+    {
+      "name": "05562",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 435.93285903740605
+      }
+    },
+    {
+      "name": "05566",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 413.53678368342855
+      }
+    },
+    {
+      "name": "05570",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.2722364390022
+      }
+    },
+    {
+      "name": "05711",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 412.8921386418213
+      }
+    },
+    {
+      "name": "05754",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 451.16446508082515
+      }
+    },
+    {
+      "name": "05758",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 404.0601830971622
+      }
+    },
+    {
+      "name": "05762",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 393.4446755971775
+      }
+    },
+    {
+      "name": "05766",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 371.9896294783263
+      }
+    },
+    {
+      "name": "05770",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 398.5158654716437
+      }
+    },
+    {
+      "name": "05774",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 409.2030074156585
+      }
+    },
+    {
+      "name": "05911",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 384.27832819647995
+      }
+    },
+    {
+      "name": "05913",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.2409075586011
+      }
+    },
+    {
+      "name": "05914",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 387.07919924547815
+      }
+    },
+    {
+      "name": "05915",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 405.16435388850476
+      }
+    },
+    {
+      "name": "05916",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 406.8872470601988
+      }
+    },
+    {
+      "name": "05954",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 408.6932432226569
+      }
+    },
+    {
+      "name": "05958",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 366.01265924955794
+      }
+    },
+    {
+      "name": "05962",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 393.49303186090873
+      }
+    },
+    {
+      "name": "05966",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 366.28662162663665
+      }
+    },
+    {
+      "name": "05970",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 436.47726612736994
+      }
+    },
+    {
+      "name": "05974",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 400.90627419422975
+      }
+    },
+    {
+      "name": "05978",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 433.4649332174962
+      }
+    },
+    {
+      "name": "06411",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.51783509169513
+      }
+    },
+    {
+      "name": "06412",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 298.5502020390966
+      }
+    },
+    {
+      "name": "06413",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 338.46589006665425
+      }
+    },
+    {
+      "name": "06414",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 368.0844807343795
+      }
+    },
+    {
+      "name": "06431",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 350.59469504171886
+      }
+    },
+    {
+      "name": "06432",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 379.2533278092477
+      }
+    },
+    {
+      "name": "06433",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 380.27730549888213
+      }
+    },
+    {
+      "name": "06434",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 339.4372875535217
+      }
+    },
+    {
+      "name": "06435",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 321.1349999362367
+      }
+    },
+    {
+      "name": "06436",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 358.72866097743463
+      }
+    },
+    {
+      "name": "06437",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 357.5775466427588
+      }
+    },
+    {
+      "name": "06438",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 374.6260859511113
+      }
+    },
+    {
+      "name": "06439",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 330.16551868261195
+      }
+    },
+    {
+      "name": "06440",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 314.0396091235151
+      }
+    },
+    {
+      "name": "06531",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 361.3424549052816
+      }
+    },
+    {
+      "name": "06532",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 360.1324845876242
+      }
+    },
+    {
+      "name": "06533",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 363.63309131064784
+      }
+    },
+    {
+      "name": "06534",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 356.6718149546537
+      }
+    },
+    {
+      "name": "06535",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 324.6237719983035
+      }
+    },
+    {
+      "name": "06611",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 333.67719260275777
+      }
+    },
+    {
+      "name": "06631",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 327.3119845699079
+      }
+    },
+    {
+      "name": "06632",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 328.2578267817291
+      }
+    },
+    {
+      "name": "06633",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 345.50082192835356
+      }
+    },
+    {
+      "name": "06634",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 334.5132163695744
+      }
+    },
+    {
+      "name": "06635",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 340.1476007930181
+      }
+    },
+    {
+      "name": "06636",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 321.488134096588
+      }
+    },
+    {
+      "name": "07111",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 406.3873992420556
+      }
+    },
+    {
+      "name": "07131",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 410.63900604860265
+      }
+    },
+    {
+      "name": "07132",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 371.7406050859198
+      }
+    },
+    {
+      "name": "07133",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 388.55562355360803
+      }
+    },
+    {
+      "name": "07134",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 389.37763224359935
+      }
+    },
+    {
+      "name": "07135",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 376.59296225345867
+      }
+    },
+    {
+      "name": "07137",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 387.1532412009744
+      }
+    },
+    {
+      "name": "07138",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 373.0569457813362
+      }
+    },
+    {
+      "name": "07140",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 389.76906159468615
+      }
+    },
+    {
+      "name": "07141",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 400.82905461327425
+      }
+    },
+    {
+      "name": "07143",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 370.4251502090991
+      }
+    },
+    {
+      "name": "07211",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 373.9001185795013
+      }
+    },
+    {
+      "name": "07231",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.4024426415467
+      }
+    },
+    {
+      "name": "07232",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 398.4327451007149
+      }
+    },
+    {
+      "name": "07233",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 384.6378542862055
+      }
+    },
+    {
+      "name": "07235",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 389.8102506213968
+      }
+    },
+    {
+      "name": "07311",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.077691566615
+      }
+    },
+    {
+      "name": "07312",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 383.26914977741905
+      }
+    },
+    {
+      "name": "07313",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 396.6605838000871
+      }
+    },
+    {
+      "name": "07314",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 395.8694392306229
+      }
+    },
+    {
+      "name": "07315",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 424.9334326854588
+      }
+    },
+    {
+      "name": "07316",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 384.99617810857177
+      }
+    },
+    {
+      "name": "07317",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 394.52047273578154
+      }
+    },
+    {
+      "name": "07318",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 397.02541979114653
+      }
+    },
+    {
+      "name": "07319",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 393.43898412381725
+      }
+    },
+    {
+      "name": "07320",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 368.61838458379
+      }
+    },
+    {
+      "name": "07331",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 383.96796990282775
+      }
+    },
+    {
+      "name": "07332",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 386.4863312519474
+      }
+    },
+    {
+      "name": "07333",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 368.4215220350838
+      }
+    },
+    {
+      "name": "07334",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 393.47987838667905
+      }
+    },
+    {
+      "name": "07335",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 375.2030011612087
+      }
+    },
+    {
+      "name": "07336",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 391.21812529816305
+      }
+    },
+    {
+      "name": "07337",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 384.94453088261474
+      }
+    },
+    {
+      "name": "07338",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 375.053585336265
+      }
+    },
+    {
+      "name": "07339",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 399.95963069656676
+      }
+    },
+    {
+      "name": "07340",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 380.7476332109051
+      }
+    },
+    {
+      "name": "08111",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 487.12362893094183
+      }
+    },
+    {
+      "name": "08115",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 412.7424852581825
+      }
+    },
+    {
+      "name": "08116",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 426.7150699061622
+      }
+    },
+    {
+      "name": "08117",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 402.8124411778706
+      }
+    },
+    {
+      "name": "08118",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 518.0272833676214
+      }
+    },
+    {
+      "name": "08119",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 449.3563052054826
+      }
+    },
+    {
+      "name": "08121",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 442.41095082229117
+      }
+    },
+    {
+      "name": "08125",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 458.2790497176097
+      }
+    },
+    {
+      "name": "08126",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 485.21976820044074
+      }
+    },
+    {
+      "name": "08127",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 477.4142138103283
+      }
+    },
+    {
+      "name": "08128",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 468.53832480193415
+      }
+    },
+    {
+      "name": "08135",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 446.34329360957094
+      }
+    },
+    {
+      "name": "08136",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 487.38745935621836
+      }
+    },
+    {
+      "name": "08211",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 409.38771178061705
+      }
+    },
+    {
+      "name": "08212",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 465.03324362004673
+      }
+    },
+    {
+      "name": "08215",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 458.89317294288037
+      }
+    },
+    {
+      "name": "08216",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 480.89665760204065
+      }
+    },
+    {
+      "name": "08221",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 456.9378554325341
+      }
+    },
+    {
+      "name": "08222",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 456.77224926655305
+      }
+    },
+    {
+      "name": "08225",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 463.07390723415745
+      }
+    },
+    {
+      "name": "08226",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 417.76592310265795
+      }
+    },
+    {
+      "name": "08231",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 446.66676421160025
+      }
+    },
+    {
+      "name": "08235",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 387.55134515432604
+      }
+    },
+    {
+      "name": "08236",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 487.0559684577686
+      }
+    },
+    {
+      "name": "08237",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 444.80000055164
+      }
+    },
+    {
+      "name": "08311",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 468.58331967807885
+      }
+    },
+    {
+      "name": "08315",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 463.53490885406376
+      }
+    },
+    {
+      "name": "08316",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 451.7993696781601
+      }
+    },
+    {
+      "name": "08317",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 449.9893881914483
+      }
+    },
+    {
+      "name": "08325",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 461.3709950803727
+      }
+    },
+    {
+      "name": "08326",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 428.38190656526467
+      }
+    },
+    {
+      "name": "08327",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 494.5147716558427
+      }
+    },
+    {
+      "name": "08335",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.9340066359635
+      }
+    },
+    {
+      "name": "08336",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 430.7769468749501
+      }
+    },
+    {
+      "name": "08337",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 397.30995785319493
+      }
+    },
+    {
+      "name": "08415",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 452.2652698689936
+      }
+    },
+    {
+      "name": "08416",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.6007946750589
+      }
+    },
+    {
+      "name": "08417",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 424.82460287266196
+      }
+    },
+    {
+      "name": "08421",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 441.3343506536731
+      }
+    },
+    {
+      "name": "08425",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 475.1683626899552
+      }
+    },
+    {
+      "name": "08426",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 464.5393206039526
+      }
+    },
+    {
+      "name": "08435",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 401.52841012100777
+      }
+    },
+    {
+      "name": "08436",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 456.7545637871301
+      }
+    },
+    {
+      "name": "08437",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 401.47866087304897
+      }
+    },
+    {
+      "name": "09161",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 415.88065851616096
+      }
+    },
+    {
+      "name": "09162",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 442.9156768255713
+      }
+    },
+    {
+      "name": "09163",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 438.8255927735529
+      }
+    },
+    {
+      "name": "09171",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.67357678153314
+      }
+    },
+    {
+      "name": "09172",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 453.6342605008591
+      }
+    },
+    {
+      "name": "09173",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 487.4435099395422
+      }
+    },
+    {
+      "name": "09174",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 423.624259012189
+      }
+    },
+    {
+      "name": "09175",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.16755510927413
+      }
+    },
+    {
+      "name": "09176",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 424.88921192155567
+      }
+    },
+    {
+      "name": "09177",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 474.7102538504438
+      }
+    },
+    {
+      "name": "09178",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 444.2460560913345
+      }
+    },
+    {
+      "name": "09179",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 458.75378036816994
+      }
+    },
+    {
+      "name": "09180",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 405.2582769274332
+      }
+    },
+    {
+      "name": "09181",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 402.78831865162107
+      }
+    },
+    {
+      "name": "09182",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 410.7275526212075
+      }
+    },
+    {
+      "name": "09183",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 436.5690470830829
+      }
+    },
+    {
+      "name": "09184",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 439.2783382720724
+      }
+    },
+    {
+      "name": "09185",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 425.21537233281276
+      }
+    },
+    {
+      "name": "09186",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 416.0347547955588
+      }
+    },
+    {
+      "name": "09187",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 477.9216424309994
+      }
+    },
+    {
+      "name": "09188",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 407.3742766380683
+      }
+    },
+    {
+      "name": "09189",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 467.9873487395135
+      }
+    },
+    {
+      "name": "09190",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 488.55177541186185
+      }
+    },
+    {
+      "name": "09261",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 416.5915120316615
+      }
+    },
+    {
+      "name": "09262",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 403.85339138443913
+      }
+    },
+    {
+      "name": "09263",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 447.7539943494265
+      }
+    },
+    {
+      "name": "09271",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 434.52105851503876
+      }
+    },
+    {
+      "name": "09272",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 398.53695591912395
+      }
+    },
+    {
+      "name": "09273",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.27403930643004
+      }
+    },
+    {
+      "name": "09274",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 432.1959362585316
+      }
+    },
+    {
+      "name": "09275",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 470.4703064458429
+      }
+    },
+    {
+      "name": "09276",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 422.1055366467778
+      }
+    },
+    {
+      "name": "09277",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 446.024764859733
+      }
+    },
+    {
+      "name": "09278",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 425.1009941066424
+      }
+    },
+    {
+      "name": "09279",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 427.1091564957643
+      }
+    },
+    {
+      "name": "09361",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 436.914211478973
+      }
+    },
+    {
+      "name": "09362",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 435.190954144357
+      }
+    },
+    {
+      "name": "09363",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 413.48752616457443
+      }
+    },
+    {
+      "name": "09371",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.8765819218675
+      }
+    },
+    {
+      "name": "09372",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 412.4116523615833
+      }
+    },
+    {
+      "name": "09373",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 406.20661219742226
+      }
+    },
+    {
+      "name": "09374",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 417.11472556387474
+      }
+    },
+    {
+      "name": "09375",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 455.2502449195722
+      }
+    },
+    {
+      "name": "09376",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 411.86440622316746
+      }
+    },
+    {
+      "name": "09377",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 416.56101528708086
+      }
+    },
+    {
+      "name": "09461",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 447.45193550426234
+      }
+    },
+    {
+      "name": "09462",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 470.6754677090274
+      }
+    },
+    {
+      "name": "09463",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 413.5207848495441
+      }
+    },
+    {
+      "name": "09464",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 454.1457481216944
+      }
+    },
+    {
+      "name": "09471",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 447.2200481990484
+      }
+    },
+    {
+      "name": "09472",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 452.0928634558212
+      }
+    },
+    {
+      "name": "09473",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 442.80037900024473
+      }
+    },
+    {
+      "name": "09474",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 440.2168697083258
+      }
+    },
+    {
+      "name": "09475",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 423.6863837188862
+      }
+    },
+    {
+      "name": "09476",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 396.62380367566817
+      }
+    },
+    {
+      "name": "09477",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 417.8631556134869
+      }
+    },
+    {
+      "name": "09478",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 449.84849789509946
+      }
+    },
+    {
+      "name": "09479",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 470.2221059866994
+      }
+    },
+    {
+      "name": "09561",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 401.2397330791504
+      }
+    },
+    {
+      "name": "09562",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 422.0491718625317
+      }
+    },
+    {
+      "name": "09563",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 460.8044268240672
+      }
+    },
+    {
+      "name": "09564",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 403.4367252751279
+      }
+    },
+    {
+      "name": "09565",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 425.9323403516685
+      }
+    },
+    {
+      "name": "09571",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.65409661725243
+      }
+    },
+    {
+      "name": "09572",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 476.92324858145537
+      }
+    },
+    {
+      "name": "09573",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 429.016942789405
+      }
+    },
+    {
+      "name": "09574",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 424.02980643211697
+      }
+    },
+    {
+      "name": "09575",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 453.7441839019978
+      }
+    },
+    {
+      "name": "09576",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 374.1169950715465
+      }
+    },
+    {
+      "name": "09577",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 406.22031049003243
+      }
+    },
+    {
+      "name": "09661",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 424.7939208903775
+      }
+    },
+    {
+      "name": "09662",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.91949097782947
+      }
+    },
+    {
+      "name": "09663",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.32153478500476
+      }
+    },
+    {
+      "name": "09671",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 442.08302393345747
+      }
+    },
+    {
+      "name": "09672",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 440.8066550191624
+      }
+    },
+    {
+      "name": "09673",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 392.630500840469
+      }
+    },
+    {
+      "name": "09674",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 447.1376745363807
+      }
+    },
+    {
+      "name": "09675",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 420.64404442706217
+      }
+    },
+    {
+      "name": "09676",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 445.38241673420555
+      }
+    },
+    {
+      "name": "09677",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 408.37196390000895
+      }
+    },
+    {
+      "name": "09678",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.0424682604909
+      }
+    },
+    {
+      "name": "09679",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 437.0831299374234
+      }
+    },
+    {
+      "name": "09761",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 448.86360547230584
+      }
+    },
+    {
+      "name": "09762",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 423.30813386828856
+      }
+    },
+    {
+      "name": "09763",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 376.9775091659221
+      }
+    },
+    {
+      "name": "09764",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 462.3045981685447
+      }
+    },
+    {
+      "name": "09771",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 426.39896468820774
+      }
+    },
+    {
+      "name": "09772",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 434.2795412432215
+      }
+    },
+    {
+      "name": "09773",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 440.74482032884157
+      }
+    },
+    {
+      "name": "09774",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 410.1819858800932
+      }
+    },
+    {
+      "name": "09775",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 429.7003842159638
+      }
+    },
+    {
+      "name": "09776",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 401.68745783215473
+      }
+    },
+    {
+      "name": "09777",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 431.8342107814495
+      }
+    },
+    {
+      "name": "09778",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 413.58142284026377
+      }
+    },
+    {
+      "name": "09779",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 400.6943326829719
+      }
+    },
+    {
+      "name": "09780",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 419.6668374262388
+      }
+    },
+    {
+      "name": "00000",
+      "day": "2020-01-27",
+      "compartments": {
+        "MildInfections": 240.43092263410475
+      }
+    }
+  ]
+}

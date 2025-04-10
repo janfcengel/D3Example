@@ -3,15 +3,52 @@ let date1, date2, date3
 
 const SHOW_BAR_CHART = false; 
     // Lade beide JSON-Dateien
+
+    function getQuestionNumberFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('questionNumber'); // Gibt z. B. "1", "2" oder "3" zurück
+    }
+    
+    const questionNumber = getQuestionNumberFromUrl(); // z. B. "2"
+    
+    // Du definierst hier die Pfade je nach Task
+    const dataConfig = {
+        "1": [
+            "rki_data/rki_custom_2020-01-27_qN1.json",
+            "rki_data/rki_custom_2020-04-27_qN1.json",
+            "rki_data/rki_custom_2020-07-27_qN1.json"
+        ],
+        "2": [
+            "rki_data/rki_custom_2024-07-09_qN2.json",
+            "rki_data/rki_custom_2024-07-16_qN2.json",
+            "rki_data/rki_custom_2024-07-23_qN2.json"
+        ],
+        "3": [
+            "rki_data/rki_custom_2023-12-07_qN3.json",
+            "rki_data/rki_custom_2023-12-14_qN3.json",
+            "rki_data/rki_custom_2023-12-21_qN3.json"
+        ]
+    };
+    
+    // Fallback für ungültige oder fehlende Task-Parameter
+    const selectedFiles = dataConfig[questionNumber] || dataConfig["1"];
+    
+    
 Promise.all([
+    d3.json('lk_germany_reduced.geojson'),
+    d3.json(selectedFiles[0]),
+    d3.json(selectedFiles[1]),
+    d3.json(selectedFiles[2])
+]).then(([geoData, rki_data_1, rki_data_2, rki_data_3]) => {
+/*Promise.all([
     d3.json('lk_germany_reduced.geojson'), // GeoJSON für die Karte
     d3.json('multivariate_test_data2.json'),  // Multivariate Testdaten
     d3.json('2023-12-07_rki_data.json'),
     d3.json('2023-12-14_rki_data.json'),
     d3.json('2023-12-21_rki_data.json')
-]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {
+]).then(([geoData, multivariateData, rki231207, rki231214, rki231221]) => {*/
 
-    dataFiles = [rki231207, rki231214, rki231221];
+    dataFiles = [rki_data_1, rki_data_2, rki_data_3];
     dates = []
     dataFiles.forEach(dataFile => {
         dates.push(dataFile.results[1].day) // Hole aus Eintrag "1" den Key für den Tag
@@ -281,7 +318,7 @@ Promise.all([
         const [year, month, day] = dateString.split("-");
         return `${day}.${month}.${year}`;
     }
-    
+
     function getBundeslandName(d) {
         const bundeslandMap = {
             "01": "Schleswig-Holstein",
