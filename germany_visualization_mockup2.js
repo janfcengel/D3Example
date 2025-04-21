@@ -441,8 +441,13 @@ Promise.all([
         const legendContainer = d3.select("#mockup2-legend-container");
         legendContainer.selectAll("*").remove();
 
+        // Ermittle die verfügbare Höhe des Legend-Containers dynamisch
+        const availableHeight = legendContainer.clientHeight; // Verfügbare Höhe der Legende
+        const svgWidth = 80;
+        const svgHeight = availableHeight - 20; // Verfügbare Höhe für die SVG
+
         // SVG für die Legende
-        const svg = legendContainer.append("svg").attr("width", 100).attr("height", 200);
+        const svg = legendContainer.append("svg").attr("width", svgWidth).attr("height", svgHeight);
 
         // Farbverlauf erstellen
         const gradient = svg.append("defs")
@@ -459,7 +464,7 @@ Promise.all([
         // Rechteck für den Farbverlauf
         svg.append("rect")
             .attr("width", 20)
-            .attr("height", 180)
+            .attr("height", svgHeight - 40)
             .style("fill", "url(#legendGradient)")
             .attr("transform", "translate(30,10)");
         
