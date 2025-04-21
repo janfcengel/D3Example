@@ -438,16 +438,17 @@ Promise.all([
 
     // Funktion zur Anzeige der Legende (farblich abgestufte Skala)
     function updateLegend(minValue, maxValue) {
-        const legendContainer = d3.select("#mockup2-legend-container");
-        legendContainer.selectAll("*").remove();
+        
+        d3.select("#mockup2-legend-container").selectAll("*").remove();
 
         // Ermittle die verfügbare Höhe des Legend-Containers dynamisch
+        const legendContainer = document.getElementById("mockup2-legend-container");
         const availableHeight = legendContainer.clientHeight; // Verfügbare Höhe der Legende
-        const svgWidth = 80;
+        const svgWidth = 120;
         const svgHeight = availableHeight - 20; // Verfügbare Höhe für die SVG
 
         // SVG für die Legende
-        const svg = legendContainer.append("svg").attr("width", svgWidth).attr("height", svgHeight);
+        const svg = d3.select("#mockup2-legend-container").append("svg").attr("width", svgWidth).attr("height", svgHeight);
 
         // Farbverlauf erstellen
         const gradient = svg.append("defs")
@@ -469,8 +470,8 @@ Promise.all([
             .attr("transform", "translate(30,10)");
         
         // Legendenwerte
-        svg.append("text").attr("x", 60).attr("y", 20).text(Math.round(maxValue));
-        svg.append("text").attr("x", 60).attr("y", 190).text(Math.round(minValue));
+        svg.append("text").attr("x", 60).attr("y", 20).attr("text-anchor", "start").text(Math.round(maxValue));
+        svg.append("text").attr("x", 60).attr("y", svgHeight-20).attr("text-anchor", "start").text(Math.round(minValue));
     }
 
 // Funktion zum Erstellen eines Balkendiagramms für das ausgewählte Hexagon
