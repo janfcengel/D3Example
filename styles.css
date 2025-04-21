@@ -208,6 +208,7 @@ body {
 #mockup2-legend-container {
     grid-column: 1;
     grid-row: 2;
+    padding: 10px;
 }
 
 #mockup2-chart-container {
